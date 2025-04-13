@@ -5,12 +5,12 @@
     font-style: normal;
     box-sizing: border-box;
 }
+
 body {
     background-image: url(../assets/login-background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    height: 100vh;
 }
 
 main {
@@ -22,38 +22,111 @@ main {
 
 .container {
     background-color: rgba(255,255,255, 0.7);
+    border: 1px transparent white;
+    border-radius: 5px;
+    padding: 30px;
+    width: 450px;
+    height: 500px;
+}
+
+h2 {
+    font-size: 26px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 10px 0px;
+}
+
+.input-box input{
+    padding: 10px 5px;
+}
+
+.input-box label {
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px; 
+}
+
+.input-container input {
+    font-size: 16px;
+    font-weight: 200;
+    border: 1px solid rgba(134, 134, 134, 1);
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+}
+
+.input-container img {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+  }
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0px;
+}
+
+.remember-forgot a {
+    color: black;
+    font-weight: 400;
+}
+
+.acess-link {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 5px;
-    border: 1px transparent white;
-    border-radius: 5px;
-    width: 400px;
+    gap: 20px;
+    margin: 40px 0px;
 }
 
-.input-box {
-    width: 300px;
-    height: 50.5px;
-    box-sizing: border-box;
-    
+.acess-link button {
+    font-size: 16px;
+    background-color: #3FBA0B;
+    color: white;
+    border-style: none;
+    border-radius: 10px;
+    padding: 10px 137px;
 }
 
-.input-box label {
-
+.acess-link a {
+    color: black;
 }
 
-.input-box input {
-    border: 1px solid #4A4A4A;
-    border-radius: 5px;
-    padding: 10px;
-}
-.input-box img {
-    
-}
-
-h2 {
-    font-size: 22px;
-    padding: 10px;
+.register-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
+.register-link button {
+    font-size: 16px;
+    background-color: #2D92E3;
+    color: white;
+    border-style: none;
+    border-radius: 10px;
+    padding: 10px 80px;
+}
+
+.register-link a {
+    color: black;
+}

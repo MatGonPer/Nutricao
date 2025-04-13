@@ -9,34 +9,41 @@
 </head>
 <body>
     <main>
-        <form action="">
-        <section class="container">    
-            <h2>Acesse sua conta</h1>
-            <section class="input-box">
-                <label for="email">Email:</label>
-                <br>
-                <input placeholder="Digite o seu email" type="email">
-                <img src="../assets/icons/login-register/user-icon.svg" alt="Ícone de usuário" width="22" height="22">
-            </section>
-            <section class="input-box">
-                <label for="password">Senha:</label>
-                <br>
-                <input placeholder="Digite a sua senha" type="password">
-                <img src="../assets/icons/login-register/password-icon.svg" alt="Ícone de usuário" width="22" height="22">
-            </section>
-            <section class="remember-forgot">
-                <label for="checkbox">
+        <section>
+            <form class="container" action="">
+                <h2>Acesse a sua conta</h1>
+                <section class="input-box">
+                    <label for="email">Email:</label>
+                    <br>
+                    <div class="input-container">
+                        <input placeholder="Digite o seu email" type="email">
+                        <img src="../assets/icons/login-register/user-icon.svg" alt="Ícone de usuário" width="22" height="22">
+                    </div>
+                </section>
+                <section class="input-box">
+                    <label for="password">Senha:</label>
+                    <br>
+                    <div class="input-container">
+                        <input placeholder="Digite a sua senha" type="password">
+                        <img src="../assets/icons/login-register/password-icon.svg" alt="Ícone de usuário" width="22" height="22">
+                    </div>
+                </section>
+                <section class="acess-link">
+                    <button type="submit">Acessar conta</button>
+                </section>
+                <section class="remember-forgot">
+                    <label for="checkbox">
                     <input type="checkbox">
                     Lembre-me
-                </label>
-                <a href="">Esqueci minha senha</a>
-            </section>
-                <button type="submit">Acessar conta</button>
-            <section class="register-link">
-                <p>Não tem uma conta? <a href="">Cadastre-se</a></p>
-            </section>
+                    </label>
+                    <a href="">Esqueci minha senha</a>
+                </section>
+                <section class="register-link">
+                    <button type="submit">Cadastrar-se</button>
+                    <a href="">Sou um parceiro</a>
+                </section>
+            </form>  
         </section>    
-        </form>  
     </main>
 </body>
 </html>
