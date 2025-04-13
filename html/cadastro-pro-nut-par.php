@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acesse sua conta</title>
+    <title>Cadastre sua conta parceira</title>
     <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/cadastro-usr.css">
+    <link rel="stylesheet" href="../css/cadastro-pro-nut-par.css">
 </head>
 <body>
     <main>
@@ -13,7 +13,7 @@
             <h1>NUTRIFIT</h1>
             <section>
                 <form class="container" action="">
-                    <h2>Cadastre a sua conta</h2>
+                    <h2>Cadastre a sua conta parceira</h2>
                     <section class="input-box">
                         <label for="nome">Nome</label>
                         <br>
