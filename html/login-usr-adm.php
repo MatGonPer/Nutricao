@@ -9,6 +9,8 @@
 </head>
 <body>
     <main>
+        <div class="external-container">
+        <h1>NUTRIFIT</h1>
         <section>
             <form class="container" action="">
                 <h2>Acesse a sua conta</h1>
@@ -43,7 +45,8 @@
                     <a href="">Sou um parceiro</a>
                 </section>
             </form>  
-        </section>    
+        </section>
+        </div>    
     </main>
 </body>
 </html>
