@@ -42,7 +42,7 @@
                     </section>
                     <section class="register-link">
                         <button type="submit">Cadastrar-se</button>
-                        <a href="">Sou um parceiro</a>
+                        <a href="login-pro-nut-par.php">Sou um parceiro</a>
                     </section>
                 </form>  
             </section>
