@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acesse sua conta</title>
     <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/login-usr-adm.css">
+    <link rel="stylesheet" href="../css/login-usuario-admin.css">
 </head>
 <body>
     <main>

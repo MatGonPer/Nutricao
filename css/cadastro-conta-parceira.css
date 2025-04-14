@@ -25,7 +25,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 105vh;
+    height: 100vh;
     width: 50vw;
     background: rgba(0 , 0 , 0 , 0.4);
     backdrop-filter: blur(2px);
@@ -40,7 +40,7 @@ main {
     border-radius: 10px;
     padding: 30px;
     width: 450px;
-    height: 620px;
+    height: 720px;
     margin-bottom: 50px;
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
@@ -57,7 +57,7 @@ h1 {
 
 h2 {
     color: #2F2F2F;
-    font-size: 26px;
+    font-size: 23px;
     padding-bottom: 10px;
     margin-bottom: 10px;
     text-align: center;
@@ -97,6 +97,7 @@ h2 {
     border: 1px solid rgba(134, 134, 134, 1);
     border-radius: 10px;
     color: rgb(0, 0, 0);
+    padding: 10px;
 }
 
 .input-container img {
@@ -120,11 +121,14 @@ h2 {
 }
 
 .input-pessoal .input-box .input-container select{
+    width: 46;
     padding: 10px;
-    background-color: #2D92E3;
+    border: 1px solid rgba(134, 134, 134, 1);
     border-radius: 10px;
-    color: white;
-    font-weight: 600;
+    color: black;
+    background-color: white;
+    font-weight: 200;
+    font-size: 16px;
 }
 
 .remember-forgot {
@@ -160,6 +164,7 @@ h2 {
     border-style: none;
     border-radius: 10px;
     padding: 10px 100px;
+    cursor: pointer;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
@@ -203,5 +208,13 @@ h2 {
 
 .register-link a:hover {
     transition: 0.5s;
-    color: #1208A1;
+    color: #00a2ff;
+}
+
+input {
+    transition: all 0.1s ease;
+}
+
+input:focus {
+    outline: none;
 }

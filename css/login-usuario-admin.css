@@ -7,7 +7,7 @@
 }
 
 body {
-    background-image: url(../assets/conta-parceira-background.jpg);
+    background-image: url(../assets/usuario-adm-background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -27,15 +27,14 @@ main {
     justify-content: center;
     height: 100vh;
     width: 50vw;
-    background: rgba(0 , 0 , 0 , 0.4);
+    background: rgba(207, 207, 207, 0.541);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-    color: white;
 }
 
 .container {
-    background-color: rgba(0 , 0 , 0 , 0.4);
+    background-color: rgba(255, 255, 255, 0.6);
     border-style: none;
     border-radius: 10px;
     padding: 30px;
@@ -51,7 +50,7 @@ h1 {
     font-size: 40px;
     margin: 30px;
     font-weight: 400;
-    color: white
+    color: #2F2F2F;
 }
 
 h2 {
@@ -61,7 +60,6 @@ h2 {
     margin-bottom: 10px;
     text-align: center;
     font-weight: 400;
-    color: white;
 }
 
 .input-container {
@@ -96,6 +94,7 @@ h2 {
     border: 1px solid rgba(134, 134, 134, 1);
     border-radius: 10px;
     color: rgb(0, 0, 0);
+    padding: 10px;
 }
 
 .input-container img {
@@ -115,7 +114,7 @@ h2 {
 }
 
 .remember-forgot a {
-    color:white;
+    color: black;
     font-weight: 400;
 }
 
@@ -141,6 +140,7 @@ h2 {
     border-style: none;
     border-radius: 10px;
     padding: 10px 136px;
+    cursor: pointer;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
@@ -170,6 +170,7 @@ h2 {
     border-style: none;
     border-radius: 10px;
     padding: 10px 80px;
+    cursor: pointer;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
@@ -179,10 +180,18 @@ h2 {
 }
 
 .register-link a {
-    color: white;
+    color: black;
 }
 
 .register-link a:hover {
     transition: 0.5s;
     color: #1208A1;
+}
+
+input {
+    transition: all 0.1s ease;
+}
+
+input:focus {
+    outline: none;
 }

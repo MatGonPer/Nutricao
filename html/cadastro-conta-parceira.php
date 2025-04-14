@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acesse sua conta</title>
+    <title>Cadastre sua conta parceira</title>
     <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/cadastro-usr.css">
+    <link rel="stylesheet" href="../css/cadastro-conta-parceira.css">
 </head>
 <body>
     <main>
@@ -13,7 +13,7 @@
             <h1>NUTRIFIT</h1>
             <section>
                 <form class="container" action="">
-                    <h2>Cadastre a sua conta</h2>
+                    <h2>Cadastre a sua conta parceira</h2>
                     <section class="input-box">
                         <label for="nome">Nome</label>
                         <br>
@@ -44,13 +44,20 @@
                             <img src="../assets/icons/login-register/password-icon.svg" alt="Ícone de usuário" width="22" height="22">
                         </div>
                     </section>
+                    <section class="input-box">
+                        <label for="password">Senha:</label>
+                        <br>
+                        <div class="input-container">
+                            <input placeholder="Digite a sua senha novamente" type="password">
+                            <img src="../assets/icons/login-register/password-icon.svg" alt="Ícone de usuário" width="22" height="22">
+                        </div>
+                    </section>
                     <div class="input-pessoal">
                         <section class="input-box">
                             <label for="password">Nascimento:</label>
                             <br>
                             <div class="input-container">
                                 <input type="date">
-                                <img src="../assets/icons/login-register/password-icon.svg" alt="Ícone de usuário" width="22" height="22">
                             </div>
                         </section>
                         <section class="input-box">

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acesse sua conta de parceiro</title>
     <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/login-pro-nut-par.css">
+    <link rel="stylesheet" href="../css/login-conta-parceira.css">
 </head>
 <body>
     <main>

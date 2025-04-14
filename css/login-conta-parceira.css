@@ -7,7 +7,7 @@
 }
 
 body {
-    background-image: url(../assets/usuario-adm-background.jpg);
+    background-image: url(../assets/conta-parceira-background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -25,21 +25,22 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 105vh;
+    height: 100vh;
     width: 50vw;
-    background: rgba(207, 207, 207, 0.541);
+    background: rgba(0 , 0 , 0 , 0.4);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    color: white;
 }
 
 .container {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(0 , 0 , 0 , 0.7);
     border-style: none;
     border-radius: 10px;
     padding: 30px;
     width: 450px;
-    height: 620px;
+    height: 500px;
     margin-bottom: 50px;
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
@@ -50,16 +51,17 @@ h1 {
     font-size: 40px;
     margin: 30px;
     font-weight: 400;
-    color: #2F2F2F;
+    color: white
 }
 
 h2 {
     color: #2F2F2F;
-    font-size: 26px;
+    font-size: 23px;
     padding-bottom: 10px;
     margin-bottom: 10px;
     text-align: center;
     font-weight: 400;
+    color: white;
 }
 
 .input-container {
@@ -94,6 +96,7 @@ h2 {
     border: 1px solid rgba(134, 134, 134, 1);
     border-radius: 10px;
     color: rgb(0, 0, 0);
+    padding: 10px;
 }
 
 .input-container img {
@@ -106,24 +109,6 @@ h2 {
     pointer-events: none;
   }
 
-.input-pessoal{
-    display: flex;
-    justify-content: center;
-    gap: 5%;
-}
-
-.input-pessoal .input-box{
-    width: 50%;
-}
-
-.input-pessoal .input-box .input-container select{
-    padding: 10px;
-    background-color: #2D92E3;
-    border-radius: 10px;
-    color: white;
-    font-weight: 600;
-}
-
 .remember-forgot {
     display: flex;
     justify-content: space-between;
@@ -131,7 +116,7 @@ h2 {
 }
 
 .remember-forgot a {
-    color: black;
+    color:white;
     font-weight: 400;
 }
 
@@ -146,7 +131,7 @@ h2 {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    margin: 10px 0px;
+    margin: 35px 0px;
 }
 
 .acess-link button {
@@ -156,7 +141,8 @@ h2 {
     color: white;
     border-style: none;
     border-radius: 10px;
-    padding: 10px 100px;
+    padding: 10px 136px;
+    cursor: pointer;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
@@ -175,7 +161,7 @@ h2 {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin: 15px 0px;
+    margin: 20px 0px;
 }
 
 .register-link button {
@@ -186,6 +172,7 @@ h2 {
     border-style: none;
     border-radius: 10px;
     padding: 10px 80px;
+    cursor: pointer;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
@@ -195,10 +182,18 @@ h2 {
 }
 
 .register-link a {
-    color: black;
+    color: white;
 }
 
 .register-link a:hover {
     transition: 0.5s;
     color: #1208A1;
+}
+
+input {
+    transition: all 0.1s ease;
+}
+
+input:focus {
+    outline: none;
 }
