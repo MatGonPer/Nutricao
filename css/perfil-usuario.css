@@ -1,0 +1,21 @@
+.container{
+    display: flex;
+}
+
+.sidebar{
+    background-color: #053225;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+    width: 15vw;
+}
+
+.perfil{
+    align-items: center;
+    justify-content: center;
+}
+
+.perfil img{
+    border-radius: 100px;
+    width: 50%;
+}
