@@ -108,12 +108,17 @@
                         <a href="">Esqueci minha senha</a>
                     </section>
                     <section class="register-link">
-                        <button type="button" onclick="window.location.href='cadastro-usuario-admin.php';">Cadastrar-se</button>
+                        <button type="button" id="registerButton">Cadastrar-se</button>
                         <a href="login-conta-parceira.php">Sou um parceiro</a>
                     </section>
                 </form>  
             </section>
         </div>    
     </main>
+    <script>
+        document.getElementById('registerButton').addEventListener('click', function() {
+            window.location.href = "cadastro-usuario-admin.php";
+        });
+    </script>
 </body>
 </html>

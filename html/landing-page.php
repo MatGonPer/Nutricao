@@ -46,14 +46,62 @@
                         <h4>Quem somos</h4>
                         <p> A Nutrifit é uma plataforma completa desenvolvida com o objetivo de transformar a maneira como você cuida da sua saúde. Nosso sistema foi pensado para auxiliar pessoas que desejam alcançar uma vida mais saudável e equilibrada, unindo tecnologia, orientação especializada e ferramentas práticas em um só lugar.
                             Ao utilizar a Nutrifit, você terá acesso a um ecossistema digital totalmente voltado para o seu bem-estar, com múltiplas áreas dedicadas ao acompanhamento e melhoria da sua saúde física e nutricional.
-                            
                         </p>
                     </div>
                 </div>
             </div>
             
     </main>
+    <section class="subscription">
+        <h2>Escolha seu plano</h2>
+        <div class="sub-div">
+            <p>Anual parcelado</p>
+            <p id="mensal">Mensal</p>
+        </div>
+        <div class="sub-container">
+            <section class="sub-container-card">
+                <h3>Plano Básico</h3>
+                <h2>R$00,00</h2>
+            </section>
+            <section class="sub-container-card">
+                <h3>Plano Padrão</h3>
+                <h2>R$00,00</h2>
+            </section>
+            <section class="sub-container-card">
+                <h3>Plano Premium</h3>
+                <h2>R$00,00</h2>
+            </section>
+        </div>
+    </section>
     <footer>
+        <section>
+            <p>lorem</p>
+            <p>lorem</p>
+            <p>lorem</p>
+        </section>
+        <section>
+            <p>lorem</p>
+            <p>lorem</p>
+            <p>lorem</p>
+        </section>
+        <section>
+            <p>lorem</p>
+            <p>lorem</p>
+            <p>lorem</p>
+        </section>
     </footer>
+    <script>
+        const animatedCard = document.querySelectorAll(".sub-container-card");
+        animatedCard.forEach(card => {
+            card.addEventListener("mouseover", function() {
+            card.style.transform = "scale(1.05)";
+            card.style.boxShadow = "rgba(0, 0, 0, 0.35) 0px 5px 15px";
+        })
+        card.addEventListener("mouseout", function() {
+            card.style.transform = "scale(1.0)";
+            card.style.boxShadow = "rgba(0, 0, 0, 0.35) 0px 5px 15px";
+        })
+        })
+    </script>
 </body>
 </html>
