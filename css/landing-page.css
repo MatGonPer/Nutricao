@@ -210,7 +210,7 @@ h1 {
 .subscription {
     height: 700px;
     width: 100vw;
-    background: linear-gradient(to bottom, #053225, #084F3B);
+    background: linear-gradient(to top, #1C0F13, #2c181d);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -270,6 +270,45 @@ h1 {
     font-weight: 500;
     font-size: 65px;
     padding: 40px 0px;
+}
+
+#card1 {
+    background: linear-gradient(to right, #dea68c, #a16d55);
+    transition: all 0.1s ease;
+    cursor: pointer;
+}
+
+#card2 {
+    background: linear-gradient(to right, #f0f0f0, #9a9a9a);
+    transition: all 0.1s ease;
+    cursor: pointer;
+}
+
+#card3 {
+    background: linear-gradient(to right, #ffd700, #786518);
+    transition: all 0.1s ease;
+    cursor: pointer;
+}
+
+#card1:hover {
+    -webkit-box-shadow:0px 0px 60px 5px rgba(222,166,140,0.5);
+    -moz-box-shadow: 0px 0px 60px 5px rgba(222,166,140,0.5);
+    box-shadow: 0px 0px 60px 5px rgba(222,166,140,0.5);
+    scale: 1.02;
+}
+
+#card2:hover {
+    -webkit-box-shadow:0px 0px 60px 5px rgba(240,240,240,0.5);
+    -moz-box-shadow: 0px 0px 60px 5px rgba(240,240,240,0.5);
+    box-shadow: 0px 0px 60px 5px rgba(240,240,240,0.5);
+    scale: 1.02;
+}
+
+#card3:hover {
+    -webkit-box-shadow:0px 0px 60px 5px rgba(255,217,0,0.5);
+    -moz-box-shadow: 0px 0px 60px 5px rgba(255,217,0,0.5);
+    box-shadow: 0px 0px 60px 5px rgba(255,217,0,0.5);
+    scale: 1.02;
 }
 
 footer {

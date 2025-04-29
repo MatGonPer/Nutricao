@@ -19,19 +19,19 @@
                     <p>Área do usuário</p>
                     <img src="../assets/landing-page/images/user-background-450px-300px.jpg" alt="Homem levantando peso.">
                     <br>
-                    <button class="acessar-button">Acessar</button>
+                    <button class="acessar-button" id="userAcess">Acessar</button>
                 </section>
                 <section class="partner-area">
                     <p>Área do parceiro</p>
                     <img src="../assets/landing-page/images/partner-background-450px-300px.jpg" alt="Instrutor auxiliando aluno.">
                     <br>
-                    <button class="acessar-button">Acessar</button>
+                    <button class="acessar-button" id="partnerAcess">Acessar</button>
                 </section>
                 <section class="commercial-partner">
                     <p>Área do parceiro comercial</p>
                     <img src="../assets/landing-page/images/commercial-partner-background-450px-300px.jpg" alt="Duas pessoas apertando as mãos por terem entrado em acordo.">
                     <br>
-                    <button class="acessar-button">Acessar</button>
+                    <button class="acessar-button" id="comercialAcess">Acessar</button>
                 </section>
             </div>
             <div class="middle-container">
@@ -59,16 +59,16 @@
             <p id="mensal">Mensal</p>
         </div>
         <div class="sub-container">
-            <section class="sub-container-card">
-                <h3>Plano Básico</h3>
+            <section class="sub-container-card" id="card1">
+                <h3>Plano Bronze</h3>
                 <h2>R$00,00</h2>
             </section>
-            <section class="sub-container-card">
-                <h3>Plano Padrão</h3>
+            <section class="sub-container-card" id="card2">
+                <h3>Plano Prata</h3>
                 <h2>R$00,00</h2>
             </section>
-            <section class="sub-container-card">
-                <h3>Plano Premium</h3>
+            <section class="sub-container-card" id="card3">
+                <h3>Plano Ouro</h3>
                 <h2>R$00,00</h2>
             </section>
         </div>
@@ -91,16 +91,19 @@
         </section>
     </footer>
     <script>
-        const animatedCard = document.querySelectorAll(".sub-container-card");
-        animatedCard.forEach(card => {
-            card.addEventListener("mouseover", function() {
-            card.style.transform = "scale(1.05)";
-            card.style.boxShadow = "rgba(0, 0, 0, 0.35) 0px 5px 15px";
+        const userAcess = document.getElementById("userAcess");
+        userAcess.addEventListener("click", function() {
+            window.location.href = "login-usuario-admin.php";
         })
-        card.addEventListener("mouseout", function() {
-            card.style.transform = "scale(1.0)";
-            card.style.boxShadow = "rgba(0, 0, 0, 0.35) 0px 5px 15px";
+        
+        const partnerAcess = document.getElementById("partnerAcess");
+        partnerAcess.addEventListener("click", function() {
+            window.location.href = "login-conta-parceira.php";
         })
+
+        const comercialAcess = document.getElementById("comercialAcess");
+        comercialAcess.addEventListener("click", function() {
+            window.location.href = "login-comercial.php";
         })
     </script>
 </body>

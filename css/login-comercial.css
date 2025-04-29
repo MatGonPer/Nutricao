@@ -7,7 +7,7 @@
 }
 
 body {
-    background-image: url(../assets/login-conta-parceira/login-conta-parceira-background-original.jpg);
+    background-image: url(../assets/login-comercial/background-login-comercial-original.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -27,14 +27,14 @@ main {
     justify-content: center;
     height: 100vh;
     width: 50vw;
-    background: rgba(0, 0, 0, 0.432);
+    background: rgba(207, 207, 207, 0.541);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .container {
-    background-color: rgba(0, 0, 0, 0.356);
+    background-color: rgba(255, 255, 255, 0.6);
     border-style: none;
     border-radius: 10px;
     padding: 30px;
@@ -50,11 +50,11 @@ h1 {
     font-size: 40px;
     margin: 30px;
     font-weight: 400;
-    color: #ffffff;
+    color: #2F2F2F;
 }
 
 h2 {
-    color: #ffffff;
+    color: #2F2F2F;
     font-size: 25px;
     padding-bottom: 10px;
     margin-bottom: 10px;
@@ -78,7 +78,6 @@ h2 {
 }
 
 .input-box label {
-    color: rgb(255, 255, 255);
     font-size: 20px;
     font-weight: 200;
 }
@@ -106,11 +105,7 @@ h2 {
     width: 20px;
     height: 20px;
     pointer-events: none;
-}
-
-.remember-forgot label {
-    color: #ffffff;
-}
+  }
 
 .remember-forgot {
     display: flex;
@@ -119,8 +114,13 @@ h2 {
 }
 
 .remember-forgot a {
-    color: rgb(255, 255, 255);
+    color: black;
     font-weight: 400;
+}
+
+.remember-forgot a:hover {
+    transition: 0.5s;
+    color: #1208A1;
 }
 
 .acess-link {
@@ -183,7 +183,12 @@ h2 {
 }
 
 .register-link a {
-    color: rgb(255, 255, 255);
+    color: black;
+}
+
+.register-link a:hover {
+    transition: 0.5s;
+    color: #1208A1;
 }
 
 input {
@@ -197,7 +202,7 @@ input:focus {
 .invalid {
     color: red;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 200;
     margin: 0px 10px;
 
 }

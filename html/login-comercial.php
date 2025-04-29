@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acesse sua conta</title>
     <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/login-conta-parceira.css">
+    <link rel="stylesheet" href="../css/login-comercial.css">
 </head>
 <body>
     <?php 
@@ -56,7 +56,7 @@
             <h1>NUTRIFIT</h1>
             <section>
                 <form class="container" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
-                    <h2>Acesse a sua conta parceira</h2>
+                    <h2>Acesse a sua conta comercial</h2>
                     <section class="input-box">
                         <label for="email">Email:</label>
                         <br>
@@ -117,7 +117,7 @@
     </main>
     <script>
         document.getElementById('registerButton').addEventListener('click', function() {
-            window.location.href = "cadastro-conta-parceira.php";
+            window.location.href = "cadastro-conta-comercial.php";
         });
     </script>
 </body>
