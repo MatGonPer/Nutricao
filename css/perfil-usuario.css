@@ -1,31 +1,170 @@
-.container{
-    display: flex;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #F5E9E2;
 }
 
-.user-photo{
-    padding: 10px;
-    align-items: center;
-    text-align: center;
-}
-
-.user-photo img{
-    width: 30%;
-}
-
-.sidebar{
-    background-color: #053225;
-    color: white;
-    padding: 20px;
+.container {
+    width: 100vw;
     height: 100vh;
-    width: 15vw;
+    display: flex;
+    flex-direction: row;
 }
 
-.perfil{
+.left {
+    width: 20%;
+    height: 100%;
+    background-color: #053225;
+}
+
+.right {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
-.perfil img{
-    border-radius: 100px;
-    width: 50%;
+.right picture img {
+    display: flex;
+    align-items: center;
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.user-picture {
+    width: 200px;
+    height: 200px;
+    padding: 20px 0px;
+}
+
+.gender {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px;
+    height: 19px;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: white;
+}
+
+.gender select {
+    font-family: "Poppins", sans-serif;
+    border-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+}
+
+.gender label {
+    font-size: 14px;
+}
+
+h4 {
+    font-size: 20px;
+    font-weight: 400;
+    padding: 0px 0px 15px 0px;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.form {
+    width: 80%;
+}
+
+.form-top {
+    padding: 15px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.form-top section {
+    width: 280px;
+    height: 49px;
+}
+
+.form-top input {
+    width: 250px;
+    font-size: 14px;
+    padding: 15px;
+    border-radius: 10px;
+    border-style: none;
+}
+
+.form-bottom {
+    padding: 15px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.form-bottom section {
+    width: 280px;
+    height: 49px;
+}
+
+.form-bottom input {
+    width: 250px;
+    font-size: 14px;
+    padding: 15px;
+    border-radius: 10px;
+    border-style: none;
+}
+
+.form label {
+    margin-left: 3px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.about-me {
+    width: 100%;
+}
+
+.about-me h3 {
+    margin: 10px 0px;
+    font-size: 16px;
+    font-weight: 300;
+}
+.about-me textarea {
+    border-style: none;
+    border-radius: 10px;
+    width: 100%;
+    padding: 18px 0px;
+    resize: none;
+}
+
+.submit-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px 0px;
+}
+
+.button1 {
+    height: 49px;
+    width: 150px;
+    border-style: none;
+    border-radius: 10px;
+    color: white;
+    background-color: #1C0F13;
+    cursor: pointer;
+}
+
+.button2 {
+    height: 49px;
+    width: 150px;
+    border-style: none;
+    border-radius: 10px;
+    color: white;
+    background-color: #0E34A0;
+    cursor: pointer;
 }

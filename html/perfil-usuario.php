@@ -1,104 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/perfil-usuario.css">
-    <title>Usuário</title>
 </head>
 <body>
     <div class="container">
-        <aside class="sidebar">
-            <ul class="sidebar-menu">
-                <li class="perfil">
-                    <figure>
-                        <img src="../assets/perfil-usuario/user-icon.jpg" alt="">
-                    </figure>
-                    <h3>Joao Macedo Santos</h3>
-                </li>
-                <li class="usuario">
-                    <figure>
-                        <img src="" alt="">
-                    </figure>
-                    <p>Usuário</p>
-                </li>
-                <li class="catalogo">
-                    <figure>
-                        <img src="" alt="">
-                    </figure>
-                    <p>Catálogo</p>
-                </li>
-                <li class="suporte">
-                    <figure>
-                        <img src="" alt="">
-                    </figure>
-                    <p>Suporte</p>
-                </li>
-                <li class="configuracoes">
-                    <figure>
-                        <img src="" alt="">
-                    </figure>
-                    <p>Configurações</p>
-                </li>
-                <li class="sair">
-                    <figure>
-                        <img src="" alt="">
-                    </figure>
-                    <p>Sair</p>
-                    </li>
-            </ul>
-        </aside>
-        <main class="user-content">
-            <div class="user-photo">
-                <figure>
-                    <img src="../assets/perfil-usuario/user-icon.jpg" alt="">
-                </figure>
-                <h2>Joao Macedo Santos</h2>
+        <section class="left">
+
+        </section>
+        <section class="right">
+            <div class="user-picture">
+                <picture>
+                    <img width="200" height="200" src="../assets/perfil-usuario/user-icon.jpg" alt="">
+                </picture>
             </div>
-            <section>
-                <div class="user-info">
-                    <div class="title">
-                        <h3>Dados Pessoais</h3>
-                    </div>
-                    <input type="text" placeholder="Nome Completo" name="nome" id="nome">
-                    <input type="number" name="idade" id="idade">
-                    <select name="ganero" id="genero">
-                        <option value="masculino">Masculino</option>
-                        <option value="feminino">Feminino</option>
-                        <option value="outro">Outro</option>
-                        <option value="no-info">Prefiro não informar</option>
-                    </select>
-                </div>
-                <div class="about-me">
-                    <input type="text" name="about-me" id="about-me" placeholder="Sobre mim">
-                </div>
-                <div class="user-contact">
-                    <div class="title">
-                        <h3>Contatos</h3>
-                    </div>
-                    <input type="email" name="email" id="email">
-                    <input type="tel" name="tel" id="tel">
-                    <select name="cidade" id="cidade">
-                        <option value="juazeiro-do-norte">Juazeiro do Norte</option>
-                        <option value="crato">Crato</option>
-                        <option value="barbalha">Barbalha</option>
-                    </select>
-                </div>
-                <div class="saude">
-                    <div class="title">
-                        <h3>Saúde</h3>
-                    </div>
-                    <input type="number" name="peso" id="peso">
-                    <input type="number" name="imc" id="imc">
-                    <input type="number" name="altura" id="altura">
-                </div>
-                <div class="fim">
-                    <input type="submit" name="salvar-perfil" id="salvar-perfil">
-                    <input type="submit" name="alterar-senha" id="alterar-senha">
-                </div>
-            </section>
-        </main>
+            <h4>Atualize os seus dados pessoais</h4>
+            <div class="form">
+                <form action="" method="post"></form>
+                        <div class="form-top">
+                            <section>
+                                <label for="name">Nome:</label>
+                                <input type="text" name="name" id="">
+                            </section>
+                            <section>
+                                <label for="date_of_birth">Data de nascimento:</label>
+                                <input type="datetime" name="date_of_birth" id="">
+                            </section>
+                            <section>
+                                <label for="gender">Gênero:</label>
+                                <div class="gender">
+                                    <select name="gender" id="">
+                                        <option value="Masculino">Masculino</option>
+                                        <option value="Feminino">Feminino</option>
+                                        <option value="Prefiro não informar">Prefiro não informar</option>
+                                    </select>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="form-bottom">
+                            <section>
+                                <label for="height">Altura:</label>
+                                <input type="text" name="height" id="">
+                            </section>
+                            <section>
+                                <label for="weight">Peso atual:</label>
+                                <input type="text" name="weight" id="">
+                            </section>
+                            <section>
+                                <label for="phone">Contato:</label>
+                                <input type="text" name="" id="">
+                            </section>
+                        </div>
+                        <section class="about-me">
+                        <h3>Sobre mim:</h3>
+                        <textarea name="sobre-mim" id=""></textarea>
+                        </section>
+                        <div class="submit-button">
+                            <input class="button1" type="button" value="Resetar dados">
+                            <input class="button2" type="button" value="Atualizar dados">
+                        </div>
+                </form>
+            </div>
+        </section>
     </div>
 </body>
 </html>
