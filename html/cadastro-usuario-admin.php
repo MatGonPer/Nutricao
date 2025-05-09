@@ -1,3 +1,14 @@
+<?php 
+session_start();
+if(isset($_POST['submit'])) {
+    $_SESSION['name'] = $_POST['name'];
+    $_SESSION['email'] = $_POST['email'];
+    $_SESSION['password'] = $_POST['password'];
+    $_SESSION['confirm_password'] = $_POST['confirm_password'];
+    $_SESSION['date'] = $_POST['date'];
+    $_SESSION['gender'] = $_POST['gender'];
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,74 +23,64 @@
         <div class="external-container">
             <h1>NUTRIFIT</h1>
             <section>
-                <form class="container" action="">
+                <form class="container" action="" method="post">
                     <h2>Cadastre a sua conta</h2>
                     <section class="input-box">
-                        <label for="nome">Nome</label>
+                        <label>Nome:</label>
                         <br>
                         <div class="input-container">
-                            <input type="text" placeholder="Digite seu nome">
+                            <input type="text" name="name" placeholder="Digite seu nome completo">
                         </div>
                     </section>
                     <section class="input-box">
-                        <label for="nome">Sobrenome</label>
+                        <label>Email:</label>
                         <br>
                         <div class="input-container">
-                            <input type="text" placeholder="Digite seu sobrenome">
-                        </div>
-                    </section>
-                    <section class="input-box">
-                        <label for="email">Email:</label>
-                        <br>
-                        <div class="input-container">
-                            <input placeholder="Digite o seu email" type="email">
+                            <input name="email" placeholder="Digite o seu email" type="email">
                             <img src="../assets/icons/login-register/user-icon.svg" alt="Ícone de usuário" width="22" height="22">
                         </div>
                     </section>
                     <section class="input-box">
-                        <label for="password">Senha:</label>
+                        <label>Senha:</label>
                         <br>
                         <div class="input-container">
-                            <input placeholder="Digite a sua senha" type="password">
+                            <input name="password" placeholder="Digite a sua senha" type="password">
                             <img src="../assets/icons/login-register/password-icon.svg" alt="Ícone de usuário" width="22" height="22">
                         </div>
                     </section>
                     <section class="input-box">
-                        <label for="password">Senha:</label>
+                        <label>Senha:</label>
                         <br>
                         <div class="input-container">
-                            <input placeholder="Digite a sua senha novamente" type="password">
+                            <input name="confirm_password" placeholder="Digite a sua senha novamente" type="password">
                             <img src="../assets/icons/login-register/password-icon.svg" alt="Ícone de usuário" width="22" height="22">
                         </div>
                     </section>
                     <div class="input-pessoal">
                         <section class="input-box">
-                            <label for="password">Nascimento:</label>
+                            <label>Nascimento:</label>
                             <br>
                             <div class="input-container">
-                                <input type="date">
-                                
+                                <input name="date" type="date">                   
                             </div>
                         </section>
                         <section class="input-box">
-                            <label for="password">Gênero:</label>
+                            <label>Gênero:</label>
                             <br>
-                            <div class="input-container">
-                                <select id="genero" name="genero">
-                                    <option value="masculino">Masculino</option>
-                                    <option value="feminino">Feminino</option>
-                                    <option value="outro">Outro</option>
-                                    <option value="no-info">Prefiro não informar</option>
+                            <div class="input-container-gender">
+                                <select class="select" name="gender">
+                                    <option value="male">Masculino</option>
+                                    <option value="female">Feminino</option>
+                                    <option value="gay">Prefiro não informar</option>
                                 </select>
                             </div>
                         </section>
                     </div>
-
                     <section class="acess-link">
-                        <button type="submit">Realizar cadastro</button>
+                        <button name="submit" type="submit">Realizar cadastro</button>
                     </section>
                     <section class="register-link">
-                        <a href="login-usr-adm.php">Já tenho uma conta</a>
+                        <a href="login-usuario-admin.php">Já tenho uma conta</a>
                     </section>
                 </form>  
             </section>
