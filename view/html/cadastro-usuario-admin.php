@@ -1,25 +1,32 @@
 <?php 
-session_start(); 
-require_once '../php/RegisterCaptureData.php';
-require_once '../php/Account.php';
-require_once '../php/Database.php';
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+require_once '../../controller/php/CapturarDadosCadastro.php';
+require_once '../../model/BancoDados.php';
 
-//Inicializa um array de contas registradas na superglobal session
-if(!isset($_SESSION['accountList'])) {
-    $_SESSION['accountList'] = [];
-}
+$dadosFormulario = new CapturarDadosCadastro();
+$contaCriadaComSucesso = false;
+$error = '';
 
-//Verifica se os dados foram inseridos no formulário, e verifica se já existe uma conta na session usando o
-//email e senha como comparação, caso não exista insere no array accountList a nova conta registrada.
-if(captureRegisterData()) {
-    foreach ($_SESSION['accountList'] as $existingAccount) {
-        if($existingAccount->getEmail() === $email && $existingAccount->getPassword() === $password) {
-            break;
-        } else {
-            $_SESSION['accountList'] = new Account($name, $email, $password, $cPassword, $date, $gender);
+if($dadosFormulario->capturarDadosDeCadastro("usuario")) {
+    $dados = $dadosFormulario->criarArrayDadosDeCadastro();
+
+    if(isset($dados['error'])) {
+        $error = $dados['error'];
+    } else {
+        $banco_dados = new BancoDados();
+        $conexao = $banco_dados->conectarBanco();
         }
+        if($conexao) {
+            $contaCriadaComSucesso = $banco_dados->inserirDados("usuario", $dados);
+            if(!$contaCriadaComSucesso) {
+                $error = "Erro ao salvar no banco de dados";
+            }
+            $banco_dados->fecharConexao();
+        } else {
+            $erro = "Erro na conexão com o banco de dados";
     }
-}
+    }
 
 ?>
 <!DOCTYPE html>
@@ -36,20 +43,13 @@ if(captureRegisterData()) {
         <div class="external-container">
             <h1>NUTRIFIT</h1>
             <section>
-                <form class="container" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+                <form class="container" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
                     <h2>Cadastre a sua conta</h2>
                     <section class="input-box">
                         <label>Nome:</label>
                         <br>
                         <div class="input-container">
-                            <input type="text" name="name" placeholder="<?php
-                            if($submit) {
-                                echo $_SESSION['name'];
-                            } else {
-                                echo 'Digite seu nome';
-                            }
-                            ?>
-                            ">
+                            <input type="text" name="name" placeholder="Digite seu nome completo">
                             <img src="../assets/icons/login-register/user-icon.svg" alt="Ícone de usuário" width="22" height="22">
                         </div>
                     </section>
@@ -88,12 +88,21 @@ if(captureRegisterData()) {
                             <label>Gênero:</label>
                             <div class="input-container-gender">
                                 <select class="select" name="gender">
-                                    <option value="male">Masculino</option>
-                                    <option value="female">Feminino</option>
-                                    <option value="gay">Prefiro não informar</option>
+                                    <option value="M">Masculino</option>
+                                    <option value="F">Feminino</option>
+                                    <option value="P">Prefiro não informar</option>
                                 </select>
                             </div>
                         </section>
+                    </div>
+                    <div>
+                        <?php
+                            if($contaCriadaComSucesso) {
+                                echo "<p>Conta criada com sucesso!</p>";
+                            }else if (!empty($erro)) {
+                                echo "<p>Erro: {$error}</p>";
+                            }
+                        ?>
                     </div>
                     <section class="acess-link">
                         <button name="submit" type="submit">Realizar cadastro</button>

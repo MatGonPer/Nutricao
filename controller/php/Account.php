@@ -18,6 +18,21 @@ class Account {
         $this->gender = $gender;
     }
 
+    public function criarNovaConta(BancoDados $banco_dados, string $tabela, array $dados) : bool {
+        $conexao = $banco_dados->conectarBanco();
+        if(!$conexao) {
+            echo pg_last_error($conexao);
+            return false;
+        } else {
+            $inserir = $banco_dados->inserirDados($tabela, $dados);
+            if(!$inserir) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+    }
+
     public function getName() : string {
         return $this->name;
     }
