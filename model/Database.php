@@ -1,0 +1,74 @@
+<?php
+//Você precisar ter instalado a extensão PHP para pg_* , e habilitar no seu php.ini, quando configurar reinicie seu Apache
+//Olhe no ChatGPT como instalar e o configurar PostgreSQL para PHP
+class Database {
+    //Olhe as configurações do seu banco de dados e altere os atributos da classe para a conexão ser bem sucedida
+    private $servidor = '127.0.0.1';
+    private $porta = '5432';
+    //Troque pelo usuário do seu banco, a senha pra acessar o seu banco, e o nome do seu banco
+    private $usuario = 'postgres';
+    private $senha = '88548582';
+    private $banco = 'nutrifit';
+    private $conexao;
+
+    //Não modifiquem nem mexam nessa porra de classe, só troque as variáveis pra voces conectarem seus bancos
+    public function conectarBanco() {
+        $this->conexao = pg_connect("host={$this->servidor} port={$this->porta} dbname={$this->banco} user={$this->usuario} password={$this->senha}");
+        if (!$this->conexao) {
+        echo "Erro ao conectar ao banco de dados.";
+        } else {
+        echo "Conexão bem-sucedida!\n";
+        }   
+    }
+
+    public function fecharConexao() {
+        if($this->conexao) {
+            pg_close($this->conexao);
+        }
+    }
+
+    public function getConexao() {
+        return $this->conexao;
+    }
+
+    public function inserirDados(string $tabela, array $dados) {
+        $colunas = array_keys($dados);
+        $valores = array_values($dados);
+        $placeholders = [];
+
+        for($i = 1; $i <= count($colunas); $i++) {
+            $placeholders[] = '$' . $i;
+        }
+
+        $sql = "INSERT INTO {$tabela} (" . implode(',', $colunas) . ") VALUES (" . implode(', ', $placeholders) . ")";
+        $resultado = pg_query_params($this->conexao, $sql, $valores);
+        
+        if($resultado === false) {
+            error_log('Erro ao inserir: ' . pg_last_error($this->conexao));
+            return false;
+        } else {
+            return true;
+        }
+    }
+    
+}
+/*Remova os comentários do código abaixo para testar se a conexão com o banco de dados foi bem sucedida
+E testa a função de inserir dados na tabela usuario com campos e valores definidos no array $reg
+$bd = new Database();
+$bd->conectarBanco();
+//O array $reg tem o nome dos campos a esquerda e o seu valor a direita, certifique-se de estar idêntico aos campos do seu banco
+$reg = [
+    'nome' => 'Márcio José da Silva',
+    'sexo' => 'M',
+    'data_de_nascimento' => '2001-07-21',
+    'email' => 'marciojs12@gmail.com',
+    'senha' => password_hash('marcio123marcio', PASSWORD_DEFAULT),
+    'tipo_usuario' => 'usuario'
+];
+if ($bd->inserirDados('usuario', $reg)) {
+    echo "Dados inseridos com sucesso.";
+} else {
+    echo "Erro ao inserir os dados: " . pg_last_error($bd->getConexao());
+}
+*/
+?>
