@@ -6,27 +6,38 @@ require_once '../../model/BancoDados.php';
 
 $dadosFormulario = new CapturarDadosCadastro();
 $contaCriadaComSucesso = false;
-$error = '';
-
+$erros = '';
+$errosSenha = [];
+$errosEmail = [];
+$nomeVazio = false;
+//Captura dados do tipo usuario
 if($dadosFormulario->capturarDadosDeCadastro("usuario")) {
+    // Se chegou aqui, significa que os dados foram validados com sucesso
     $dados = $dadosFormulario->criarArrayDadosDeCadastro();
-
-    if(isset($dados['error'])) {
-        $error = $dados['error'];
-    } else {
+    
+    if(!isset($dados['erro'])) {
+        //Cria e tenta se conectar ao banco de dados
         $banco_dados = new BancoDados();
         $conexao = $banco_dados->conectarBanco();
-        }
+        
         if($conexao) {
+            //Tenta inserir os dados na tabela usuario
             $contaCriadaComSucesso = $banco_dados->inserirDados("usuario", $dados);
             if(!$contaCriadaComSucesso) {
-                $error = "Erro ao salvar no banco de dados";
+                $erros = "Erro ao salvar no banco de dados";
             }
             $banco_dados->fecharConexao();
         } else {
-            $erro = "Erro na conexão com o banco de dados";
+            $erros = "Erro na conexão com o banco de dados";
+        }
+    } else {
+        $erros = 'Array de dados errada!';
     }
-    }
+} else {
+    // Se houver erros de validação
+    $errosSenha = $dadosFormulario->getErrosValidacao();
+    $errosEmail = $dadosFormulario->getErros();
+}
 
 ?>
 <!DOCTYPE html>
@@ -49,7 +60,7 @@ if($dadosFormulario->capturarDadosDeCadastro("usuario")) {
                         <label>Nome:</label>
                         <br>
                         <div class="input-container">
-                            <input type="text" name="name" placeholder="Digite seu nome completo">
+                            <input type="text" name="nome" placeholder="Digite seu nome completo">
                             <img src="../assets/icons/login-register/user-icon.svg" alt="Ícone de usuário" width="22" height="22">
                         </div>
                     </section>
@@ -57,7 +68,7 @@ if($dadosFormulario->capturarDadosDeCadastro("usuario")) {
                         <label>Email:</label>
                         <br>
                         <div class="input-container">
-                            <input name="email" placeholder="Digite o seu email" type="email">
+                            <input name="email" placeholder="<?php if(!empty($errosEmail)) { echo $errosEmail['Email inválido!']; } else { echo 'Digite seu email'; } ?>" type="email">
                             <img src="../assets/icons/login-register/user-icon.svg" alt="Ícone de usuário" width="22" height="22">
                         </div>
                     </section>
@@ -65,7 +76,7 @@ if($dadosFormulario->capturarDadosDeCadastro("usuario")) {
                         <label>Senha:</label>
                         <br>
                         <div class="input-container">
-                            <input name="password" placeholder="Digite a sua senha" type="password">
+                            <input name="senha" placeholder="<?php if(!empty($errosSenha)) { echo $errosSenha[0]; } else { echo 'Digite a sua senha'; } ?>" type="password">
                             <img src="../assets/icons/login-register/password-icon.svg" alt="Ícone de usuário" width="22" height="22">
                         </div>
                     </section>
@@ -73,7 +84,7 @@ if($dadosFormulario->capturarDadosDeCadastro("usuario")) {
                         <label>Senha:</label>
                         <br>
                         <div class="input-container">
-                            <input name="confirm_password" class="input-info" placeholder="Digite a sua senha novamente" type="password">
+                            <input name="confirmarSenha" class="input-info" placeholder="<?php if(!empty($errosSenha)) { echo $errosSenha[0]; } else { echo 'Digite a sua senha novamente'; } ?>" type="password">
                             <img src="../assets/icons/login-register/password-icon.svg" alt="Ícone de usuário" width="22" height="22">
                         </div>
                     </section>
@@ -81,13 +92,13 @@ if($dadosFormulario->capturarDadosDeCadastro("usuario")) {
                         <section class="input-pbox">
                             <label>Data de nascimento:</label>
                             <div class="input-div">
-                                <input name="date" type="date" required>                   
+                                <input name="dataNascimento" type="date" required>                   
                             </div>
                         </section>
                         <section class="input-pbox">
                             <label>Gênero:</label>
                             <div class="input-container-gender">
-                                <select class="select" name="gender">
+                                <select class="select" name="sexo">
                                     <option value="M">Masculino</option>
                                     <option value="F">Feminino</option>
                                     <option value="P">Prefiro não informar</option>
@@ -98,9 +109,20 @@ if($dadosFormulario->capturarDadosDeCadastro("usuario")) {
                     <div>
                         <?php
                             if($contaCriadaComSucesso) {
-                                echo "<p>Conta criada com sucesso!</p>";
-                            }else if (!empty($erro)) {
-                                echo "<p>Erro: {$error}</p>";
+                            echo "<p style=\"color: #0E34A0; font-size: 16px; text-align: center;\">Conta criada com sucesso!</p>";
+                            } else if (!empty($erros)) { // Alterado de $error para $erros
+                                echo "<p style=\"color: red; font-size: 16px; text-align: center;\">Erro: {$erros}</p>";
+                            }
+                            // Adicione isso para mostrar erros de validação
+                            if(!empty($errosSenha)) {
+                                foreach($errosSenha as $erro) {
+                                    echo "<p style=\"color: red; font-size: 16px; text-align: center;\">{$erro}</p>";
+                                }
+                            }
+                            if(!empty($errosEmail)) {
+                                foreach($errosEmail as $erro) {
+                                    echo "<p style=\"color: red; font-size: 16px; text-align: center;\">{$erro}</p>";
+                                }
                             }
                         ?>
                     </div>

@@ -1,61 +1,110 @@
 <?php
 
+//Classe feita para capturar a entrada de dados do formulário de cadastro
 class CapturarDadosCadastro {
-
-    private string $name;
-    private string $email;
-    private string $password;
-    private string $cPassword;
-    private string $date;
-    private string $gender;
-    private string $tipo_usuario;
+//Os atributos da classe serão onde ficará armazenado os dados capturas pelo formulário
+    private string $nome = '';
+    private string $email = '';
+    private string $senha = '';
+    private string $confirmarSenha = '';
+    private string $dataNascimento = '';
+    private string $sexo = '';
+    private string $tipoUsuario = '';
     private bool $senhasDiferentes = false;
-
-    public function capturarDadosDeCadastro(string $tipo_usuario) : bool {
-        if(isset($_POST['submit'])) {
-            if(empty($_POST['name']) || empty($_POST['email']) || 
-            empty($_POST['password']) || empty($_POST['confirm_password']) || 
-            empty($_POST['date']) || empty($_POST['gender'])) {
+    private array $erros = [];
+    private array $errosValidacao = [];
+//Essa função serve para verificar se o usuário enviou o formulário, verifica se os campos foram enviados vazios
+//Se não estão vazios, insere os dados capturados nos atributos da classe e retonar true
+//Se estiverem vazios, incorretos, ou o campo de senha e confirmar senha estiverem diferentes retorna false
+//O parâmetro tipo_usuario só pode ter esse 4 valores: 'administrador', 'usuario', 'nutricionista', 'personal'
+    public function capturarDadosDeCadastro(string $tipoUsuario) : bool {
+        //Verifica se o formulário foi submetido e se os campos estão vazios, se estiverem retornar false
+        if(!isset($_POST['submit'])) {
             return false;
         }
-            $this->name = $_POST['name'];
-            $this->email = $_POST['email'];
-            $this->password = $_POST['password'];
-            $this->cPassword = $_POST['confirm_password'];
-            $this->date = $_POST['date'];
-            $this->gender = $_POST['gender'];
-            $this->tipo_usuario = $tipo_usuario;
-        } else {
+        if(empty($_POST['nome'])) {
+            $this->erros[] = 'Nome não inserido';
+        } 
+        if(empty($_POST['email'])) {
+            $this->erros[] = 'Email não inserido';
+        }
+        if(empty($_POST['senha'])) {
+            $this->erros[] = 'Senha não inserida';
+        }
+        if(empty($_POST['confirmarSenha'])) {
+            $this->erros[] = 'Confirmar senha não inserida';
+        }
+        if(empty($_POST['dataNascimento'])) {
+            $this->erros[] = 'Data de nascimento não inserida';
+        }
+        if(empty($_POST['sexo'])) {
+            $this->erros[] = 'Gênero não inserido';
+        } 
+        if(!empty($this->erros)) {
             return false;
         }
-        if($this->password != $this->cPassword ) {
+        //Insere os dados capturados via POST nos atributos da classe
+        $this->nome = $_POST['nome'];
+        $this->email = $_POST['email'];
+        $this->senha = $_POST['senha'];
+        $this->confirmarSenha = $_POST['confirmarSenha'];
+        $this->dataNascimento = $_POST['dataNascimento'];
+        $this->sexo= $_POST['sexo'];
+        $this->tipoUsuario = $tipoUsuario;
+        //Sanitiza e valida email e senha
+        $this->email = filter_var($this->email, FILTER_SANITIZE_EMAIL);
+        if(!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
+            $this->erros[] = 'Email inválido!';
+        }
+        if(strlen($this->senha) < 8) {
+            $this->errosValidacao[] = "No mínimo 8 caracteres.";
+        } else if(!preg_match('/[A-Z]/', $this->senha)) {
+            $this->errosValidacao[] = "No mínimo uma letra maiúscula.";
+        } else if(!preg_match('/[a-z]/', $this->senha)) {
+            $this->errosValidacao[] = "No mínimo uma letra minúscula.";
+        } else if(!preg_match('/[0-9]/', $this->senha)) {
+            $this->errosValidacao[] = "No mínimo um número.";
+        } else if(!preg_match('/[\W_]/', $this->senha)) {
+            $this->errosValidacao[] = "No mínimo um caractere especial.";
+        }
+        //Verifica se a senha e confirmarSenha são iguais
+        if($this->senha != $this->confirmarSenha ) {
+            $this->erros[] = 'Senhas diferentes';
             $this->senhasDiferentes = true;
-            $this->name = '';
-            $this->email = '';
-            $this->password = '';
-            $this->cPassword = '';
-            $this->date = '';
-            $this->gender = '';
             return false;
-        } else {
-            return true;
         }
+        $this->senha = password_hash($this->senha, PASSWORD_DEFAULT);
+        return true;     
     }
-
+    //Essa função serve para criar um array chave/valor, usando os atributos da classe, utilize apenas quando os dados forem
+    //capturados e validados corretamente, esse array serve para inserir os dados em uma tabela no bando de dados usando a classe BancoDados
     public function criarArrayDadosDeCadastro() : array {
         if($this->senhasDiferentes === false) {
             $dados = [
-                'nome' => "$this->name",
-                'sexo' => "$this->gender",
-                'data_de_nascimento' => "$this->date",
+                'nome' => "$this->nome",
+                'sexo' => "$this->sexo",
+                'data_de_nascimento' => "$this->dataNascimento",
                 'email' => "$this->email",
-                'senha' => "$this->password",
-                'tipo_usuario' => "$this->tipo_usuario"
+                'senha' => "$this->senha",
+                'tipo_usuario' => "$this->tipoUsuario"
             ];
             return $dados;
         } else {
-            return ['error' => 'Senhas diferentes'];
+            $dados[] = 'erro';
+            return $dados;
         }
+    }
+
+    public function validarSanizitarDadosDeCadastros() {
+        
+    }
+
+    public function getErros() : array {
+        return $this->erros;
+    }
+
+    public function getErrosValidacao() : array {
+        return $this->errosValidacao;
     }
 }
 

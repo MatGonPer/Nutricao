@@ -39,8 +39,8 @@ main {
     border-radius: 10px;
     padding: 30px;
     width: 450px;
-    height: 550px;
-    margin-bottom: 50px;
+    height: 570px;
+    
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
@@ -48,7 +48,7 @@ main {
 
 h1 {
     font-size: 40px;
-    margin: 30px;
+    margin: 10px 0px;
     font-weight: 400;
     color: #2F2F2F;
 }
