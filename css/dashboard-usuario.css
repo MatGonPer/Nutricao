@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    background-color: black;
+}
+
+.background-main {
+    background-image: url("./assets/dashboard-usuario/background-main");
+}
+
+ul{
+    display: flex;
+
+}
