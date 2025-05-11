@@ -26,20 +26,34 @@
             </aside>
         </section>
 
-        <header>
-            <h1>Meu Desempenho</h1>
-            <form action="#" method="get">
-                <input type="search" id="search" name="search" placeholder="Digite aqui...">
-                <button type="submit">Buscar</button>
-            </form>
-        </header>
+        <section class="right">
+            <div class="background-right"></div>   
+            <header>
+                <h1>Meu Desempenho</h1>
+                <form action="#" method="get">
+                    <input type="search" id="search" name="search" placeholder="Digite aqui...">
+                    <button type="submit">Buscar</button>
+                </form>
+            </header>
+    
+            <main>   
+                    <section class="desempenho">
+                        <h2 id="performance-title">Desempenho</h2>
+                            <div class="metrics">
+                                <article>
+                                    <h3>Treino</h3>
+                                </article>
+                                <article>
+                                    <h3>Calorias</h3>
+                                </article>
+                                <article>
+                                    <h3>Peso</h3>
+                                </article>
+                            </div>
+                    </section>
+            </main>
+        </section>
 
-        <main>
-            <div class="background-main"></div>
-            <section class="right"> 
-                
-            </section>
-        </main>
    </div>
 </body>
 </html
