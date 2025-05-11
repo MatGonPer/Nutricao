@@ -3,11 +3,15 @@
     background-color: black;
 }
 
+header {
+    display: flex;
+}
+
 .background-main {
-    background-image: url("./assets/dashboard-usuario/background-main");
+    background-image: url("../assets/dashboard-usuario/background-main.svg");
 }
 
 ul{
     display: flex;
-
+    flex-direction: column;
 }

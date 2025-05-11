@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desempenho do Usuário</title>
     <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href= "/css/dashboard-usuario.css">
+    <link rel="stylesheet" href= "../css/dashboard-usuario.css">
 </head>
 <body>
    <div class="container">
@@ -25,11 +25,21 @@
                 </nav>
             </aside>
         </section>
+
+        <header>
+            <h1>Meu Desempenho</h1>
+            <form action="#" method="get">
+                <input type="search" id="search" name="search" placeholder="Digite aqui...">
+                <button type="submit">Buscar</button>
+            </form>
+        </header>
+
         <main>
             <div class="background-main"></div>
             <section class="right"> 
-    
+                
             </section>
         </main>
+   </div>
 </body>
 </html
