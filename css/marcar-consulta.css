@@ -82,7 +82,6 @@ body {
 
 .info{
     display: flex;
-    flex-direction: column;
     gap: 10px;
 }
 
@@ -101,7 +100,19 @@ body {
     font-weight: 500;
 }
 
-.all p{
+.sobre p,
+.info p{
     font-style: italic;
 }
 
+.botao{
+    background-color: #2D92E3;
+    width: 10%;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+}
+
+.botao p{
+    text-decoration: none;
+}

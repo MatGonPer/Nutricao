@@ -61,12 +61,17 @@
                         <div class="all">
                             <h3>Personal Trainer</h3>
                             <div class="info">
-                                <h4>Francisco do Nascimento</h4>
+                                <h4>Francisco do Nascimento -</h4>
                                 <p>Emagrecimento e hipertrofia</p>
                             </div>
                             <div class="sobre">
                                 <p>Treinador voltado para resultados reais: emagrecimento saudável e ganho de massa muscular. Programas personalizados para transformar o corpo com eficiência.</p>
                             </div>
+                            <a href="">
+                                <div class="botao">
+                                    <p>Ver detalhes</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
                     <div class="profissional">
@@ -76,12 +81,17 @@
                         <div class="all">
                             <h3>Personal Trainer</h3>
                             <div class="info">
-                                <h4>Francisco do Nascimento</h4>
+                                <h4>Francisco do Nascimento -</h4>
                                 <p>Emagrecimento e hipertrofia</p>
                             </div>
                             <div class="sobre">
                                 <p>Treinador voltado para resultados reais: emagrecimento saudável e ganho de massa muscular. Programas personalizados para transformar o corpo com eficiência.</p>
                             </div>
+                            <a href="">
+                                <div class="botao">
+                                    <p>Ver detalhes</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </section>
