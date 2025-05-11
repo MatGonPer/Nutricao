@@ -18,52 +18,6 @@ body {
     background-color: #053225;
 }
 
-.clientes{
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    gap: 20px;
-}
-
-.clientes h3{
-    font-weight: bold;
-}
-
-.cliente{
-    display: flex;
-    border: 1px solid black;
-    padding: 20px;
-    border-radius: 20px;
-    align-items: center;
-    gap: 10px;
-    width: 140%;
-}
-
-.cliente img{
-    border-radius: 100px;
-    width: 90px;
-}
-
-.cliente a{
-    padding: 7px;
-    border-radius: 10px;
-    text-decoration: none;
-    color: white;
-    background-color: #2D92E3;
-
-}
-
-.botao{
-    margin-top: 10px;
-}
-
-.info{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px;
-}
-
 .item{
     display: flex;
     flex-direction: row;
@@ -105,31 +59,46 @@ body {
     border: 3px solid white;
 }
 
-.upper{
-    display: flex;
-    justify-content: space-between;
-    gap: 100%;
-    padding: 20px;
-}
-
-.upper h1{
+.titulo{
+    padding: 30px;
     font-size: 30px;
 }
 
-.upper input{
-    background-color: #F5E9E2;
-    border: 1px olid;
-    border-radius: 10px;
-    border: 1px solid black;
-    padding: 10px;
+h3{
+    font-size: 25px;
+    font-weight: 500;
 }
 
-/*
-.right {
-    width: 80%;
-    height: 100%;
+.profissionais{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    margin-left: 30px;
+    gap: 30px;
 }
-*/
+
+.chat{
+    display: flex;
+    gap: 20px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+}
+
+.info p{
+    padding-top: 20px;
+}
+
+.nutricionista,
+.personal{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid black;
+    padding: 30px;
+    border-radius: 10px;
+    gap: 10px;
+    width: 70vw;
+}
+
