@@ -10,6 +10,14 @@
 <body>
    <div class="container">
         <section class="left">
+
+            <div class="profile">
+                <figure>
+                    <img src="../assets/perfil-usuario/user-icon.jpg" alt="">
+                </figure>
+                <h2>Francisco do Nascimento</h2>
+            </div>
+
             <aside>
                 <nav>
                     <ul>
@@ -25,34 +33,37 @@
                 </nav>
             </aside>
         </section>
-
-        <section class="right">
-            <div class="background-right"></div>   
-            <header>
-                <h1>Meu Desempenho</h1>
-                <form action="#" method="get">
-                    <input type="search" id="search" name="search" placeholder="Digite aqui...">
-                    <button type="submit">Buscar</button>
-                </form>
-            </header>
-    
-            <main>   
-                    <section class="desempenho">
-                        <h2 id="performance-title">Desempenho</h2>
-                            <div class="metrics">
-                                <article>
-                                    <h3>Treino</h3>
-                                </article>
-                                <article>
-                                    <h3>Calorias</h3>
-                                </article>
-                                <article>
-                                    <h3>Peso</h3>
-                                </article>
-                            </div>
-                    </section>
-            </main>
-        </section>
+ 
+            <section class="right">
+                <div class="background-right"></div>   
+                <div class="background-content">
+                <header>
+                    <h1>Meu Desempenho</h1>
+                    <form action="#" method="get">
+                        <input type="search" id="search" name="search" placeholder="Digite aqui...">
+                        <button type="submit">Buscar</button>
+                    </form>
+                </header>
+        
+                <main>   
+                        <section class="desempenho">
+                                    <article class="treino">
+                                        <figure><img src="#" alt=""></figure>
+                                        <h3>Treino</h3>
+                                    </article>
+                                    <article class="calorias">
+                                        <figure><img src="#" alt=""></figure>
+                                        <h3>Calorias</h3>
+                                    </article>
+                                    <article class="peso">
+                                        <figure><img src="#" alt=""></figure>
+                                        <h3>Peso</h3>
+                                    </article>
+                        </section>
+                </main>
+                </div>
+            </section>
+                
 
    </div>
 </body>
