@@ -52,7 +52,14 @@
             </div>
         </section>
         <section class="right">
-           <main class="marcar-consultas">
+            <main class="marcar-consultas">
+                <div class="upper">
+                    <h1>MARCAR CONSULTAS</h1>
+                    <select name="profissionais" id="select-profissionais">
+                        <option value="personal">Personal</option>
+                        <option value="nutricionista">Nutricionista</option>
+                    </select>
+                </div>
                 <section class="profissionais">
                     <div class="profissional">
                         <figure>
@@ -67,11 +74,9 @@
                             <div class="sobre">
                                 <p>Treinador voltado para resultados reais: emagrecimento saudável e ganho de massa muscular. Programas personalizados para transformar o corpo com eficiência.</p>
                             </div>
-                            <a href="">
-                                <div class="botao">
-                                    <p>Ver detalhes</p>
-                                </div>
-                            </a>
+                            <div class="botao">
+                                <a href="">Ver Detalhes</a>
+                            </div>
                         </div>
                     </div>
                     <div class="profissional">
@@ -87,11 +92,27 @@
                             <div class="sobre">
                                 <p>Treinador voltado para resultados reais: emagrecimento saudável e ganho de massa muscular. Programas personalizados para transformar o corpo com eficiência.</p>
                             </div>
-                            <a href="">
-                                <div class="botao">
-                                    <p>Ver detalhes</p>
-                                </div>
-                            </a>
+                            <div class="botao">
+                                <a href="">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profissional">
+                        <figure>
+                            <img src="../assets/perfil-usuario/user-icon.jpg" alt="">
+                        </figure>
+                        <div class="all">
+                            <h3>Personal Trainer</h3>
+                            <div class="info">
+                                <h4>Francisco do Nascimento -</h4>
+                                <p>Emagrecimento e hipertrofia</p>
+                            </div>
+                            <div class="sobre">
+                                <p>Treinador voltado para resultados reais: emagrecimento saudável e ganho de massa muscular. Programas personalizados para transformar o corpo com eficiência.</p>
+                            </div>
+                            <div class="botao">
+                                <a href="">Ver Detalhes</a>
+                            </div>
                         </div>
                     </div>
                 </section>
