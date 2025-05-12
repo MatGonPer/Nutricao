@@ -16,40 +16,20 @@
                 </figure>
                 <h2>Francisco do Nascimento</h2>
             </div>
-            <div class="menu">
-                <ul>
-                    <li class="item">
-                        <figure>
-                            <img src="../assets/icons/user-page/inicio-icon.png" alt="">
-                        </figure>
-                        <a href="">Início</a>
-                    </li>
-                    <li class="item">
-                        <figure>
-                            <img src="../assets/icons/user-page/user-icon.png" alt="">
-                        </figure>
-                        <a href="">Usuário</a>
-                    </li>
-                    <li class="item">
-                        <figure>
-                            <img src="../assets/icons/user-page/market-icon.png" alt="">
-                        </figure>
-                        <a href="">Catálogo</a>
-                    </li>
-                    <li class="item">
-                        <figure>
-                            <img src="../assets/icons/user-page/suporte-icon.png" alt="">
-                        </figure>
-                        <a href="">Suporte</a>
-                    </li>
-                    <li class="item">
-                        <figure>
-                            <img src="../assets/icons/user-page/config-icon.png" alt="">
-                        </figure>
-                        <a href="">Configurações</a>
-                    </li>
-                </ul>
-            </div>
+            <aside>
+                <nav>
+                    <ul>
+                        <li><a  href="#"> <img src="../assets/icons/dashboard-usuario/inicio-icon.svg" alt=""> Início</a></li>
+                        <li><a href="#"> <img src="../assets/icons/dashboard-usuario/user-icon.svg" alt=""> Usuário</a></li>
+                        <li><a href="#"> <img src="../assets/icons/dashboard-usuario/desempenho-icon.svg" alt=""> Desempenho</a></li>
+                        <li><a href="#"> <img src="../assets/icons/dashboard-usuario/treino-icon.svg" alt=""> Treino</a></li>
+                        <li><a href="#"> <img src="../assets/icons/dashboard-usuario/consulta-icon.svg" alt=""> Consultas</a></li>
+                        <li><a href="#"> <img src="../assets/icons/dashboard-usuario/market-icon.svg" alt=""> Catálogo</a></li>
+                        <li><a href="#"> <img src="../assets/icons/dashboard-usuario/suport-icon.svg" alt=""> Suporte</a></li>
+                        <li><a href="#"> <img src="../assets/icons/dashboard-usuario/config-icon.svg" alt=""> Configurações</a></li>
+                    </ul>
+                </nav>
+            </aside>
         </section>
         <section class="right">
             <main class="marcar-consultas">

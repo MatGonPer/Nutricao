@@ -10,7 +10,6 @@
 <body>
    <div class="container">
         <section class="left">
-
             <div class="profile">
                 <figure>
                     <img src="../assets/perfil-usuario/user-icon.jpg" alt="">
@@ -35,7 +34,6 @@
         </section>
  
             <section class="right">
-                <div class="background-right"></div>   
                 <div class="background-content">
                 <header>
                     <h1>Meu Desempenho</h1>
@@ -44,27 +42,31 @@
                         <input type="search" id="search" name="search" placeholder="Buscar">
                     </form>
                 </header>
-        
                 <main>   
-                        <section class="desempenho">
-                                    <article class="treino">
-                                        <figure><img src="#" alt=""></figure>
-                                        <h3>Treino</h3>
-                                    </article>
-                                    <article class="calorias">
-                                        <figure><img src="#" alt=""></figure>
-                                        <h3>Calorias</h3>
-                                    </article>
-                                    <article class="peso">
-                                        <figure><img src="#" alt=""></figure>
-                                        <h3>Peso</h3>
-                                    </article>
-                        </section>
+                    <section class="desempenho">
+                        <article class="treino">
+                            <figure>
+                                <img src="../assets/icons/dashboard-usuario/dummbell-icon.svg" width="60px" alt="consultar peso">
+                            </figure>
+                            <h3>Treino</h3>
+                        </article>
+                        <article class="calorias">
+                            <figure>
+                                <img src="../assets/icons/dashboard-usuario/caloria-icon.svg" width="60px" alt="">
+                            </figure>
+                            <h3>Calorias</h3>
+                        </article>
+                        <article class="peso">
+                            <figure><img src="../assets/icons/dashboard-usuario/balanca-icon.svg" width="60px" alt=""></figure>
+                            <h3>Peso</h3>
+                        </article>
+                    </section>
+                    <section class="grafico">
+                        
+                    </section>
                 </main>
                 </div>
             </section>
-                
-
    </div>
 </body>
 </html
