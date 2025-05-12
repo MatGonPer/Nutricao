@@ -1,14 +1,3 @@
-<?php 
-session_start();
-if(isset($_POST['submit'])) {
-    $_SESSION['name'] = $_POST['name'];
-    $_SESSION['email'] = $_POST['email'];
-    $_SESSION['password'] = $_POST['password'];
-    $_SESSION['confirm_password'] = $_POST['confirm_password'];
-    $_SESSION['date'] = $_POST['date'];
-    $_SESSION['gender'] = $_POST['gender'];
-}
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -16,7 +5,7 @@ if(isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastre sua conta</title>
     <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/cadastro-usuario-admin.css">
+    <link rel="stylesheet" href="../css/cadastro-comercial.css">
 </head>
 <body>
     <main>
@@ -24,12 +13,20 @@ if(isset($_POST['submit'])) {
             <h1>NUTRIFIT</h1>
             <section>
                 <form class="container" action="" method="post">
-                    <h2>Cadastre a sua conta</h2>
+                    <h2>Cadastre a sua conta comercial</h2>
                     <section class="input-box">
-                        <label>Nome:</label>
+                        <label>Nome da empresa:</label>
                         <br>
                         <div class="input-container">
                             <input type="text" name="name" placeholder="Digite seu nome completo">
+                        </div>
+                    </section>
+                     <section class="input-box">
+                        <label>CNPJ:</label>
+                        <br>
+                        <div class="input-container">
+                            <input type="text" name="cnpj" placeholder="CNPJ da empresa">
+                            <img src="../assets/icons/cadastro-comercial/empresa-icon.svg" alt="cnpj" width="22" height="22">
                         </div>
                     </section>
                     <section class="input-box">
@@ -56,26 +53,16 @@ if(isset($_POST['submit'])) {
                             <img src="../assets/icons/login-register/password-icon.svg" alt="Ícone de usuário" width="22" height="22">
                         </div>
                     </section>
-                    <div class="input-pessoal">
-                        <section class="input-box">
-                            <label>Nascimento:</label>
-                            <br>
-                            <div class="input-container">
-                                <input name="date" type="date">                   
-                            </div>
-                        </section>
-                        <section class="input-box">
-                            <label>Gênero:</label>
-                            <br>
-                            <div class="input-container-gender">
-                                <select class="select" name="gender">
-                                    <option value="male">Masculino</option>
-                                    <option value="female">Feminino</option>
-                                    <option value="gay">Prefiro não informar</option>
-                                </select>
-                            </div>
-                        </section>
-                    </div>
+                    <section class="input-box">
+                        <label>Parceria</label>
+                        <br>
+                        <div class="input-container">
+                           <select name="parceria" id="parceria">
+                            <option value="vendas">Vendas</option>
+                            <option value="indicacao">Indicação</option>
+                           </select>
+                        </div>
+                    </section>
                     <section class="acess-link">
                         <button name="submit" type="submit">Realizar cadastro</button>
                     </section>

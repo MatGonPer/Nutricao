@@ -199,3 +199,12 @@ input {
 input:focus {
     outline: none;
 }
+
+.voltar{
+    text-align: center;
+    font-size: 15px;
+}
+
+.voltar a{
+        color: white;
+}

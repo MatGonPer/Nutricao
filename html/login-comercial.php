@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acesse sua conta de parceiro</title>
+    <title>Acesse sua conta</title>
     <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/login-conta-parceira.css">
+    <link rel="stylesheet" href="../css/login-comercial.css">
 </head>
 <body>
     <main>
@@ -13,7 +13,7 @@
             <h1>NUTRIFIT</h1>
             <section>
                 <form class="container" action="">
-                    <h2>Acesse a sua conta de parceiro</h1>
+                    <h2>Acesse a sua conta comercial</h1>
                     <section class="input-box">
                         <label for="email">Email:</label>
                         <br>
@@ -42,8 +42,7 @@
                     </section>
                     <section class="register-link">
                         <button type="submit">Cadastrar-se</button>
-                        <br>
-                        <a href="cadastro-conta-parceira.php">Não tenho uma conta</a>
+                        <a href="login-conta-parceira.php">Sou um parceiro</a>
                     </section>
                 </form>  
             </section>

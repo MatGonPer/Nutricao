@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desempenho do Usuário</title>
+    <title>Treinos</title>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href= "../css/treinos.css">
 </head>

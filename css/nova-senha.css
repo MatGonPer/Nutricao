@@ -40,7 +40,7 @@ main {
     border-radius: 10px;
     padding: 30px;
     width: 450px;
-    height: 350px;
+    height: 380px;
     margin-bottom: 50px;
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
@@ -197,4 +197,13 @@ input {
 
 input:focus {
     outline: none;
+}
+
+.voltar{
+    text-align: center;
+    font-size: 15px;
+}
+
+.voltar a{
+        color: white;
 }

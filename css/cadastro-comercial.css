@@ -7,7 +7,7 @@
 }
 
 body {
-    background-image: url(../assets/usuario-adm-background.jpg);
+    background-image: url(../assets/parceiro-comercial-background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -25,7 +25,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 110vh;
+    height: 120vh;
     width: 50vw;
     background: rgba(207, 207, 207, 0.541);
     backdrop-filter: blur(2px);
@@ -39,7 +39,7 @@ main {
     border-radius: 10px;
     padding: 30px;
     width: 450px;
-    height: 630px;
+    height: 700px;
     margin-bottom: 50px;
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
@@ -92,6 +92,14 @@ h2 {
     border-radius: 10px;
     color: rgb(0, 0, 0);
     padding: 10px;
+}
+
+.input-container select{
+    background-color: white;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid rgba(134, 134, 134, 1);
+    font-size: 18px;
 }
 
 .input-container img {

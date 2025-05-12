@@ -25,7 +25,10 @@
                     <section class="acess-link">
                         <button type="submit">Receber</button>
                     </section>
-                </form>  
+                    <section class="voltar">
+                        <a href="login-usuario-admin.php">Voltar</a>
+                    </section>
+                </form>
             </section>
         </div>    
     </main>

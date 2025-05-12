@@ -39,11 +39,11 @@
                         <input type="checkbox">
                         Lembre-me
                         </label>
-                        <a href="">Esqueci minha senha</a>
+                        <a href="recuperacao-senha.php">Esqueci minha senha</a>
                     </section>
                     <section class="register-link">
                         <button type="submit">Cadastrar-se</button>
-                        <a href="login-pro-nut-par.php">Sou um parceiro</a>
+                        <a href="login-conta-parceira.php">Sou um parceiro</a>
                     </section>
                 </form>  
             </section>

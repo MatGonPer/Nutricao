@@ -33,6 +33,9 @@
                     <section class="acess-link">
                         <button type="submit">Salvar</button>
                     </section>
+                    <section class="voltar">
+                        <a href="recuperacao-senha.php">Voltar</a>
+                    </section>
                 </form>  
             </section>
         </div>    
