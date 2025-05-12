@@ -40,8 +40,8 @@
                 <header>
                     <h1>Meu Desempenho</h1>
                     <form action="#" method="get">
-                        <input type="search" id="search" name="search" placeholder="Digite aqui...">
-                        <button type="submit">Buscar</button>
+                        <img src="../assets/icons/dashboard-usuario/search.svg" alt="Buscar">
+                        <input type="search" id="search" name="search" placeholder="Buscar">
                     </form>
                 </header>
         
