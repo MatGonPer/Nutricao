@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: poppins;
+  
+}
+
+.container {
+    display: flex;
+ 
+   
+}
+
+.container-left {
+    width: 220px;
+}
+
+.container-right {
+    flex: 1;
+    overflow: auto; /* usado para manter somento o lado direto com rolagem ( deixando o menu "fixo")*/
+    height: 100vh;
+}
+
+.container-right h1{
+    margin: 10px 0 0 100px;
+    font-weight: 300;
+ 
+}
+
+
+
+/*Menu Lateral*/
+.sidebar {
+    width: 220px;
+    background-color: #083d26;
+    color: white;
+    padding: 20px;
+    height: 100%;
+    background-color: #053225;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar .profile {
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.sidebar .profile img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.sidebar nav ul {
+    list-style: none;
+}
+
+.sidebar nav ul li {
+    margin: 15px 0;
+    cursor: pointer;
+}
+.profile{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.menu-itens {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+
+}
+.menu-itens img{
+    height: 30px;
+    
+    
+}
+.menu-itens li a{
+    list-style: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    text-decoration: none;
+    gap: 8px;
+    transition: 0.3s;
+   
+}
+
+.menu-itens li a:hover{
+    background-color: #004E38; 
+    color: white;
+}
+
+/*Parceiros card*/
+.Parceiro-container{
+    display: flex;
+    gap: 50px;
+    justify-content: space-evenly;
+    margin: 20px;
+}
+
+.parceiro-card figure img{
+    width: 200px;
+    height: 200px;
+
+}
