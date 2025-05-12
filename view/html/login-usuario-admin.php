@@ -1,3 +1,38 @@
+<?php
+session_start();
+
+if(isset($_SESSION['logado']) && $_SESSION['logado'] === true) {
+    header('Location: landing-page.php');
+    exit();
+}
+require_once "../../controller/php/CapturarDadosLogin.php";
+require_once "../../model/BancoDados.php";
+//Tenta capturar os dados do formulário
+$dadosFormulario = new CapturarDadosLogin();
+$resultado = false;
+
+if($dadosFormulario->capturarDados('usuario')) {
+    //Cria um banco e tenta conectar-se a ele
+    $banco = new BancoDados;
+    if($banco->conectarBanco()) {
+        //Verifica se email e senha fornecidos pelo usuario constam no banco da dodos.
+        if($banco->consultarDados('usuario', $dadosFormulario->getEmail(), $dadosFormulario->getSenha())) {
+            $resultado = true;
+        } else {
+            $resultado = false;
+        }
+        $banco->fecharConexao();
+    }
+}
+
+if($resultado === true) {
+    $_SESSION['logado'] = true;
+    $_SESSION['email'] = $dadosFormulario->getEmail();
+    $_SESSION['tipo_usuario'] = 'usuario';
+    header('Location: landing-page.php');
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,9 +43,6 @@
     <link rel="stylesheet" href="../css/login-usuario-admin.css">
 </head>
 <body>
-    <?php 
-        require_once "../../controller/php/sanitization-validation.php";
-    ?>
     <main>
         <div class="external-container">
             <h1>NUTRIFIT</h1>
@@ -18,45 +50,34 @@
                 <form class="container" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
                     <h2>Acesse a sua conta</h2>
                     <section class="input-box">
-                        <label for="email">Email:</label>
+                        <label>Email:</label>
                         <br>
                         <div class="input-container">
                             <input placeholder="Digite o seu email" type="email" name="email">
                             <img src="../assets/icons/login-register/user-icon.svg" alt="Ícone de usuário" width="22" height="22">
                         </div>
-                        <?php 
-                            if(!$formSubmitted) {
-                                echo "<br>";
-                            }
-                            if($formSubmitted) {
-                                if(!empty($errorsEmail)) {
-                                    echo "<p class='invalid'>" . htmlspecialchars($errorsEmail[0]) . "</p>";
-                                } else {
-                                    echo "<br>";
-                                }
-                            }
-                        ?>
+                        <br>
                     </section>
                     <section class="input-box">
-                        <label for="password">Senha:</label>
+                        <label>Senha:</label>
                         <br>
                         <div class="input-container">
-                            <input placeholder="Digite a sua senha" type="password" name="password">
+                            <input placeholder="Digite a sua senha" type="password" name="senha">
                             <img src="../assets/icons/login-register/password-icon.svg" alt="Ícone de usuário" width="22" height="22">
                         </div>
+                        <br>
+                    </section>
+                    <div class="error">
                         <?php
-                            if(!$formSubmitted) {
-                                echo "<br>";
-                            }
-                            if($formSubmitted) {
-                                if(!empty($errorsPassword)) {
-                                    echo "<p class='invalid'>" . htmlspecialchars($errorsPassword[0]) . "</p>";
+                            if(isset($_POST['submit'])) {
+                                if(!$resultado) {
+                                    echo "<p style='color: red;'>Email ou senha incorretos!</p>";
                                 } else {
                                     echo "<br>";
                                 }
                             }
                         ?>
-                    </section>
+                    </div>
                     <section class="acess-link">
                         <button type="submit" name="submit">Acessar conta</button>
                     </section>

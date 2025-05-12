@@ -53,8 +53,32 @@ class BancoDados {
             pg_free_result($resultado);
             return true;
         }
+        
     }
     
+    public function consultarDados(string $tabela, string $email, string $senha) : bool {
+        if(empty($tabela) || empty($email) || empty($senha)) {
+            error_log('Parâmetros inválidos!');
+            return false;
+        }
+        
+        $query = "SELECT * FROM {$tabela} WHERE email = $1";
+        $resultado = pg_query_params($this->conexao, $query, array($email));
+
+        if($resultado === false) {
+            error_log('Erro na consulta: ' . pg_last_error($this->conexao));
+            return false;
+        }
+
+        $usuario = pg_fetch_assoc($resultado);
+        pg_free_result($resultado);
+
+        if($usuario && password_verify($senha, $usuario['senha'])) {
+            return true;
+        }
+        
+        return false;
+    }
 }
 /*Remova os comentários do código abaixo para testar se a conexão com o banco de dados foi bem sucedida
 E testa a função de inserir dados na tabela usuario com campos e valores definidos no array $reg
