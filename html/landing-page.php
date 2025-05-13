@@ -19,19 +19,22 @@
                     <p>Área do usuário</p>
                     <img src="../assets/landing-page/images/user-background-450px-300px.jpg" alt="Homem levantando peso.">
                     <br>
-                    <button class="acessar-button">Acessar</button>
+                    <br>
+                    <a class="acessar-button" href="login-usuario-admin.php">Acessar</a>
                 </section>
                 <section class="partner-area">
                     <p>Área do parceiro</p>
                     <img src="../assets/landing-page/images/partner-background-450px-300px.jpg" alt="Instrutor auxiliando aluno.">
                     <br>
-                    <button class="acessar-button">Acessar</button>
+                    <br>
+                    <a class="acessar-button" href="login-conta-parceira.php">Acessar</a>
                 </section>
                 <section class="commercial-partner">
                     <p>Área do parceiro comercial</p>
                     <img src="../assets/landing-page/images/commercial-partner-background-450px-300px.jpg" alt="Duas pessoas apertando as mãos por terem entrado em acordo.">
                     <br>
-                    <button class="acessar-button">Acessar</button>
+                    <br>
+                    <a class="acessar-button" href="login-comercial.php">Acessar</a>
                 </section>
             </div>
             <div class="middle-container">

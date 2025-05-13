@@ -112,14 +112,30 @@ h1 {
     border-radius: 10px;
 }
 
-.commercial-partner button {
+.container a {
     background-color: #904e55;
     color: #F5E9E2;
     border-style: none;
     border-radius: 10px;
+    padding: 15px 20px;
     font-size: 20px;
-    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
 }
+
+.acessar-button {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.acessar-button:hover{
+    background-color: #94363f;
+    transform: scale(1.1);
+}
+
+
+
+/*
 
 .acessar-button {
     cursor: pointer;
@@ -133,6 +149,7 @@ h1 {
     box-shadow: 0px 0px 80px 5px rgba(237,123,134,1);
 
 }
+*/
 
 .middle-container {
     width: 100vw;
