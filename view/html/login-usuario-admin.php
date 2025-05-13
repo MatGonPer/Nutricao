@@ -1,37 +1,5 @@
 <?php
-session_start();
-
-if(isset($_SESSION['logado']) && $_SESSION['logado'] === true) {
-    header('Location: landing-page.php');
-    exit();
-}
-require_once "../../controller/php/CapturarDadosLogin.php";
-require_once "../../model/BancoDados.php";
-//Tenta capturar os dados do formulário
-$dadosFormulario = new CapturarDadosLogin();
-$resultado = false;
-
-if($dadosFormulario->capturarDados('usuario')) {
-    //Cria um banco e tenta conectar-se a ele
-    $banco = new BancoDados;
-    if($banco->conectarBanco()) {
-        //Verifica se email e senha fornecidos pelo usuario constam no banco da dodos.
-        if($banco->consultarDados('usuario', $dadosFormulario->getEmail(), $dadosFormulario->getSenha())) {
-            $resultado = true;
-        } else {
-            $resultado = false;
-        }
-        $banco->fecharConexao();
-    }
-}
-
-if($resultado === true) {
-    $_SESSION['logado'] = true;
-    $_SESSION['email'] = $dadosFormulario->getEmail();
-    $_SESSION['tipo_usuario'] = 'usuario';
-    header('Location: landing-page.php');
-    exit();
-}
+require "../../controller/php/LoginUsuarioAdmin.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -51,47 +19,39 @@ if($resultado === true) {
                     <h2>Acesse a sua conta</h2>
                     <section class="input-box">
                         <label>Email:</label>
-                        <br>
                         <div class="input-container">
                             <input placeholder="Digite o seu email" type="email" name="email">
                             <img src="../assets/icons/login-register/user-icon.svg" alt="Ícone de usuário" width="22" height="22">
                         </div>
-                        <br>
                     </section>
                     <section class="input-box">
                         <label>Senha:</label>
-                        <br>
                         <div class="input-container">
                             <input placeholder="Digite a sua senha" type="password" name="senha">
                             <img src="../assets/icons/login-register/password-icon.svg" alt="Ícone de usuário" width="22" height="22">
                         </div>
-                        <br>
                     </section>
-                    <div class="error">
-                        <?php
-                            if(isset($_POST['submit'])) {
-                                if(!$resultado) {
-                                    echo "<p style='color: red;'>Email ou senha incorretos!</p>";
-                                } else {
-                                    echo "<br>";
-                                }
-                            }
-                        ?>
-                    </div>
                     <section class="acess-link">
                         <button type="submit" name="submit">Acessar conta</button>
                     </section>
                     <section class="remember-forgot">
-                        <label for="checkbox">
+                        <label>
                         <input type="checkbox" name="remember-me">
                         Lembre-me
                         </label>
                         <a href="">Esqueci minha senha</a>
                     </section>
                     <section class="register-link">
-                        <button type="button" id="registerButton">Cadastrar-se</button>
-                        <a href="login-conta-parceira.php">Sou um parceiro</a>
+                        <button type="button" id="registerButton">Criar nova conta</button>
+                        <a href="landing-page.php">Voltar para página anterior</a>
                     </section>
+                    <div class="error">
+                        <?php
+                        if(isset($_POST['submit']) && $resultado === false) {
+                            echo "<p style='text-align: center; color: red; font-size: 20px; font-weight: 500;'>Email e/ou senha incorretos!</p>";
+                        }
+                        ?>
+                    </div>
                 </form>  
             </section>
         </div>    

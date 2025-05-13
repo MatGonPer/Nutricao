@@ -1,51 +1,12 @@
-<?php 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-require_once '../../controller/php/CapturarDadosCadastro.php';
-require_once '../../model/BancoDados.php';
-
-$dadosFormulario = new CapturarDadosCadastro();
-$contaCriadaComSucesso = false;
-$erros = '';
-$errosSenha = [];
-$errosEmail = [];
-$nomeVazio = false;
-//Captura dados do tipo usuario
-if($dadosFormulario->capturarDadosDeCadastro("usuario")) {
-    // Se chegou aqui, significa que os dados foram validados com sucesso
-    $dados = $dadosFormulario->criarArrayDadosDeCadastro();
-    
-    if(!isset($dados['erro'])) {
-        //Cria e tenta se conectar ao banco de dados
-        $banco_dados = new BancoDados();
-        $conexao = $banco_dados->conectarBanco();
-        
-        if($conexao) {
-            //Tenta inserir os dados na tabela usuario
-            $contaCriadaComSucesso = $banco_dados->inserirDados("usuario", $dados);
-            if(!$contaCriadaComSucesso) {
-                $erros = "Erro ao salvar no banco de dados";
-            }
-            $banco_dados->fecharConexao();
-        } else {
-            $erros = "Erro na conexão com o banco de dados";
-        }
-    } else {
-        $erros = 'Array de dados errada!';
-    }
-} else {
-    // Se houver erros de validação
-    $errosSenha = $dadosFormulario->getErrosValidacao();
-    $errosEmail = $dadosFormulario->getErros();
-}
-
+<?php
+require "../../controller/php/CadastroUsuarioAdmin.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acesse sua conta</title>
+    <title>Registre sua conta</title>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/cadastro-usuario-admin.css">
 </head>
@@ -89,13 +50,13 @@ if($dadosFormulario->capturarDadosDeCadastro("usuario")) {
                         </div>
                     </section>
                     <div class="input-pessoal">
-                        <section class="input-pbox">
+                        <section class="input-pessoal-inside">
                             <label>Data de nascimento:</label>
                             <div class="input-div">
                                 <input name="dataNascimento" type="date" required>                   
                             </div>
                         </section>
-                        <section class="input-pbox">
+                        <section class="input-pessoal-inside">
                             <label>Gênero:</label>
                             <div class="input-container-gender">
                                 <select class="select" name="sexo">
