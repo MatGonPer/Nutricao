@@ -52,8 +52,96 @@
                 </div>
             </div>
             
+            <section class="banner2">
+                <h1>Na Nutrifit você encontra:</h1>
+                <div class="sub-banner2">
+                    <section>
+                        <h4>Acompanhamento especializado</h4>
+                        <p>Com os melhores profissionais da área</p>
+                    </section>
+                    <section>
+                        <h4>Treinos personalizados</h4>
+                        <p>Planejados de acordo com seu perfil</p>
+                    </section>                        <section>
+                        <h4>Dicas nutricionais</h4>
+                        <p>Recomendações alimentares práticas</p>
+                    </section>
+                    <section>
+                        <h4>Suporte integrado</h4>
+                        <p>Canal direto com especialistas</p>
+                    </section>                    
+                </div>
+                <h1>Tudo em um só lugar!</h1>
+            </section>
+  <section class="planos">
+  <h2 class="escolha">Escolha o seu plano</h2>
+
+  <div class="toggle-container">
+    <input type="radio" name="plan" id="mensal" checked>
+    <input type="radio" name="plan" id="anual">
+
+    <div class="toggle-labels">
+      <label for="mensal">Mensal</label>
+      <label for="anual">Anual</label>
+      <div class="toggle-indicator"></div>
+    </div>
+
+    <div class="planos-conteudo">
+      <div class="mensal-cards cards">
+        <div class="card">
+          <h3>Mensal Básico</h3>
+          <p>R$ 79,90</p>
+        </div>
+        <div class="card">
+          <h3>Mensal Padrão</h3>
+          <p>R$ 99,90</p>
+        </div>
+        <div class="card">
+          <h3>Mensal Premium</h3>
+          <p>R$ 119,90</p>
+        </div>
+      </div>
+
+      <div class="anual-cards cards">
+        <div class="card">
+          <h3>Anual Básico</h3>
+          <p>12x de R$ 75,90</p>
+        </div>
+        <div class="card">
+          <h3>Anual Padrão</h3>
+          <p>12x de R$ 95,90</p>
+        </div>
+        <div class="card">
+          <h3>Anual Premium</h3>
+          <p>12x de R$ 115,90</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+                       
     </main>
-    <footer>
+
+    <footer class="footer">
+        <div class="footer-column">
+            <p>Sobre Nós</p>
+            <p>Contato</p>
+            <p>Política de Privacidade</p>
+            <p>Blog ou Artigos</p>
+        </div>
+        <div class="footer-column">
+            <p>Planos e Serviços</p>
+            <p>FAQ (Perguntas Frequentes)</p>
+            <p>Newsletter</p>
+            <p>Termos de Uso</p>
+        </div>
+        <div class="footer-column">
+            <p>Parceiros</p>
+            <p>Redes Sociais</p>
+            <p>Créditos e Copyright</p>
+            <p>Mapa do Site</p>
+        </div>
     </footer>
+
 </body>
 </html>
