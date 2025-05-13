@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marque sua consulta</title>
     <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/marcar-consulta.css">
+    <link rel="stylesheet" href="../css/parceiros.css">
 </head>
 <body>
     <div class="container">
@@ -38,11 +38,67 @@
            <section class="parceiros">
                 <div class="parceiro">
                     <figure>
-                        <img src="" alt="">
+                        <img src="../assets/icons/parceiros/Logos-parceiros/growth.png" alt="">
                     </figure>
                     <h2>Growth Supplements</h2>
                     <p>Nutrição esportiva</p>
-                    <button>Ver</button>
+                    <a href="">Ver</a>
+                </div>
+                <div class="parceiro">
+                    <figure>
+                        <img src="../assets/icons/parceiros/Logos-parceiros/maxtitanium.png" alt="">
+                    </figure>
+                    <h2>Growth Supplements</h2>
+                    <p>Nutrição esportiva</p>
+                    <a href="">Ver</a>
+                </div>
+                <div class="parceiro">
+                    <figure>
+                        <img src="../assets/icons/parceiros/Logos-parceiros/integral.png" alt="">
+                    </figure>
+                    <h2>Growth Supplements</h2>
+                    <p>Nutrição esportiva</p>
+                    <a href="">Ver</a>
+                </div>
+                <div class="parceiro">
+                    <figure>
+                        <img src="../assets/icons/parceiros/Logos-parceiros/fitnessexclusive.png" alt="">
+                    </figure>
+                    <h2>Growth Supplements</h2>
+                    <p>Nutrição esportiva</p>
+                    <a href="">Ver</a>
+                </div>
+                <div class="parceiro">
+                    <figure>
+                        <img src="../assets/icons/parceiros/Logos-parceiros/growth.png" alt="">
+                    </figure>
+                    <h2>Growth Supplements</h2>
+                    <p>Nutrição esportiva</p>
+                    <a href="">Ver</a>
+                </div>
+                <div class="parceiro">
+                    <figure>
+                        <img src="../assets/icons/parceiros/Logos-parceiros/integral.png" alt="">
+                    </figure>
+                    <h2>Growth Supplements</h2>
+                    <p>Nutrição esportiva</p>
+                    <a href="">Ver</a>
+                </div>
+                <div class="parceiro">
+                    <figure>
+                        <img src="../assets/icons/parceiros/Logos-parceiros/fitnessexclusive.png" alt="">
+                    </figure>
+                    <h2>Growth Supplements</h2>
+                    <p>Nutrição esportiva</p>
+                    <a href="">Ver</a>
+                </div>
+                <div class="parceiro">
+                    <figure>
+                        <img src="../assets/icons/parceiros/Logos-parceiros/maxtitanium.png" alt="">
+                    </figure>
+                    <h2>Growth Supplements</h2>
+                    <p>Nutrição esportiva</p>
+                    <a href="">Ver</a>
                 </div>
            </section>
         </section>

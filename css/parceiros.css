@@ -14,13 +14,18 @@ body {
 
 .left{
     width: 20%;
-    height: 100vh;
+    height: 110vh;
     background-color: #053225;
     display: flex;
     flex-direction: column;
     align-items: center;;
     justify-content: flex-start;
     gap: 5vh;
+}
+
+.right{
+    width: 100%;
+    height: 100%;
 }
 
 .profile{
@@ -70,4 +75,51 @@ aside nav ul li{
 aside nav ul li:hover{
     background-color: rgba(255, 255, 255, 0.100);
     border-radius: 10px;
+}
+
+header h1{
+    padding: 10px 10px 0 30px;
+    font-size: 35px;
+}
+
+.parceiros{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+    padding: 30px;
+    gap: 50px;
+}
+
+.parceiro{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+    gap: 10px;
+}
+
+.parceiro img{
+    width: 70%;
+}
+
+.parceiro a{
+    background-color: #2D92E3;
+    color: white;
+    text-decoration: none;
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.parceiro a:hover{
+    transition: 0.5s;
+    transform: scale(1.1);
 }
