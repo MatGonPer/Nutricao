@@ -13,6 +13,7 @@ class CapturarDadosCadastro {
     private bool $senhasDiferentes = false;
     private array $erros = [];
     private array $errosValidacao = [];
+    private DateTime $hoje;
 //Essa função serve para verificar se o usuário enviou o formulário, verifica se os campos foram enviados vazios
 //Se não estão vazios, insere os dados capturados nos atributos da classe e retonar true
 //Se estiverem vazios, incorretos, ou o campo de senha e confirmar senha estiverem diferentes retorna false
@@ -44,6 +45,7 @@ class CapturarDadosCadastro {
             return false;
         }
         //Insere os dados capturados via POST nos atributos da classe
+        $this->hoje = new DateTime();
         $this->nome = $_POST['nome'];
         $this->email = $_POST['email'];
         $this->senha = $_POST['senha'];

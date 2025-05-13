@@ -39,7 +39,7 @@ main {
     border-radius: 10px;
     padding: 30px;
     width: 450px;
-    height: 570px;
+    height: 550px;
     
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
@@ -48,7 +48,7 @@ main {
 
 h1 {
     font-size: 40px;
-    margin: 10px 0px;
+    margin: 15px 0px;
     font-weight: 400;
     color: #2F2F2F;
 }
@@ -56,8 +56,7 @@ h1 {
 h2 {
     color: #2F2F2F;
     font-size: 26px;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     text-align: center;
     font-weight: 400;
 }
@@ -70,7 +69,7 @@ h2 {
 }
 
 .input-box {
-    margin: 10px 0px;
+    margin: 0px 0px;
 }
 
 .input-box input{
@@ -115,12 +114,19 @@ h2 {
 
 .remember-forgot a {
     color: black;
-    font-weight: 400;
+    font-weight: 500;
+    text-decoration: none;
 }
 
 .remember-forgot a:hover {
     transition: 0.5s;
     color: #1208A1;
+}
+
+.remember-forgot label {
+    color: black;
+    font-weight: 500;
+    text-decoration: none;
 }
 
 .acess-link {
@@ -161,7 +167,7 @@ h2 {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin: 32px 0px;
+    margin-top: 32px;
 }
 
 .register-link button {
@@ -183,6 +189,9 @@ h2 {
 
 .register-link a {
     color: black;
+    font-weight: 500;
+    text-decoration: none;
+    margin: 10px 0px 25px 0px;
 }
 
 .register-link a:hover {
