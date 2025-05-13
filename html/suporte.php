@@ -1,24 +1,14 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-=======
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consultas agendadas</title>
+    <title>Suporte</title>
     <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/consultas-agendadas.css">
+    <link rel="stylesheet" href= "../css/suporte.css">
 </head>
 <body>
-    <div class="container">
+   <div class="container">
         <section class="left">
             <div class="profile">
                 <figure>
@@ -26,6 +16,7 @@
                 </figure>
                 <h2>Francisco do Nascimento</h2>
             </div>
+
             <aside>
                 <nav>
                     <ul>
@@ -42,42 +33,48 @@
             </aside>
         </section>
         <section class="right">
-            <main>
-                <div class="titulo">
-                    <h1>AGENDADOS</h1>
+            <div class="contato">
+                <h1>SUPORTE</h1>
+                <div class="email">
+                    <a href="">
+                        <h2>Fale conosco:</h2>
+                        <p>nutrifit@gmail.com</p>
+                    </a>
                 </div>
-                <div class="profissionais">
-                    <div class="nutricionista">
-                        <div class="chat">
-                            <h3>Nutricionista</h3>
-                            <a href="">
-                                <figure>
-                                    <img src="../assets/icons/consultas-agendadas/chat-icon.svg" alt="">
-                                </figure>
-                            </a>
+            </div>
+            <div class="principais-perguntas">
+                <h3>Principais Dúvidas</h3>
+                <div class="duvidas">
+                    <a href="">
+                        <div class="pergunta">
+                            <p>É normal o sistema demorar para carregar?</p>
+                            <p>></p>
                         </div>
-                        <div class="info">
-                            <p>Avaliação Antropométrica</p>
-                            <p>Plano Alimentar Personalizado</p>
+                    </a>
+                    <a href="">
+                        <div class="pergunta">
+                            <p>Como posso redefinir minha senha?</p>
+                            <p>></p>
                         </div>
-                    </div>
-                    <div class="personal">
-                        <div class="chat">
-                            <h3>Personal</h3>
-                            <a href="">
-                                <figure>
-                                    <img src="../assets/icons/consultas-agendadas/chat-icon.svg" alt="">
-                                </figure>
-                            </a>
+                    </a>
+                    <a href="">
+                        <div class="pergunta">
+                            <p>Existe um manual ou guia de uso disponível?</p>
+                            <p>></p>
                         </div>
-                        <div class="info">
-                            <p>Definição de plano de treino</p>
+                    </a>
+                    <a href="">
+                        <div class="pergunta">
+                            <p>O sistema possui integração com outras ferramentas?</p>
+                            <p>></p>
                         </div>
-                    </div>
+                    </a>
+                    <a href="">
+                        <div class="pergunta">
+                            <p>Como o sistema protege os meus dados pessoais?</p>
+                            <p>></p>
+                        </div>
+                    </a>
                 </div>
-            </main>
+            </div>
         </section>
-    </div>
->>>>>>> 48eeef955ce1e51b4482a8910f2704639a854030
-</body>
-</html>

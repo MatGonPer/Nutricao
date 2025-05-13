@@ -72,118 +72,78 @@ aside nav ul li:hover{
     border-radius: 10px;
 }
 
-header {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 35px 0 35px;
-
-}
-
-header h1{
-    font-size: 20px;
-    font-weight: 500;
-}
-
-form{
-    background-color: #ffffff;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    width: 600px;
-    height: 50px;
-    border: 1px solid #000;
-    border-radius: 10px;
-}
-
-form img{
-    width: 30px;
-    height: 30px;
-    margin-left: 10px;
-}
-
-form input{
-    border: none;
-    width: 667px;
-    height: 50px;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: 500;
-}
-
 .right{
     width: 100%;
+}
+
+.duvidas{
     display: flex;
     flex-direction: column;
+    padding: 20px;
+    gap: 20px;
     align-items: center;
 }
 
-.background-content{
-    margin-top: 20px;
-    width: 90%;
-    height: 100%;
-    background-color: #ffffff;
-    border-radius: 10px;
+.duvidas a{
+    width: 95%;
+    text-decoration: none;
+    color: black;
 }
 
-main {
+.contato{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.contato h1{
+    font-size: 30px;
+}
+
+.contato a{
+    text-decoration: none;
+    color: black;
+}
+
+.principais-perguntas{
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
 }
 
-ul{
-    display: flex;
-    flex-direction: column;
-}
-
-.desempenho{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
+.principais-perguntas h3{
+    text-align: center;
     font-size: 25px;
-    font-weight: bold;
 }
 
-.desempenho article{
-    display: flex;
-    width: 270px;
-    height: 150px;
-    border: 1px solid #000;
-    border-radius: 10px;
-    padding: 10px;
-    gap: 20px;
-}
-
-.desempenho img{
+.email{
     background-color: white;
+    text-align: center;
+    padding: 10px;
     border-radius: 10px;
     border: 1px solid black;
-    padding: 5px;
+    transition: 0.5s;
 }
 
-.desempenho article.treino {
-    background-color: #2D92E3;
+.email:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
 }
 
-.desempenho article.calorias {
-    background-color: #3FBA0B;
-}
-
-.desempenho article.peso {
-    background-color: #EFA73C;
-}
-
-.grafico{
-    border-radius: 10px;
-    margin: 50px;
-    height: 60vh;
+.pergunta{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
     border: 1px solid black;
-    background-image: url(../assets/dashboard-usuario/grafico.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    font-weight: bold;
+    font-size: 17px;
+    transition: 0.5s;
 }
+
+.pergunta:hover{
+    transform: scale(1.03);
+    transition: 0.5s;
+}
+

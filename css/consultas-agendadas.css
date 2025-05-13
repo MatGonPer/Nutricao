@@ -71,119 +71,46 @@ aside nav ul li:hover{
     background-color: rgba(255, 255, 255, 0.100);
     border-radius: 10px;
 }
-
-header {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 35px 0 35px;
-
+.titulo{
+    padding: 30px;
+    font-size: 30px;
 }
 
-header h1{
-    font-size: 20px;
-    font-weight: 500;
-}
-
-form{
-    background-color: #ffffff;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    width: 600px;
-    height: 50px;
-    border: 1px solid #000;
-    border-radius: 10px;
-}
-
-form img{
-    width: 30px;
-    height: 30px;
-    margin-left: 10px;
-}
-
-form input{
-    border: none;
-    width: 667px;
-    height: 50px;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: 500;
-}
-
-.right{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.background-content{
-    margin-top: 20px;
-    width: 90%;
-    height: 100%;
-    background-color: #ffffff;
-    border-radius: 10px;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-}
-
-ul{
-    display: flex;
-    flex-direction: column;
-}
-
-.desempenho{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
+h3{
     font-size: 25px;
-    font-weight: bold;
+    font-weight: 500;
 }
 
-.desempenho article{
+.profissionais{
     display: flex;
-    width: 270px;
-    height: 150px;
-    border: 1px solid #000;
-    border-radius: 10px;
-    padding: 10px;
+    flex-direction: column;
+    margin-left: 30px;
+    gap: 30px;
+}
+
+.chat{
+    display: flex;
     gap: 20px;
 }
 
-.desempenho img{
+.info{
+    display: flex;
+    flex-direction: column;
+}
+
+.info p{
+    padding-top: 20px;
+}
+
+.nutricionista,
+.personal{
+    display: flex;
+    flex-direction: column;
     background-color: white;
-    border-radius: 10px;
     border: 1px solid black;
-    padding: 5px;
-}
-
-.desempenho article.treino {
-    background-color: #2D92E3;
-}
-
-.desempenho article.calorias {
-    background-color: #3FBA0B;
-}
-
-.desempenho article.peso {
-    background-color: #EFA73C;
-}
-
-.grafico{
+    padding: 30px;
     border-radius: 10px;
-    margin: 50px;
-    height: 60vh;
-    border: 1px solid black;
-    background-image: url(../assets/dashboard-usuario/grafico.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-
+    gap: 10px;
+    width: 70vw;
 }
+

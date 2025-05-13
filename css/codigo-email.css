@@ -7,7 +7,7 @@
 }
 
 body {
-    background-image: url(../assets/conta-parceira-background.jpg);
+    background-image: url(../assets/esqueci-senha-background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -40,7 +40,7 @@ main {
     border-radius: 10px;
     padding: 30px;
     width: 450px;
-    height: 500px;
+    height: 300px;
     margin-bottom: 50px;
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
@@ -73,6 +73,7 @@ h2 {
 
 .input-box {
     margin: 10px 0px;
+    text-align: center;
 }
 
 .input-box input{
@@ -82,6 +83,7 @@ h2 {
 .input-box label {
     font-size: 20px;
     font-weight: 200;
+    font-size: 15px;
 }
 
 .input-container {

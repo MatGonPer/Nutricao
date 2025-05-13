@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil</title>
+    <title>Clientes do nutricionista</title>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/clientes-nutricionista.css">
 </head>
@@ -16,40 +16,20 @@
                 </figure>
                 <h2>Francisco do Nascimento</h2>
             </div>
-            <div class="menu">
-                <ul>
-                    <li class="item">
-                        <figure>
-                            <img src="../assets/icons/user-page/inicio-icon.png" alt="">
-                        </figure>
-                        <a href="">Início</a>
-                    </li>
-                    <li class="item">
-                        <figure>
-                            <img src="../assets/icons/user-page/user-icon.png" alt="">
-                        </figure>
-                        <a href="">Usuário</a>
-                    </li>
-                    <li class="item">
-                        <figure>
-                            <img src="../assets/icons/user-page/market-icon.png" alt="">
-                        </figure>
-                        <a href="">Catálogo</a>
-                    </li>
-                    <li class="item">
-                        <figure>
-                            <img src="../assets/icons/user-page/suporte-icon.png" alt="">
-                        </figure>
-                        <a href="">Suporte</a>
-                    </li>
-                    <li class="item">
-                        <figure>
-                            <img src="../assets/icons/user-page/config-icon.png" alt="">
-                        </figure>
-                        <a href="">Configurações</a>
-                    </li>
-                </ul>
-            </div>
+            <aside>
+                <nav>
+                    <ul>
+                        <li><a  href="landing-page.php"> <img src="../assets/icons/dashboard-usuario/inicio-icon.svg" alt=""> Início</a></li>
+                        <li><a href="perfil-usuario.php"> <img src="../assets/icons/dashboard-usuario/user-icon.svg" alt=""> Usuário</a></li>
+                        <li><a href="dashboard-usuario.php"> <img src="../assets/icons/dashboard-usuario/desempenho-icon.svg" alt=""> Desempenho</a></li>
+                        <li><a href="treinos.php"> <img src="../assets/icons/dashboard-usuario/treino-icon.svg" alt=""> Treino</a></li>
+                        <li><a href="consultas-agendadas.php"> <img src="../assets/icons/dashboard-usuario/consulta-icon.svg" alt=""> Consultas</a></li>
+                        <li><a href="parceiros.php"> <img src="../assets/icons/dashboard-usuario/market-icon.svg" alt=""> Catálogo</a></li>
+                        <li><a href="suporte.php"> <img src="../assets/icons/dashboard-usuario/suport-icon.svg" alt=""> Suporte</a></li>
+                        <li><a href="#"> <img src="../assets/icons/dashboard-usuario/config-icon.svg" alt=""> Configurações</a></li>
+                    </ul>
+                </nav>
+            </aside>
         </section>
         <section class="right">
             <div class="upper">

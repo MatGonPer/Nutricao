@@ -7,7 +7,7 @@
 }
 
 body {
-    background-image: url(../assets/conta-parceira-background.jpg);
+    background-image: url(../assets/parceiro-comercial-background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -27,15 +27,14 @@ main {
     justify-content: center;
     height: 100vh;
     width: 50vw;
-    background: rgba(0 , 0 , 0 , 0.4);
+    background: rgba(207, 207, 207, 0.541);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-    color: white;
 }
 
 .container {
-    background-color: rgba(0 , 0 , 0 , 0.7);
+    background-color: rgba(255, 255, 255, 0.6);
     border-style: none;
     border-radius: 10px;
     padding: 30px;
@@ -51,17 +50,16 @@ h1 {
     font-size: 40px;
     margin: 30px;
     font-weight: 400;
-    color: white
+    color: #2F2F2F;
 }
 
 h2 {
     color: #2F2F2F;
-    font-size: 23px;
+    font-size: 26px;
     padding-bottom: 10px;
     margin-bottom: 10px;
     text-align: center;
     font-weight: 400;
-    color: white;
 }
 
 .input-container {
@@ -116,7 +114,7 @@ h2 {
 }
 
 .remember-forgot a {
-    color:white;
+    color: black;
     font-weight: 400;
 }
 
@@ -184,7 +182,7 @@ h2 {
 }
 
 .register-link a {
-    color: white;
+    color: black;
 }
 
 .register-link a:hover {
