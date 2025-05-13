@@ -7,7 +7,7 @@ class BancoDados {
     private $porta = '5432';
     //Troque pelo usuário do seu banco, a senha pra acessar o seu banco, e o nome do seu banco
     private $usuario = 'postgres';
-    private $senha = '88548582';
+    private $senha = 'arthur333';
     private $banco = 'nutrifit';
     private $conexao;
 
