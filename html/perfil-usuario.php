@@ -1,33 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil</title>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/perfil-usuario.css">
+    <title>Usuário</title>
 </head>
 <body>
     <div class="container">
         <section class="left">
-            <div  class="user-picture">
-                <picture>
-                    <img width="100" height="100" src="../assets/perfil-usuario/user-icon.jpg" alt="" >
-                </picture>
-            </div>
-            <h1>Martin Braithwaite</h1>
-            <nav>
-                <ul class="menu-lateral">
-                    <li><a href="#"> <img src="../assets/icons/dashboard-usuario/inicio-icon.svg" alt=""> Início</a></li>
-                    <li><a href="#"> <img src="../assets/icons/dashboard-usuario/user-icon.svg" alt=""> Usuário</a></li>
-                    <li><a href="#"> <img src="../assets/icons/dashboard-usuario/desempenho-icon.svg" alt=""> Desempenho</a></li>
-                    <li><a href="#"> <img src="../assets/icons/dashboard-usuario/treino-icon.svg" alt=""> Treino</a></li>
-                    <li><a href="#"> <img src="../assets/icons/dashboard-usuario/consulta-icon.svg" alt=""> Consultas</a></li>
-                    <li><a href="#"> <img src="../assets/icons/dashboard-usuario/market-icon.svg" alt=""> Catálogo</a></li>                        <li><a href="#"> <img src="../assets/icons/dashboard-usuario/suport-icon.svg" alt=""> Suporte</a></li>
-                    <li><a href="#"> <img src="../assets/icons/dashboard-usuario/config-icon.svg" alt=""> Configurações</a></li>
-                </ul>
-            </nav>
-        <section class="left"> 
             <div class="profile">
                 <figure>
                     <img src="../assets/perfil-usuario/user-icon.jpg" alt="">
@@ -49,59 +31,55 @@
                 </nav>
             </aside>
         </section>
-        <section class="right">
-            <div class="user-picture">
-                <picture>
-                    <img width="200" height="200" src="../assets/perfil-usuario/user-icon.jpg" alt="">
-                </picture>
-            </div>
-            <h4>Atualize os seus dados pessoais</h4>
-            <div class="form">
-                <form action="" method="post"></form>
-                        <div class="form-top">
-                            <section>
-                                <label for="name">Nome:</label>
-                                <input type="text" name="name" id="">
-                            </section>
-                            <section>
-                                <label for="date_of_birth">Data de nascimento:</label>
-                                <input type="datetime" name="date_of_birth" id="">
-                            </section>
-                            <section>
-                                <label for="gender">Gênero:</label>
-                                <div class="gender">
-                                    <select name="gender" id="">
-                                        <option value="Masculino">Masculino</option>
-                                        <option value="Feminino">Feminino</option>
-                                        <option value="Prefiro não informar">Prefiro não informar</option>
-                                    </select>
-                                </div>
-                            </section>
+        <section class="container-right">
+            <main class="profile-content">
+                <header class="profile-header">
+                    <figure>
+                        <img src="/images/user-icon.jpg" alt="foto de perfil">
+                        <h3>Martin Brainthwaite</h3>
+                        <p>Perfil 50% completo</p>
+                        <div class="progress-bar">
+                            <div class="fill" style="width: 50%;"></div>
                         </div>
-                        <div class="form-bottom">
-                            <section>
-                                <label for="height">Altura:</label>
-                                <input type="text" name="height" id="">
-                            </section>
-                            <section>
-                                <label for="weight">Peso atual:</label>
-                                <input type="text" name="weight" id="">
-                            </section>
-                            <section>
-                                <label for="phone">Contato:</label>
-                                <input type="text" name="" id="">
-                            </section>
-                        </div>
-                        <section class="about-me">
-                        <h3>Sobre mim:</h3>
-                        <textarea name="sobre-mim" id=""></textarea>
-                        </section>
-                        <div class="submit-button">
-                            <input class="button1" type="button" value="Resetar dados">
-                            <input class="button2" type="button" value="Atualizar dados">
-                        </div>
+                    </figure>
+                </header>
+                <form class="profile-form">
+                    <fieldset>
+                        <legend>Dados pessoais</legend>
+                        <input type="text" placeholder="Nome Completo">
+                        <input type="text" placeholder="Idade">
+                        <select name="" id="">
+                            <option value="Gênero">Gênero</option>
+                            <option value="">Masculino</option>
+                            <option value="feminino">Feminino</option>
+
+                        </select>
+                        <textarea name="" id="" placeholder="Sobre mim"></textarea>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Contato</legend>
+                        <input type="email" name="Email" id="" placeholder="Email">
+                        <input type="tel" name="Tel" id="" placeholder="Telefone">
+                        <input type="text" name="Cidade" id="" placeholder="Cidade">
+                    </fieldset>
+                    <fieldset>
+                        <legend>Saúde</legend>
+                        <input type="text" placeholder="Peso">
+                        <input type="text" placeholder="IMC">
+                        <input type="text" placeholder="Altura">
+                    </fieldset>
+                     <fieldset>
+                        <legend>Segurança</legend>
+                        <input type="password" name="Senha atual" id="senhaatual" placeholder="Senha Atual">
+                        <input type="password" name="Nova senha" id="novasenha" placeholder="Nova senha">
+                        <input type="password" name="Confirmar senha" id="confirmarsenha" placeholder="Confirmar Senha">
+                    </fieldset>
+                    <div class="buttons">
+                        <button type="submit" class="save">Salvar perfil</button>
+                        <button type="button" class="change-pass">Alterar Senha</button>
+                    </div>
                 </form>
-            </div>
+            </main>
         </section>
     </div>
 </body>
