@@ -61,9 +61,62 @@
                             <h3>Peso</h3>
                         </article>
                     </section>
-                    <section class="grafico">
-                        
-                    </section>
+                    
+                        <section class="treinos">
+                            
+                            <section class="grafico">
+                                <div class="col-all">
+                                    <div class="c-1 col c-b"></div>
+                                    <div class="c-2 col c-g"></div>
+                                    <div class="c-3 col c-o"></div>
+                                    <div class="c-4 col c-b"></div>
+                                    <div class="c-5 col c-g"></div>
+                                    <div class="c-6 col c-o"></div>
+                                    <div class="c-7 col c-b"></div>
+                                    <div class="c-8 col c-g"></div>
+                                    <div class="c-9 col c-o"></div>
+                                    <div class="c-10 col c-b"></div>
+                                    <div class="c-11 col c-g"></div>
+                                    <div class="c-12 col c-o"></div>
+                                    <div class="c-13 col c-b"></div>
+                                    <div class="c-14 col c-g"></div>
+                                    <div class="c-15 col c-o"></div>
+                                    <div class="c-16 col c-b"></div>
+                                </div>
+                                <div class="line-col"></div>
+                            </section> 
+
+                            <section class="sec-treinos-semanais">
+                                <article>
+                                    <h3>Segunda-feira</h3>
+                                    <div>
+                                        <img src="" alt="peso">
+                                        .
+                                        <p>Treino de peito r bíceps</p>
+                                    </div>
+                                    visualizar
+                                </article>
+                                <article>
+                                    <h3>Terça-feira</h3>
+                                    <div>
+                                        <img src="" alt="peso">
+                                        .
+                                        <p>Treino de costas</p>
+                                    </div>
+                                    visualizar
+                                </article>
+                                <article>
+                                    <h3>Quarta-feira</h3>
+                                    <div>
+                                        <img src="" alt="corrida">
+                                        .
+                                        <p>Cardio (30 min)</p>
+                                    </div>
+                                    visualizar
+                                </article>
+                            </section>
+
+                        </section>
                 </main>
                 </div>
             </section>

@@ -83,7 +83,7 @@ header {
 }
 
 header h1{
-    font-size: 20px;
+    font-size: 32px;
     font-weight: 500;
 }
 
@@ -150,6 +150,7 @@ ul{
 
 .desempenho article{
     display: flex;
+    flex-direction: column;
     width: 270px;
     height: 150px;
     border: 1px solid #000;
@@ -177,13 +178,143 @@ ul{
     background-color: #EFA73C;
 }
 
-.grafico{
-    border-radius: 10px;
-    margin: 50px;
-    height: 60vh;
-    border: 1px solid black;
-    background-image: url(../assets/dashboard-usuario/grafico.png);
-    background-size: cover;
-    background-repeat: no-repeat;
+.treinos{
+    height: 298px;
+    margin-top: 40px;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
 
+.grafico{
+    width: 70%;
+    height: 298px;
+    border-radius: 10px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.col-all{
+     width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: space-around;
+}
+
+.col{
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.c-b{
+    background-color: #2D92E3;
+}
+
+.c-g{
+    background-color: #3FBA0B;
+}
+
+.c-o{
+    background-color: #EFA73C;
+}
+
+.c-1{
+    width: 4%;
+    height: 20%;
+}
+.c-2{
+    width: 4%;
+    height: 40%;
+}
+.c-3{
+    width: 4%;
+    height: 60%;
+}
+.c-4{
+    width: 4%;
+    height: 50%;
+}
+.c-5{
+    width: 4%;
+    height: 70%;
+}
+.c-6{
+    width: 4%;
+    height: 30%;
+}
+.c-7{
+    width: 4%;
+    height: 80%;
+}
+.c-8{
+    width: 4%;
+    height: 40%;
+}
+.c-9{
+    width: 4%;
+    height: 50%;
+}
+.c-10{
+    width: 4%;
+    height: 70%;
+}
+.c-11{
+    width: 4%;
+    height: 75%;
+}
+.c-12{
+    width: 4%;
+    height: 60%;
+}
+.c-13{
+    width: 4%;
+    height: 50%;
+}
+.c-14{
+    width: 4%;
+    height: 32%;
+}
+.c-15{
+    width: 4%;
+    height: 69%;
+}
+.c-16{
+    width: 4%;
+    height: 34%;
+}
+
+.line-col{
+    width: 97%;
+    height: 11px;
+    background-color: #000;
+    border-radius: 10px;
+    margin-bottom: 26px;
+    border-radius: 10px;
+}
+
+.sec-treinos-semanais{
+    width: 25%;
+    height: 298px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.sec-treinos-semanais article{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 90px;
+    border-radius: 10px;
+    border: 1px solid black;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.sec-treinos-semanais article div{
+    display: flex;
+    gap: 10px;
 }
