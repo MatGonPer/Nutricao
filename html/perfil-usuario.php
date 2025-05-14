@@ -38,7 +38,7 @@
                         <figure>
                             <img class="img" src="../assets/perfil-usuario/user-icon.jpg" alt="foto de perfil">
                         </figure>
-                            <h3>Martin Brainthwaite</h3>
+                        <h3 style="font-weight: bold;">Francisco do Nascimento</h3>
                     </div>
                         <p>Perfil 50% completo</p>
                         <div class="progress-bar">

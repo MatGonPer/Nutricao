@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,8 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    
-=======
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">

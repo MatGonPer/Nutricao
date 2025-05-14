@@ -73,6 +73,10 @@ aside nav ul li:hover{
     border-radius: 10px;
 }
 
+.profile-info h3{
+    font-size: 30px;
+}
+
 .profile-header{
     display: flex;
     flex-direction: column;
