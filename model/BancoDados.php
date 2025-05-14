@@ -7,7 +7,7 @@ class BancoDados {
     private $porta = '5432';
     //Troque pelo usuário do seu banco, a senha pra acessar o seu banco, e o nome do seu banco
     private $usuario = 'postgres';
-    private $senha = 'arthur333';
+    private $senha = '123';
     private $banco = 'nutrifit';
     private $conexao;
 
@@ -82,8 +82,10 @@ class BancoDados {
 }
 /*Remova os comentários do código abaixo para testar se a conexão com o banco de dados foi bem sucedida
 E testa a função de inserir dados na tabela usuario com campos e valores definidos no array $reg
+*/
 $bd = new Database();
 $bd->conectarBanco();
+/*
 //O array $reg tem o nome dos campos a esquerda e o seu valor a direita, certifique-se de estar idêntico aos campos do seu banco
 $reg = [
     'nome' => 'Márcio José da Silva',
