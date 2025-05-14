@@ -9,7 +9,6 @@
 </head>
 <body>
     <div class="container">
-<<<<<<< HEAD
         <section class="left">
             <div  class="user-picture">
                 <picture>
@@ -28,9 +27,6 @@
                     <li><a href="#"> <img src="../assets/icons/dashboard-usuario/config-icon.svg" alt=""> Configurações</a></li>
                 </ul>
             </nav>
-
-
-=======
         <section class="left"> 
             <div class="profile">
                 <figure>
@@ -52,7 +48,6 @@
                     </ul>
                 </nav>
             </aside>
->>>>>>> 48eeef955ce1e51b4482a8910f2704639a854030
         </section>
         <section class="right">
             <div class="user-picture">
