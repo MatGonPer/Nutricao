@@ -34,45 +34,56 @@
         <section class="container-right">
             <main class="profile-content">
                 <header class="profile-header">
-                    <figure>
-                        <img src="/images/user-icon.jpg" alt="foto de perfil">
-                        <h3>Martin Brainthwaite</h3>
+                    <div class="profille-info">
+                        <figure>
+                            <img class="img" src="../assets/perfil-usuario/user-icon.jpg" alt="foto de perfil">
+                        </figure>
+                            <h3>Martin Brainthwaite</h3>
+                    </div>
                         <p>Perfil 50% completo</p>
                         <div class="progress-bar">
                             <div class="fill" style="width: 50%;"></div>
                         </div>
-                    </figure>
                 </header>
                 <form class="profile-form">
                     <fieldset>
                         <legend>Dados pessoais</legend>
-                        <input type="text" placeholder="Nome Completo">
-                        <input type="text" placeholder="Idade">
-                        <select name="" id="">
-                            <option value="Gênero">Gênero</option>
-                            <option value="">Masculino</option>
-                            <option value="feminino">Feminino</option>
-
-                        </select>
-                        <textarea name="" id="" placeholder="Sobre mim"></textarea>
+                        <div class="form">
+                            <input type="text" placeholder="Nome Completo">
+                            <input type="text" placeholder="Idade">
+                            <select class="gender" name="gender" id="gender">
+                                <option value="Gênero">Gênero</option>
+                                <option value="">Masculino</option>
+                                <option value="feminino">Feminino</option>
+                            </select>
+                        </div>
+                        <div class="about-me">
+                            <textarea class="about" name="" id="" placeholder="Sobre mim"></textarea>
+                        </div>
                     </fieldset>
                     <fieldset>
                         <legend>Contato</legend>
-                        <input type="email" name="Email" id="" placeholder="Email">
-                        <input type="tel" name="Tel" id="" placeholder="Telefone">
-                        <input type="text" name="Cidade" id="" placeholder="Cidade">
+                        <div class="form">
+                            <input type="email" name="Email" id="" placeholder="Email">
+                            <input type="tel" name="Tel" id="" placeholder="Telefone">
+                            <input type="text" name="Cidade" id="" placeholder="Cidade">
+                        </div>
                     </fieldset>
                     <fieldset>
                         <legend>Saúde</legend>
-                        <input type="text" placeholder="Peso">
-                        <input type="text" placeholder="IMC">
-                        <input type="text" placeholder="Altura">
+                        <div class="form">
+                            <input type="text" placeholder="Peso">
+                            <input type="text" placeholder="IMC">
+                            <input type="text" placeholder="Altura">
+                        </div>
                     </fieldset>
                      <fieldset>
                         <legend>Segurança</legend>
-                        <input type="password" name="Senha atual" id="senhaatual" placeholder="Senha Atual">
-                        <input type="password" name="Nova senha" id="novasenha" placeholder="Nova senha">
-                        <input type="password" name="Confirmar senha" id="confirmarsenha" placeholder="Confirmar Senha">
+                        <div class="form">
+                            <input type="password" name="Senha atual" id="senhaatual" placeholder="Senha Atual">
+                            <input type="password" name="Nova senha" id="novasenha" placeholder="Nova senha">
+                            <input type="password" name="Confirmar senha" id="confirmarsenha" placeholder="Confirmar Senha">
+                        </div>
                     </fieldset>
                     <div class="buttons">
                         <button type="submit" class="save">Salvar perfil</button>

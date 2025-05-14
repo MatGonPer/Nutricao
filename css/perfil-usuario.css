@@ -13,34 +13,9 @@ body {
     
 }
 
-.left {
-    width: 30%;
-    height: 100%;
-    background-color: #053225;
-    justify-items: center;
-}
-
-.left .user-picture img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    padding: 50px;
-    margin: 10px;
-}
-
-.menu-lateral ul{
-    padding: 20px;
-}
-
-.menu-lateral a {
-    margin: 20px;
-    color:aliceblue;
-    text-decoration: none;
-}
-
 .left{
     width: 20%;
-    height: 100vh;
+    height: 130vh;;
     background-color: #053225;
     display: flex;
     flex-direction: column;
@@ -98,152 +73,115 @@ aside nav ul li:hover{
     border-radius: 10px;
 }
 
-.right {
-    width: 80%;
-    height: 100%;
+.profile-header{
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    padding: 10px;
 }
 
+.profile-header p{
+    margin-top: 10px;
+}
 
-.right picture img {
-    display: flex;
-    align-items: center;
-    border-radius: 100%;
+.container-right{
     width: 100%;
-    height: 100%;
+    height: 130vh;
 }
 
-.left h1 {
-    margin: 20px;
-    color: aliceblue;
-}
-
-.user-photo {
-    width: 200px;
-    height: 200px;
-    padding: 20px 0px;
-}
-
-.gender {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 170px;
-    height: 17px;
-    border-radius: 10px;
-    padding: 15px;
-    background-color: white;
-}
-
-.gender select {
-    font-family: "Poppins", sans-serif;
-    border-style: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: white;
-}
-
-label {
-    font-size: 14px;
-}
-
-h4 {
-    font-size: 20px;
-    font-weight: 400;
-    padding: 0px 0px 15px 0px;
-}
-
-h3 {
-    font-size: 18px;
-    font-weight: 400;
-}
-
-.form {
+.img{
+    border-radius: 100px;
     width: 80%;
+    border: 5px solid white;
 }
 
-.form-top, .form-bottom {
-    padding: 15px 0px;
+.progress-bar{
+    border: 1px solid black;
+    width: 70%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 2px;
+}
+
+.fill{
+    background-color: #4CAF50;
+    height: 10px;
+    border-radius: 10px;
+}
+
+.profile-form{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
-.form-top section {
-    width: 280px;
-    height: 49px;
-}
-
-.form-top input {
-    width: 250px;
-    font-size: 14px;
-    padding: 15px;
-    border-radius: 10px;
-    border-style: none;
-}
-
-.form-bottom section {
-    width: 280px;
-    height: 49px;
-}
-
-.form-bottom input {
-    width: 250px;
-    font-size: 14px;
-    padding: 15px;
-    border-radius: 10px;
-    border-style: none;
-}
-
-.form label {
-    margin: 3px;
-    font-size: 16px;
-    font-weight: 300;
-}
-
-.about-me {
-    width: 100%;
-}
-
-.about-me h3 {
-    margin: 10px 0px;
-    font-size: 16px;
-    font-weight: 300;
-}
-.about-me textarea {
-    border-style: none;
-    border-radius: 10px;
-    width: 100%;
-    padding: 18px 0px;
-    resize: none;
-}
-
-.submit-button {
+.form{
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    padding: 30px 0px;
+    gap: 40px;
+    padding: 10px;
 }
 
-.button1 {
-    height: 49px;
-    width: 150px;
-    border-style: none;
-    border-radius: 10px;
-    color: white;
-    background-color: #1C0F13;
-    cursor: pointer;
+legend{
+    font-size: 20px;
 }
 
-.button2 {
-    height: 49px;
-    width: 150px;
-    border-style: none;
+.form input{
+    width: 310px;
+    height: 60px;
     border-radius: 10px;
-    color: white;
+    border: 1px solid black;
+    padding-left: 10px;
+    font-size: 15px;
+}
+
+.gender{
+    width: 21vw;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding-left: 10px;
+    font-size: 15px;
+    background-color: white;
+}
+
+.about-me{
+    padding: 10px;
+}
+
+.about{
+    width: 99%;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding-left: 10px;
+    font-size: 15px;
+    height: 70px;
+}
+
+.buttons{
+    display: flex;
+    gap: 650px;
+}
+
+.buttons button{
+    width: 210px;
+    height: 55px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.save{
     background-color: #0E34A0;
-    cursor: pointer;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+}
+
+.change-pass{
+    background-color: #cbcbcb8e;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.71);
+    font-weight: bold;
 }
