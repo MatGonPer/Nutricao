@@ -7,8 +7,8 @@ class BancoDados {
     private $porta = '5432';
     //Troque pelo usuário do seu banco, a senha pra acessar o seu banco, e o nome do seu banco
     private $usuario = 'postgres';
-    private $senha = '123';
-    private $banco = 'nutrifit';
+    private $senha = '1981';
+    private $banco = 'sistema';
     private $conexao;
 
     //Não modifiquem nem mexam nessa porra de classe, só troque as variáveis pra voces conectarem seus bancos
