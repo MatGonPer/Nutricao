@@ -180,7 +180,7 @@ ul{
 
 .treinos{
     height: 298px;
-    margin-top: 40px;
+    margin-top: 20px;
     display: flex;
     width: 100%;
     justify-content: space-around;
@@ -322,4 +322,54 @@ ul{
 .sec-treinos-semanais article div{
     display: flex;
     align-items: center;
+}
+
+.met-exe{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.metas {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+
+.metas article{
+    display: flex;
+    width: 100%;
+    height: 25px;
+    border-radius: 10px;
+    border: 1px solid black;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.exercicios{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.exercicios article{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+.exercicios article p{
+    font-size: small;
 }

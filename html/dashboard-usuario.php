@@ -117,6 +117,31 @@
                             </section>
 
                         </section>
+
+                        <section class="met-exe">
+                            <section class="metas">
+                                <article>
+                                    <p> Aumentar carga no supino: Subir de 50kg para 55kg até sexta-feira.</p>
+                                </article>
+                                <article>
+                                    <p>Hidratação diária: Beber pelo menos 2 litros de água por dia.</p>
+                                </article>
+                                <article>
+                                    <p>
+                                        Melhorar o tempo na corrida: Completar 5km abaixo de 30 minutos até domingo.</p>
+                                </article>
+                            </section>
+
+                            <section class="exercicios">
+                                <article>
+                                    <p>Segunda-feira: Treino de força</p>
+                                    <p>Terça-feira: Corrida leve + yoga</p>
+                                    <p>Quarta-feira: Treino de força + cardio</p>
+                                    <p>Quinta-feira: Descanso ativo</p>
+                                    
+                                </article>
+                            </section>
+                        </section>
                 </main>
                 </div>
             </section>
