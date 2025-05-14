@@ -318,3 +318,8 @@ ul{
     display: flex;
     gap: 10px;
 }
+
+.sec-treinos-semanais article div{
+    display: flex;
+    align-items: center;
+}

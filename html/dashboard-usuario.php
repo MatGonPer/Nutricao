@@ -90,16 +90,16 @@
                                 <article>
                                     <h3>Segunda-feira</h3>
                                     <div>
-                                        <img src="" alt="peso">
+                                        <img src="../assets/icons/dashboard-usuario/Peso.svg" alt="peso">
                                         .
-                                        <p>Treino de peito r bíceps</p>
+                                        <p>Treino de peito e bíceps</p>
                                     </div>
                                     visualizar
                                 </article>
                                 <article>
                                     <h3>Terça-feira</h3>
                                     <div>
-                                        <img src="" alt="peso">
+                                        <img src="../assets/icons/dashboard-usuario/Peso.svg" alt="peso">
                                         .
                                         <p>Treino de costas</p>
                                     </div>
@@ -108,7 +108,7 @@
                                 <article>
                                     <h3>Quarta-feira</h3>
                                     <div>
-                                        <img src="" alt="corrida">
+                                        <img src="../assets/icons/dashboard-usuario/correndo.svg" alt="corrida">
                                         .
                                         <p>Cardio (30 min)</p>
                                     </div>
