@@ -30,12 +30,12 @@ if(isset($_POST['submit']) && $resultado === true && isset($_POST['remember-me']
     $_SESSION['logado'] = true;
     $_SESSION['email'] = $dadosFormulario->getEmail();
     $_SESSION['tipo_usuario'] = 'usuario';
-    header('Location: landing-page.php');
+    header('Location: dashboard-usuario.php');
     exit();
 }
 //Se a consulta ao banco foi um sucesso, e o usuario não selecionou o botão remember-me
 if(isset($_POST['submit']) === true && $resultado === true) {
-    header('Location: landing-page.php');
+    header('Location: dashboard-usuario.php');
     exit();
 }
 

@@ -7,8 +7,7 @@ require '../../model/BancoDados.php';
 $dadosFormulario = new CapturarDadosCadastro();
 $contaCriadaComSucesso = false;
 $erros = '';
-$errosSenha = [];
-$errosEmail = [];
+$errosLista = [];
 $nomeVazio = false;
 //Captura dados do tipo usuario
 if($dadosFormulario->capturarDadosDeCadastro("usuario")) {
@@ -34,9 +33,7 @@ if($dadosFormulario->capturarDadosDeCadastro("usuario")) {
         $erros = 'Array de dados errada!';
     }
 } else {
-    // Se houver erros de validação
-    $errosSenha = $dadosFormulario->getErrosValidacao();
-    $errosEmail = $dadosFormulario->getErros();
+    // Se houver erros de validação coloca no array $errosLista
+    $errosLista = $dadosFormulario->getErros();
 }
-
 ?>

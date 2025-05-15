@@ -39,7 +39,7 @@ main {
     border-radius: 10px;
     padding: 10px 30px;
     width: 450px;
-    height: 630px;
+    height: 700px;
     margin-bottom: 50px;
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
@@ -98,7 +98,7 @@ h2 {
 .input-container {
     display: flex;
     flex-direction: column;
-    margin: 10px 0px;
+    margin-top: 10px;
     position: relative;
 }
 
@@ -230,6 +230,7 @@ h2 {
     font-size: 16px;
     font-weight: 500;
     text-decoration: none;
+    margin: 10px;
 }
 
 .register-link a:hover {
@@ -247,4 +248,9 @@ input:focus {
 
 .conta-criada {
     height: 25px;
+}
+
+.nome-erro {
+    height: 16px;
+    margin: 5px 0px;
 }

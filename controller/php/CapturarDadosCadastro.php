@@ -12,7 +12,6 @@ class CapturarDadosCadastro {
     private string $tipoUsuario = '';
     private bool $senhasDiferentes = false;
     private array $erros = [];
-    private array $errosValidacao = [];
     private DateTime $hoje;
 //Essa função serve para verificar se o usuário enviou o formulário, verifica se os campos foram enviados vazios
 //Se não estão vazios, insere os dados capturados nos atributos da classe e retonar true
@@ -59,15 +58,20 @@ class CapturarDadosCadastro {
             $this->erros[] = 'Email inválido!';
         }
         if(strlen($this->senha) < 8) {
-            $this->errosValidacao[] = "No mínimo 8 caracteres.";
+            $this->erros[] = "No mínimo 8 caracteres!";
+            return false;
         } else if(!preg_match('/[A-Z]/', $this->senha)) {
-            $this->errosValidacao[] = "No mínimo uma letra maiúscula.";
+            $this->erros[] = "No mínimo uma letra maiúscula!";
+            return false;
         } else if(!preg_match('/[a-z]/', $this->senha)) {
-            $this->errosValidacao[] = "No mínimo uma letra minúscula.";
+            $this->erros[] = "No mínimo uma letra minúscula!";
+            return false;
         } else if(!preg_match('/[0-9]/', $this->senha)) {
-            $this->errosValidacao[] = "No mínimo um número.";
+            $this->erros[] = "No mínimo um número!";
+            return false;
         } else if(!preg_match('/[\W_]/', $this->senha)) {
-            $this->errosValidacao[] = "No mínimo um caractere especial.";
+            $this->erros[] = "No mínimo um caractere especial!";
+            return false;
         }
         //Verifica se a senha e confirmarSenha são iguais
         if($this->senha != $this->confirmarSenha ) {
@@ -105,9 +109,6 @@ class CapturarDadosCadastro {
         return $this->erros;
     }
 
-    public function getErrosValidacao() : array {
-        return $this->errosValidacao;
-    }
 }
 
 ?>
