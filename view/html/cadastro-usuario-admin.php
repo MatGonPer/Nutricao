@@ -29,7 +29,7 @@ require "../../controller/php/CadastroUsuarioAdmin.php";
                         <label>Email:</label>
                         <br>
                         <div class="input-container">
-                            <input name="email" placeholder="<?php if(!empty($errosEmail)) { echo $errosEmail['Email inválido!']; } else { echo 'Digite seu email'; } ?>" type="email">
+                            <input name="email" placeholder="<?php if(!empty($errosEmail)) { echo 'Email inserido é inválido!'; } else { echo 'Digite seu email'; } ?>" type="email">
                             <img src="../assets/icons/login-register/user-icon.svg" alt="Ícone de usuário" width="22" height="22">
                         </div>
                     </section>
@@ -37,7 +37,7 @@ require "../../controller/php/CadastroUsuarioAdmin.php";
                         <label>Senha:</label>
                         <br>
                         <div class="input-container">
-                            <input name="senha" placeholder="<?php if(!empty($errosSenha)) { echo $errosSenha[0]; } else { echo 'Digite a sua senha'; } ?>" type="password">
+                            <input name="senha" placeholder="<?php if(!empty($errosSenha)) { echo 'Senha inserida é inválida!'; } else { echo 'Digite a sua senha'; } ?>" type="password">
                             <img src="../assets/icons/login-register/password-icon.svg" alt="Ícone de usuário" width="22" height="22">
                         </div>
                     </section>
@@ -58,7 +58,7 @@ require "../../controller/php/CadastroUsuarioAdmin.php";
                         </section>
                         <section class="input-pessoal-inside">
                             <label>Gênero:</label>
-                            <div class="input-container-gender">
+                            <div class="input-div">
                                 <select class="select" name="sexo">
                                     <option value="M">Masculino</option>
                                     <option value="F">Feminino</option>
@@ -67,23 +67,14 @@ require "../../controller/php/CadastroUsuarioAdmin.php";
                             </div>
                         </section>
                     </div>
-                    <div>
+                    <div class="conta-criada">
                         <?php
-                            if($contaCriadaComSucesso) {
-                            echo "<p style=\"color: #0E34A0; font-size: 16px; text-align: center;\">Conta criada com sucesso!</p>";
-                            } else if (!empty($erros)) { // Alterado de $error para $erros
-                                echo "<p style=\"color: red; font-size: 16px; text-align: center;\">Erro: {$erros}</p>";
-                            }
-                            // Adicione isso para mostrar erros de validação
-                            if(!empty($errosSenha)) {
-                                foreach($errosSenha as $erro) {
-                                    echo "<p style=\"color: red; font-size: 16px; text-align: center;\">{$erro}</p>";
-                                }
-                            }
-                            if(!empty($errosEmail)) {
-                                foreach($errosEmail as $erro) {
-                                    echo "<p style=\"color: red; font-size: 16px; text-align: center;\">{$erro}</p>";
-                                }
+                            if(isset($_POST['submit'])) {
+                                if($contaCriadaComSucesso) {
+                                    echo "<p style=\"color: #0E34A0; font-size: 16px; text-align: center;\">Conta criada com sucesso!</p>";
+                                    } else {
+                                        echo "<p style=\"color: red; font-size: 16px; text-align: center;\">Dados inseridos inválidos!</p>";
+                                    }
                             }
                         ?>
                     </div>

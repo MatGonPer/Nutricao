@@ -7,7 +7,7 @@
 }
 
 body {
-    background-image: url(../assets/login-comercial/background-login-comercial-original.jpg);
+    background-image: url(../assets/parceiro-comercial-background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -39,7 +39,7 @@ main {
     border-radius: 10px;
     padding: 30px;
     width: 450px;
-    height: 550px;
+    height: 500px;
     margin-bottom: 50px;
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
@@ -55,7 +55,7 @@ h1 {
 
 h2 {
     color: #2F2F2F;
-    font-size: 25px;
+    font-size: 26px;
     padding-bottom: 10px;
     margin-bottom: 10px;
     text-align: center;
@@ -130,7 +130,6 @@ h2 {
     align-items: center;
     gap: 20px;
     margin: 35px 0px;
-    margin-top: 30px;
 }
 
 .acess-link button {
@@ -143,12 +142,11 @@ h2 {
     padding: 10px 136px;
     cursor: pointer;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    transition: transform 0.4ms ease;
+    transition: 0.5s;
 }
 
 .acess-link button:hover {
     transition: 0.5s;
-    transform: scale(1.03);
     background-color: #4CFF00;
 }
 
@@ -162,7 +160,7 @@ h2 {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin: 32px 0px;
+    margin: 20px 0px;
 }
 
 .register-link button {
@@ -175,6 +173,7 @@ h2 {
     padding: 10px 80px;
     cursor: pointer;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: 0.5s;
 }
 
 .register-link button:hover {
@@ -197,20 +196,4 @@ input {
 
 input:focus {
     outline: none;
-}
-
-.invalid {
-    color: red;
-    font-size: 16px;
-    font-weight: 200;
-    margin: 0px 10px;
-
-}
-
-#registerButton {
-    transition: transform 0.5s ease;
-}
-
-#registerButton:hover {
-    transform: scale(1.03);
 }

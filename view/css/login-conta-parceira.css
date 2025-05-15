@@ -143,7 +143,7 @@ h2 {
     padding: 10px 136px;
     cursor: pointer;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    transition: transform 0.4ms ease;
+    transition: 0.5s;
 }
 
 .acess-link button:hover {
@@ -175,6 +175,7 @@ h2 {
     padding: 10px 80px;
     cursor: pointer;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: 0.5s;
 }
 
 .register-link button:hover {

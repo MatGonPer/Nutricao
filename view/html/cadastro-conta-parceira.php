@@ -78,7 +78,7 @@
                         <button type="submit">Realizar cadastro</button>
                     </section>
                     <section class="register-link">
-                        <a href="login-usr-adm.php">Já tenho uma conta</a>
+                        <a href="login-usuario-admin.php">Já tenho uma conta</a>
                     </section>
                 </form>  
             </section>

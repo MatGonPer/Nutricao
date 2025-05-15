@@ -8,77 +8,45 @@
     <link rel="stylesheet" href="../css/login-comercial.css">
 </head>
 <body>
-    <?php 
-        require_once "../php/sanitization-validation.php";
-    ?>
     <main>
         <div class="external-container">
             <h1>NUTRIFIT</h1>
             <section>
-                <form class="container" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
-                    <h2>Acesse a sua conta comercial</h2>
+                <form class="container" action="">
+                    <h2>Acesse a sua conta comercial</h1>
                     <section class="input-box">
                         <label for="email">Email:</label>
                         <br>
                         <div class="input-container">
-                            <input placeholder="Digite o seu email" type="email" name="email">
+                            <input placeholder="Digite o seu email" type="email">
                             <img src="../assets/icons/login-register/user-icon.svg" alt="Ícone de usuário" width="22" height="22">
                         </div>
-                        <?php 
-                            if(!$formSubmitted) {
-                                echo "<br>";
-                            }
-                            if($formSubmitted) {
-                                if(!empty($errorsEmail)) {
-                                    echo "<p class='invalid'>" . htmlspecialchars($errorsEmail[0]) . "</p>";
-                                } else {
-                                    echo "<br>";
-                                }
-                            }
-                        ?>
                     </section>
                     <section class="input-box">
                         <label for="password">Senha:</label>
                         <br>
                         <div class="input-container">
-                            <input placeholder="Digite a sua senha" type="password" name="password">
+                            <input placeholder="Digite a sua senha" type="password">
                             <img src="../assets/icons/login-register/password-icon.svg" alt="Ícone de usuário" width="22" height="22">
                         </div>
-                        <?php
-                            if(!$formSubmitted) {
-                                echo "<br>";
-                            }
-                            if($formSubmitted) {
-                                if(!empty($errorsPassword)) {
-                                    echo "<p class='invalid'>" . htmlspecialchars($errorsPassword[0]) . "</p>";
-                                } else {
-                                    echo "<br>";
-                                }
-                            }
-                        ?>
                     </section>
                     <section class="acess-link">
-                        <button type="submit" name="submit">Acessar conta</button>
+                        <button type="submit">Acessar conta</button>
                     </section>
                     <section class="remember-forgot">
                         <label for="checkbox">
-                        <input type="checkbox" name="remember-me">
+                        <input type="checkbox">
                         Lembre-me
                         </label>
-                        <a href="">Esqueci minha senha</a>
+                        <a href="recuperacao-senha.php">Esqueci minha senha</a>
                     </section>
                     <section class="register-link">
-                        <button type="button" id="registerButton">Cadastrar-se</button>
+                        <button type="submit">Cadastrar-se</button>
                         <a href="login-conta-parceira.php">Sou um parceiro</a>
                     </section>
                 </form>  
             </section>
         </div>    
     </main>
-    <script>
-        document.getElementById('registerButton').addEventListener('click', function() {
-            window.location.href = "cadastro-conta-comercial.php";
-        });
-    </script>
 </body>
 </html>
