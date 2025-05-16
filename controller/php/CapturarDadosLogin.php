@@ -7,11 +7,6 @@ class CapturarDadosLogin {
     private array $erros = [];
     private string $tipoUsuario = '';
 
-    /*public function __construct($email, $senha) {
-        $this->email = $email;
-        $this->senha = $senha;
-    }*/
-
     public function capturarDados($tipoUsuario) : bool {
         //Verifica se o usuário deu submit, e verifica se os campos de email e senha estão vazios
         //Se não tiver submitado, ou se estiverem vazios, retornar false
@@ -44,6 +39,10 @@ class CapturarDadosLogin {
         return $this->email;
     }
 
+    public function getTipoUsuario() {
+        return $this->tipoUsuario;
+    }
+    
     public function getSenha() {
         return $this->senha;
     }

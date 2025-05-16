@@ -1,5 +1,5 @@
 <?php
-require "../../controller/php/CadastroUsuarioAdmin.php";
+require "../../controller/php/CadastrarUsuario.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

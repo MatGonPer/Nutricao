@@ -1,5 +1,4 @@
 <?php
-
 //Classe feita para capturar a entrada de dados do formulário de cadastro
 class CapturarDadosCadastro {
 //Os atributos da classe serão onde ficará armazenado os dados capturas pelo formulário
@@ -52,11 +51,18 @@ class CapturarDadosCadastro {
         $this->dataNascimento = $_POST['dataNascimento'];
         $this->sexo= $_POST['sexo'];
         $this->tipoUsuario = $tipoUsuario;
-        //Sanitiza e valida email e senha
+
+        //Esse trecho faz parte da validação e sanitização do email, e verificação se o email é real.
+        //Remove espaços em branco do email
+        $this->email = trim($this->email);
+        //Sanitiza o email
         $this->email = filter_var($this->email, FILTER_SANITIZE_EMAIL);
+        //Valida o email
         if(!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
             $this->erros[] = 'Email inválido!';
         }
+
+        //Verifica as condições para a uma senha forte
         if(strlen($this->senha) < 8) {
             $this->erros[] = "No mínimo 8 caracteres!";
             return false;
@@ -99,10 +105,6 @@ class CapturarDadosCadastro {
             $dados[] = 'erro';
             return $dados;
         }
-    }
-
-    public function validarSanizitarDadosDeCadastros() {
-        
     }
 
     public function getErros() : array {
