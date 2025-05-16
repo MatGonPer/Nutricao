@@ -148,9 +148,4 @@ class BancoDeDados {
         return $this->conexao;
     }
 }
-/*Remova os comentários do código abaixo para testar se a conexão com o banco de dados foi bem sucedida
-//E testa a função de inserir dados na tabela usuario com campos e valores definidos no array $reg
-$bd = new BancoDados();
-$bd->conectarBanco();
-*/
 ?>
