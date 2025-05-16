@@ -130,8 +130,18 @@ class BancoDeDados {
         }
     }
 
-    public function deletar() {
+    //Função que deleta todos os dados de uma $tabela pelo id
+    public function deletar(string $tabela, string $id) : bool {
+        $sql = "DELETE FROM {$tabela} WHERE id = \$1";
 
+        $resultado = pg_query_params($this->conexao, $sql, array($id));
+
+        if($resultado) {
+            pg_free_result($resultado);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function getConexao() {
