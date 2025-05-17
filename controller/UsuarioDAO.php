@@ -1,16 +1,22 @@
 <?php
 
-require "../../model/BancoDeDados.php";
-require "../../model/ValidarVerificarSenha.php";
-require "../../model/ValidarDataDeNascimento.php";
-require "../../model/ValidarEmail.php";
-require "../../model/ValidarNome.php";
+require_once __DIR__ . "/../model/BancoDeDados.php";
+require_once __DIR__ . "/../model/ValidarVerificarSenha.php";
+require_once __DIR__ . "/../model/ValidarDataDeNascimento.php";
+require_once __DIR__ . "/../model/ValidarEmail.php";
+require_once __DIR__ . "/../model/ValidarNome.php";
 
 class UsuarioDAO {
 
     private array $erros = [];
+    private BancoDeDados $banco;
+
+    public function __construct(BancoDeDados $banco) {
+        $this->banco = $banco;
+    }
 
     public function cadastrar(string $nome, string $email, string $senha, string $cSenha, string $dataNasc, string $sexo) : bool {
+        $erros = '';
         //Validar nome
         $validarNome = new ValidarNome();
         $nomeSanitizado = $validarNome->sanitizar($nome);
@@ -59,30 +65,61 @@ class UsuarioDAO {
             'tipo_usuario' => 'usuario'
         ];
 
-        $banco = new BancoDeDados();
-        if(!$banco->conectar()) {
+        if(!$this->banco->conectar()) {
             $this->erros[] = "Erro de conexão com banco";
             return false;
         }
 
-        if(!$banco->inserir('usuario', $dados)) {
+        if(!$this->banco->inserir('usuario', $dados)) {
             $this->erros[] = "Erro ao  inserir usuário";
             return false;
         }
 
-        $banco->desconectar();
+        $this->banco->desconectar();
         return true;
     }
 
-    public function consultar(BancoDeDados $banco, array $dados) : bool {
-        if(!$banco->conectar()) {
+    public function consultarDados(array $dados) : bool {
+        if(!$this->banco->conectar()) {
             return false;
         }
-        if(!$banco->consultar('usuario', $dados)) {
+        if(!$this->banco->consultar('usuario', $dados)) {
             return false;
         }
-        $banco->desconectar();
+        $this->banco->desconectar();
         return true;
+    }
+
+    public function consultarId(string $id) : bool {
+        $dados = [
+            'id' => $id
+        ];
+
+        if(!$this->banco->conectar()) {
+            return false;
+        }
+        if(!$this->banco->consultar('usuario', $dados)) {
+            return false;
+        }
+        $this->banco->desconectar();
+        return true;
+    }
+
+    public function consultarEmail(string $email) : string {
+        $dados = [
+            'email' => $email
+        ];
+        $hash = '';
+
+        if(!$this->banco->conectar()) {
+            return '';
+        }
+
+        $array = $this->banco->consultar('usuario', $dados);
+        $hash = $array[0]['senha'];
+        $this->banco->desconectar();
+
+        return $hash;
     }
 
     public function atualizar() {

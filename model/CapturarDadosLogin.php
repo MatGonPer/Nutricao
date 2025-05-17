@@ -4,8 +4,8 @@ class CapturarDadosLogin {
 
     private string $email = '';
     private string $senha = '';
-    private array $erros = [];
     private string $tipoUsuario = '';
+    private array $erros = [];
 
     public function capturarDados($tipoUsuario) : bool {
         //Verifica se o usuário deu submit, e verifica se os campos de email e senha estão vazios
@@ -13,19 +13,21 @@ class CapturarDadosLogin {
         if(!isset($_POST['submit'])) {
             return false;
         }
+
         if(empty($_POST['email'])) {
             $this->erros[] = "Email não inserido!";
-        } else if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-            $this->erros[] = "Email inválido!";
         }
+
         if(empty($_POST['senha'])) {
             $this->erros[] = "Senha não inserida!";
         }
+
         if(!empty($this->erros)) {
             return false;
         }
+
         //Insere os dados do formulário nos atributos da classe
-        $this->email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+        $this->email = $_POST['email'];
         $this->senha = $_POST['senha'];
         $this->tipoUsuario = $tipoUsuario;
         return true;

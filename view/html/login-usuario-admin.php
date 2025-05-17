@@ -1,5 +1,5 @@
 <?php
-require "../../controller/php/LoginUsuario.php";
+require "../../model/LoginUsuario.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

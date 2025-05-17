@@ -1,5 +1,5 @@
 <?php
-require "../../controller/php/CadastrarUsuario.php";
+require_once "../../model/CadastrarUsuario.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -26,23 +26,25 @@ require "../../controller/php/CadastrarUsuario.php";
                     </section>
                     <div class="nome-erro">
                         <?php
-                        if(in_array("Nome não inserido", $errosLista)) {
+                        if(in_array("Nome não inserido", $camposVazios)) {
                             echo "<p style=\"color: red; font-size: 15px; margin-left: 12px;\">Nome não inserido!</p>";
-                        }               
+                        } else if(in_array("Nome inválido", $erros)) {
+                            echo "<p style=\"color: red; font-size: 15px; margin-left: 12px;\">Nome inválido!</p>";
+                        }           
                         ?>
                     </div>
                     <section class="input-box">
                         <label>Email:</label>
                         <div class="input-container">
-                            <input name="email" placeholder="<?php if(!empty($errosEmail)) { echo 'Email inserido é inválido!'; } else { echo 'Digite seu email'; } ?>" type="email">
+                            <input name="email" placeholder="Digite seu email" type="email">
                             <img src="../assets/icons/login-register/user-icon.svg" alt="Ícone de usuário" width="22" height="22">
                         </div>
                     </section>
                     <div class="nome-erro">
                         <?php
-                        if(in_array("Email não inserido", $errosLista)) {
+                        if(in_array("Email não inserido", $camposVazios)) {
                             echo "<p style=\"color: red; font-size: 15px; margin-left: 12px;\">Email não inserido!</p>";
-                        } else if (in_array("Email não inserido", $errosLista) == false && in_array("Email inválido!", $errosLista) == true) {
+                        } else if (in_array("Email inválido", $erros)) {
                             echo "<p style=\"color: red; font-size: 15px; margin-left: 12px;\">Email inválido!</p>";
                         }         
                         ?>
@@ -50,53 +52,57 @@ require "../../controller/php/CadastrarUsuario.php";
                     <section class="input-box">
                         <label>Senha:</label>
                         <div class="input-container">
-                            <input name="senha" placeholder="<?php if(!empty($errosSenha)) { echo 'Senha inserida é inválida!'; } else { echo 'Digite a sua senha'; } ?>" type="password">
+                            <input name="senha" placeholder="'Digite a sua senha'" type="password">
                             <img src="../assets/icons/login-register/password-icon.svg" alt="Ícone de usuário" width="22" height="22">
                         </div>
                     </section>
                     <div class="nome-erro">
                         <?php
-                        if(in_array("Senha não inserida", $errosLista)) {
+                        if(in_array("Senha não inserida", $camposVazios)) {
                             echo "<p style=\"color: red; font-size: 15px; margin-left: 12px;\">Senha não inserida!</p>";
-                        } else if(in_array("No mínimo 8 caracteres!", $errosLista)) {
-                            echo "<p style=\"color: red; font-size: 15px; margin-left: 12px;\">No mínimo 8 caracteres!</p>";
-                        } else if(in_array("No mínimo uma letra maiúscula!", $errosLista)) {
-                            echo "<p style=\"color: red; font-size: 15px; margin-left: 12px;\">No mínimo uma letra maiúscula!</p>";
-                        } else if(in_array("No mínimo uma letra minúscula!", $errosLista)) {
-                            echo "<p style=\"color: red; font-size: 15px; margin-left: 12px;\">No mínimo uma letra minúscula!</p>";
-                        } else if(in_array("No mínimo um número!", $errosLista)) {
-                            echo "<p style=\"color: red; font-size: 15px; margin-left: 12px;\">No mínimo um número!</p>";
-                        } else if(in_array("No mínimo um caractere especial!", $errosLista)) {
-                            echo "<p style=\"color: red; font-size: 15px; margin-left: 12px;\">No mínimo um caractere especial!</p>";
-                        } else if(in_array("Senhas diferentes", $errosLista)) {
+                        } else if(in_array("Senhas diferentes", $errosSenha)) {
                             echo "<p style=\"color: red; font-size: 15px; margin-left: 12px;\">Senhas diferentes!</p>";
+                        } else if(in_array("A senha deve ter no minimo 8 caracteres", $errosSenha)) {
+                            echo "<p style=\"color: red; font-size: 15px; margin-left: 12px;\">A senha deve ter no minimo 8 caracteres!</p>";
+                        } else if(in_array("A senha deve ter no máximo 72 caracteres", $errosSenha)) {
+                            echo "<p style=\"color: red; font-size: 15px; margin-left: 12px;\">A senha deve ter no máximo 72 caracteres!</p>";
+                        } else if(in_array("A senha deve conter pelo menos uma letra maiúscula", $errosSenha)) {
+                            echo "<p style=\"color: red; font-size: 15px; margin-left: 12px;\">A senha deve conter uma letra maiúscula!</p>";
+                        } else if(in_array("A senha deve conter pelo menos uma letra minúscula", $errosSenha)) {
+                            echo "<p style=\"color: red; font-size: 15px; margin-left: 12px;\">A senha deve conter uma letra minúscula!</p>";
+                        } else if(in_array("A senha deve conter pelo menos um número", $errosSenha)) {
+                            echo "<p style=\"color: red; font-size: 15px; margin-left: 12px;\">A senha deve conter um número!</p>";
+                        } else if(in_array("A senha deve conter pelo menos um caractere especial", $errosSenha)) {
+                            echo "<p style=\"color: red; font-size: 15px; margin-left: 12px;\">A senha deve conter um caractere especial!</p>";
                         }
                         ?>
                     </div>
                     <section class="input-box">
                         <label>Senha:</label>
                         <div class="input-container">
-                            <input name="confirmarSenha" class="input-info" placeholder="<?php if(!empty($errosSenha)) { echo $errosSenha[0]; } else { echo 'Digite a sua senha novamente'; } ?>" type="password">
+                            <input name="confirmarSenha" class="input-info" placeholder="Digite a sua senha novamente" type="password">
                             <img src="../assets/icons/login-register/password-icon.svg" alt="Ícone de usuário" width="22" height="22">
                         </div>
                     </section>
                     <div class="nome-erro">
                         <?php
-                        if(in_array("Senha não inserida", $errosLista)) {
+                        if(in_array("Senha não inserida", $camposVazios)) {
                             echo "<p style=\"color: red; font-size: 15px; margin-left: 12px;\">Senha não inserida!</p>";
-                        } else if(in_array("No mínimo 8 caracteres!", $errosLista)) {
-                            echo "<p style=\"color: red; font-size: 15px; margin-left: 12px;\">No mínimo 8 caracteres!</p>";
-                        } else if(in_array("No mínimo uma letra maiúscula!", $errosLista)) {
-                            echo "<p style=\"color: red; font-size: 15px; margin-left: 12px;\">No mínimo uma letra maiúscula!</p>";
-                        } else if(in_array("No mínimo uma letra minúscula!", $errosLista)) {
-                            echo "<p style=\"color: red; font-size: 15px; margin-left: 12px;\">No mínimo uma letra minúscula!</p>";
-                        } else if(in_array("No mínimo um número!", $errosLista)) {
-                            echo "<p style=\"color: red; font-size: 15px; margin-left: 12px;\">No mínimo um número!</p>";
-                        } else if(in_array("No mínimo um caractere especial!", $errosLista)) {
-                            echo "<p style=\"color: red; font-size: 15px; margin-left: 12px;\">No mínimo um caractere especial!</p>";
-                        } else if(in_array("Senhas diferentes", $errosLista)) {
+                        } else if(in_array("Senhas diferentes", $errosSenha)) {
                             echo "<p style=\"color: red; font-size: 15px; margin-left: 12px;\">Senhas diferentes!</p>";
-                        }              
+                        } else if(in_array("A senha deve ter no minimo 8 caracteres", $errosSenha)) {
+                            echo "<p style=\"color: red; font-size: 15px; margin-left: 12px;\">A senha deve ter no minimo 8 caracteres!</p>";
+                        } else if(in_array("A senha deve ter no máximo 72 caracteres", $errosSenha)) {
+                            echo "<p style=\"color: red; font-size: 15px; margin-left: 12px;\">A senha deve ter no máximo 72 caracteres!</p>";
+                        } else if(in_array("A senha deve conter pelo menos uma letra maiúscula", $errosSenha)) {
+                            echo "<p style=\"color: red; font-size: 15px; margin-left: 12px;\">A senha deve conter uma letra maiúscula!</p>";
+                        } else if(in_array("A senha deve conter pelo menos uma letra minúscula", $errosSenha)) {
+                            echo "<p style=\"color: red; font-size: 15px; margin-left: 12px;\">A senha deve conter uma letra minúscula!</p>";
+                        } else if(in_array("A senha deve conter pelo menos um número", $errosSenha)) {
+                            echo "<p style=\"color: red; font-size: 15px; margin-left: 12px;\">A senha deve conter um número!</p>";
+                        } else if(in_array("A senha deve conter pelo menos um caractere especial", $errosSenha)) {
+                            echo "<p style=\"color: red; font-size: 15px; margin-left: 12px;\">A senha deve conter um caractere especial!</p>";
+                        }            
                         ?>
                     </div>
                     <div class="input-pessoal">
@@ -117,13 +123,18 @@ require "../../controller/php/CadastrarUsuario.php";
                             </div>
                         </section>
                     </div>
+                    <div class="nome-erro">
+                        <?php
+                        if(in_array("Data de nascimento inválida", $erros)) {
+                            echo "<p style=\"color: red; font-size: 15px; margin-left: 12px;\">Data de nascimento inválida!</p>";
+                        }
+                        ?>
+                    </div>
                     <div class="conta-criada">
                         <?php
                             if(isset($_POST['submit'])) {
                                 if($contaCriadaComSucesso) {
                                     echo "<p style=\"color: #0E34A0; font-size: 16px; text-align: center;\">Conta cadastrada com sucesso!</p>";
-                                    } else {
-                                        echo "<p style=\"color: red; font-size: 16px; text-align: center;\">Não foi possível criar uma conta!</p>";
                                     }
                             }
                         ?>

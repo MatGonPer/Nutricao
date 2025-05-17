@@ -8,22 +8,37 @@ if(isset($_SESSION['logado']) && $_SESSION['logado'] === true) {
     exit();
 }
 
-require "../../controller/php/CapturarDadosLogin.php";
-require "../../controller/php/VerificarLogin.php";
+require_once "CapturarDadosLogin.php";
+require_once __DIR__ . "/../controller/UsuarioDAO.php";
+require_once "BancoDeDados.php";
 
-$dadosFormulario = new CapturarDadosLogin();
-$verificarLogin = new VerificarLogin();
+$bancoDeDados = new BancoDeDados();
+$usuarioDAO = new UsuarioDAO($bancoDeDados);
+$capturarDados = new CapturarDadosLogin();
 $resultado = false;
 
 //Tenta capturar os dados do formulário
-if($dadosFormulario->capturarDados('usuario')) {
-    error_log("Dados capturados - Email: " . $dadosFormulario->getEmail());
-    if($verificarLogin->verificarLogin('usuario', $dadosFormulario->getEmail(), $dadosFormulario->getSenha(), $dadosFormulario->getTipoUsuario())) {
-        error_log("Login bem sucedido");
-        $resultado = true;
-    } else {
-        error_log("Login falhou");
+if($capturarDados->capturarDados('usuario')) {
+    $hash = '';
+    $hash = $usuarioDAO->consultarEmail($capturarDados->getEmail());
+    if(empty($hash)) {
         $resultado = false;
+    } else {
+        if(password_verify($capturarDados->getSenha(), $hash)) {
+            $dados = [
+                "email" => $capturarDados->getEmail(),
+                "senha" => $hash,
+                "tipo_usuario" => "usuario"
+            ];
+
+            if($usuarioDAO->consultarDados($dados) === true) {
+                $resultado = true;
+            } else {
+                $resultado = false;
+            }
+        }
+        
+        
     }
 }
 

@@ -6,18 +6,16 @@ class ValidarVerificarSenha {
     private int $tamanhoMaximo = 72;
 
     public function validar(string $senha, string $confirmarSenha) : array {
-        $erros = [];
-
-        if($senha !== $confirmarSenha) {
-            $erros[] = 'As senhas não conferem';
+        if($senha != $confirmarSenha) {
+            $erros[] = 'Senhas diferentes';
         }
 
         if(strlen($senha) < $this->tamanhoMinimo) {
-            $erros[] = "A senha deve ter no minimo {$this->tamanhoMinimo} caracteres";
+            $erros[] = "A senha deve ter no minimo 8 caracteres";
         }
 
         if(strlen($senha) > $this->tamanhoMaximo) {
-            $erros[] = "A senha deve ter no máximo {this->tamanhoMaximo} caracteres";
+            $erros[] = "A senha deve ter no máximo 72 caracteres";
         }
 
         if(!preg_match('/[A-Z]/', $senha)) {

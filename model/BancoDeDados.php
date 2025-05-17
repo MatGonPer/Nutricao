@@ -148,4 +148,14 @@ class BancoDeDados {
         return $this->conexao;
     }
 }
+/*
+$dados = [
+            "email" => 'matheushtht@gmail.com',
+            "senha" => '$2y$10$4M23aVWEhekA8c.CHVBcvu6MZPEIlAbOJdgEDM5N2U5G/XaNqsIn2',
+            "tipo_usuario" => "usuario"
+        ];
+$banco = new BancoDeDados();
+$banco->conectar();
+$resultado = $banco->consultar('usuario', $dados);
+var_dump($resultado);*/
 ?>
