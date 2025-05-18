@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/perfil-usuario.css">
-    <title>Usuário</title>
+    <title>Meu perfil</title>
 </head>
 <body>
     <div class="container">
         <section class="left">
             <div class="profile">
                 <figure>
-                    <img src="../assets/perfil-usuario/user-icon.jpg" alt="">
+                    <img src="../assets/perfil-usuario/user-icon-default-mod.jpeg" alt="Foto de perfil">
                 </figure>
                 <h2>Francisco do Nascimento</h2>
             </div>
             <aside>
                 <nav>
                     <ul>
-                        <li><a  href="landing-page.php"> <img src="../assets/icons/dashboard-usuario/inicio-icon.svg" alt=""> Início</a></li>
-                        <li><a href="perfil-usuario.php"> <img src="../assets/icons/dashboard-usuario/user-icon.svg" alt=""> Usuário</a></li>
-                        <li><a href="dashboard-usuario.php"> <img src="../assets/icons/dashboard-usuario/desempenho-icon.svg" alt=""> Desempenho</a></li>
-                        <li><a href="treinos.php"> <img src="../assets/icons/dashboard-usuario/treino-icon.svg" alt=""> Treino</a></li>
-                        <li><a href="consultas-agendadas.php"> <img src="../assets/icons/dashboard-usuario/consulta-icon.svg" alt=""> Consultas</a></li>
-                        <li><a href="parceiros.php"> <img src="../assets/icons/dashboard-usuario/market-icon.svg" alt=""> Catálogo</a></li>
-                        <li><a href="suporte.php"> <img src="../assets/icons/dashboard-usuario/suport-icon.svg" alt=""> Suporte</a></li>
-                        <li><a href="#"> <img src="../assets/icons/dashboard-usuario/config-icon.svg" alt=""> Configurações</a></li>
+                        <li><a href="landing-page.php">Início</a></li>
+                        <li><a href="perfil-usuario.php">Usuário</a></li>
+                        <li><a href="dashboard-usuario.php">Desempenho</a></li>
+                        <li><a href="treinos.php">Treino</a></li>
+                        <li><a href="consultas-agendadas.php">Consultas</a></li>
+                        <li><a href="parceiros.php">Catálogo</a></li>
+                        <li><a href="suporte.php">Suporte</a></li>
+                        <li><a href="#">Configurações</a></li>
                     </ul>
                 </nav>
             </aside>
@@ -36,9 +36,9 @@
                 <header class="profile-header">
                     <div class="profille-info">
                         <figure>
-                            <img class="img" src="../assets/perfil-usuario/user-icon.jpg" alt="foto de perfil">
+                            <img class="img" src="../assets/perfil-usuario/user-icon-default-mod.jpeg" alt="Foto de perfil">
                         </figure>
-                        <h3 style="font-weight: bold;">Francisco do Nascimento</h3>
+                        <h3>Francisco do Nascimento</h3>
                     </div>
                         <p>Perfil 50% completo</p>
                         <div class="progress-bar">
