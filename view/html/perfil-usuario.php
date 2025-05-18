@@ -32,7 +32,7 @@
             </aside>
         </section>
         <section class="container-right">
-            <main class="profile-content">
+            <main>
                 <header class="profile-header">
                     <div class="profille-info">
                         <figure>

@@ -16,11 +16,12 @@ $bancoDeDados = new BancoDeDados();
 $usuarioDAO = new UsuarioDAO($bancoDeDados);
 $capturarDados = new CapturarDadosLogin();
 $resultado = false;
+$id = '';
 
 //Tenta capturar os dados do formulário
 if($capturarDados->capturarDados('usuario')) {
     $hash = '';
-    $hash = $usuarioDAO->consultarEmail($capturarDados->getEmail());
+    $hash = $usuarioDAO->consultarHash($capturarDados->getEmail());
     if(empty($hash)) {
         $resultado = false;
     } else {
@@ -32,6 +33,7 @@ if($capturarDados->capturarDados('usuario')) {
             ];
 
             if($usuarioDAO->consultarDados($dados) === true) {
+                $id = $usuarioDAO->recuperarId($capturarDados->getEmail());
                 $resultado = true;
             } else {
                 $resultado = false;
@@ -43,7 +45,9 @@ if($capturarDados->capturarDados('usuario')) {
 }
 
 //Se a consulta ao banco foi um sucesso, e o usuário selecionou o botão remember-me, seta logado para true, e loga o usuario
-if(isset($_POST['submit']) && $resultado === true && isset($_POST['remember-me'])) {
+if(isset($_POST['submit']) && $resultado === true && isset($_POST['remember-me']) && !empty($id)) {
+    //UsuarioId serve pra guarda o Id do usuário para as outras páginas lembrarem de qual usuário mostrar as informações
+    $_SESSION['usuarioId'] = $id;
     $_SESSION['logado'] = true;
     $_SESSION['email'] = $dadosFormulario->getEmail();
     $_SESSION['tipo_usuario'] = 'usuario';
@@ -52,7 +56,9 @@ if(isset($_POST['submit']) && $resultado === true && isset($_POST['remember-me']
 }
 
 //Se a consulta ao banco foi um sucesso, e o usuario não selecionou o botão remember-me
-if(isset($_POST['submit']) === true && $resultado === true) {
+if(isset($_POST['submit']) === true && $resultado === true && !empty($id)) {
+    //UsuarioId serve pra guarda o Id do usuário para as outras páginas lembrarem de qual usuário mostrar as informações
+    $_SESSION['usuarioId'] = $id;
     header('Location: dashboard-usuario.php');
     exit();
 }

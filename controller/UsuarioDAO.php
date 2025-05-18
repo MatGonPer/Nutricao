@@ -105,7 +105,7 @@ class UsuarioDAO {
         return true;
     }
 
-    public function consultarEmail(string $email) : string {
+    public function consultarHash(string $email) : string {
         $dados = [
             'email' => $email
         ];
@@ -120,6 +120,21 @@ class UsuarioDAO {
         $this->banco->desconectar();
 
         return $hash;
+    }
+
+    public function recuperarId(string $email) : string {
+        $id = '';
+        $dados = [
+            'email' => $email
+        ];
+        
+        if(!$this->banco->conectar()) {
+            return '';
+        }
+
+        $array = $this->banco->consultar('usuario', $dados);
+        $id = $array[0]['id'];
+        return $id;
     }
 
     public function atualizar() {
