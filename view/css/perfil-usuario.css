@@ -6,6 +6,12 @@ body {
     box-sizing: border-box;
 }
 
+ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .container {
     width: 100dvw;
     height: 100dvh;
@@ -76,6 +82,8 @@ aside nav ul li {
 }
 
 aside nav ul li a {
+    display: flex;
+    gap: 12px;
     font-size: 23px;
     font-weight: 300;
     text-decoration: none;

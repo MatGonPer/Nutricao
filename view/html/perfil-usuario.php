@@ -19,14 +19,14 @@
             <aside>
                 <nav>
                     <ul>
-                        <li><a href="landing-page.php">Início</a></li>
-                        <li><a href="perfil-usuario.php">Usuário</a></li>
-                        <li><a href="dashboard-usuario.php">Desempenho</a></li>
-                        <li><a href="treinos.php">Treino</a></li>
-                        <li><a href="consultas-agendadas.php">Consultas</a></li>
-                        <li><a href="parceiros.php">Catálogo</a></li>
-                        <li><a href="suporte.php">Suporte</a></li>
-                        <li><a href="#">Configurações</a></li>
+                        <li><a href="landing-page.php"> <img src="../assets/perfil-usuario/incio-icon.svg" width="25px">Início</a></li>
+                        <li><a href="perfil-usuario.php"> <img src="../assets/perfil-usuario/profile-icon.svg" width="25px">Usuário</a></li>
+                        <li><a href="dashboard-usuario.php"> <img src="../assets/perfil-usuario/desempenho-icon.svg" width="25px">Desempenho</a></li>
+                        <li><a href="treinos.php"> <img src="../assets/perfil-usuario/treinos-icon.svg" width="25px">Treino</a></li>
+                        <li><a href="consultas-agendadas.php"> <img src="../assets/perfil-usuario/consultas-icon.svg" width="25px">Consultas</a></li>
+                        <li><a href="parceiros.php"> <img src="../assets/perfil-usuario/catalogo-icon.svg" width="25px">Catálogo</a></li>
+                        <li><a href="suporte.php"> <img src="../assets/perfil-usuario/suporte-icon.svg" width="25px">Suporte</a></li>
+                        <li><a href="#"> <img src="../assets/perfil-usuario/configuracao-icon.svg" width="25px">Configurações</a></li>
                     </ul>
                 </nav>
             </aside>
