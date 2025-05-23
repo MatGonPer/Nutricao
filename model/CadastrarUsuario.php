@@ -1,13 +1,13 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-require_once "/opt/lampp/htdocs/Nutricao/controller/UsuarioDAO.php";
-require_once "/opt/lampp/htdocs/Nutricao/model/BancoDeDados.php";
-require_once "/opt/lampp/htdocs/Nutricao/model/CapturarDadosCadastro.php";
-require_once "/opt/lampp/htdocs/Nutricao/model/ValidarVerificarSenha.php";
-require_once "/opt/lampp/htdocs/Nutricao/model/ValidarEmail.php";
-require_once "/opt/lampp/htdocs/Nutricao/model/ValidarDataDeNascimento.php";
-require_once "/opt/lampp/htdocs/Nutricao/model/ValidarNome.php";
+require_once __DIR__ . "/../controller/UsuarioDAO.php";
+require_once __DIR__ . "/../model/BancoDeDados.php";
+require_once __DIR__ . "/../model/CapturarDadosCadastro.php";
+require_once __DIR__ . "/../model/ValidarVerificarSenha.php";
+require_once __DIR__ . "/../model/ValidarEmail.php";
+require_once __DIR__ . "/../model/ValidarDataDeNascimento.php";
+require_once __DIR__ . "/../model/ValidarNome.php";
 
 $banco = new BancoDeDados();
 $dao = new UsuarioDAO($banco);

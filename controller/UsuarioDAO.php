@@ -1,10 +1,10 @@
 <?php
 
-require_once __DIR__ . "/../model/BancoDeDados.php";
-require_once __DIR__ . "/../model/ValidarVerificarSenha.php";
-require_once __DIR__ . "/../model/ValidarDataDeNascimento.php";
-require_once __DIR__ . "/../model/ValidarEmail.php";
-require_once __DIR__ . "/../model/ValidarNome.php";
+require_once __DIR__ . "../../model/BancoDeDados.php";
+require_once __DIR__ . "../../model/ValidarVerificarSenha.php";
+require_once __DIR__ . "../../model/ValidarDataDeNascimento.php";
+require_once __DIR__ . "../../model/ValidarEmail.php";
+require_once __DIR__ . "../../model/ValidarNome.php";
 
 class UsuarioDAO {
 
