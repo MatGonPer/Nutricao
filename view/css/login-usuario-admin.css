@@ -119,7 +119,7 @@ h2 {
 }
 
 .remember-forgot a:hover {
-    transition: 0.5s;
+    transition: 0.1s;
     color: #1208A1;
 }
 
@@ -196,7 +196,7 @@ h2 {
 }
 
 .register-link a:hover {
-    transition: 0.5s;
+    transition: 0.1s;
     color: #1208A1;
 }
 

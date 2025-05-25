@@ -1,3 +1,8 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,41 +17,51 @@
         <div class="external-container">
             <h1>NUTRIFIT</h1>
             <section>
-                <form class="container" action="">
-                    <h2>Acesse a sua conta comercial</h1>
+                <form class="container" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+                    <h2>Acesse a sua conta comercial</h2>
                     <section class="input-box">
-                        <label for="email">Email:</label>
-                        <br>
+                        <label>Email:</label>
                         <div class="input-container">
-                            <input placeholder="Digite o seu email" type="email">
+                            <input placeholder="Digite o seu email" type="email" name="email">
                             <img src="../assets/icons/login-register/user-icon.svg" alt="Ícone de usuário" width="22" height="22">
                         </div>
                     </section>
                     <section class="input-box">
-                        <label for="password">Senha:</label>
-                        <br>
+                        <label>Senha:</label>
                         <div class="input-container">
-                            <input placeholder="Digite a sua senha" type="password">
+                            <input placeholder="Digite a sua senha" type="password" name="senha">
                             <img src="../assets/icons/login-register/password-icon.svg" alt="Ícone de usuário" width="22" height="22">
                         </div>
                     </section>
                     <section class="acess-link">
-                        <button type="submit">Acessar conta</button>
+                        <button type="submit" name="submit">Acessar conta</button>
                     </section>
                     <section class="remember-forgot">
-                        <label for="checkbox">
-                        <input type="checkbox">
+                        <label>
+                        <input type="checkbox" name="remember-me">
                         Lembre-me
                         </label>
                         <a href="recuperacao-senha.php">Esqueci minha senha</a>
                     </section>
                     <section class="register-link">
-                        <button type="submit">Cadastrar-se</button>
-                        <a href="login-conta-parceira.php">Sou um parceiro</a>
+                        <button type="button" id="registerButton">Criar nova conta</button>
+                        <a href="landing-page.php">Voltar para página anterior</a>
                     </section>
+                    <div class="error">
+                        <?php
+                        if(isset($_POST['submit']) && $resultado === false) {
+                            echo "<p style='text-align: center; color: red; font-size: 20px; font-weight: 500;'>Email e/ou senha incorretos!</p>";
+                        }
+                        ?>
+                    </div>
                 </form>  
             </section>
         </div>    
     </main>
+    <script>
+        document.getElementById('registerButton').addEventListener('click', function() {
+            window.location.href = "cadastro-conta-comercial.php";
+        });
+    </script>
 </body>
 </html>
