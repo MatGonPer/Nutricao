@@ -25,7 +25,6 @@ class ValidarEmail {
 
     public function sanitizar(string $email) : string {
         $email = trim($email);
-        $email = strtolower($email);
         
         return filter_var($email, FILTER_SANITIZE_EMAIL);
     }

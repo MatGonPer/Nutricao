@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-require_once __DIR__ . "/../controller/UsuarioDAO.php";
+require_once __DIR__ . "/../controller/ParceiroDAO.php";
 require_once __DIR__ . "/../model/BancoDeDados.php";
 require_once __DIR__ . "/../model/CapturarDadosCadastro.php";
 require_once __DIR__ . "/../model/ValidarVerificarSenha.php";
@@ -11,7 +11,7 @@ require_once __DIR__ . "/../model/ValidarDataDeNascimento.php";
 require_once __DIR__ . "/../model/ValidarNome.php";
 
 $banco = new BancoDeDados();
-$dao = new UsuarioDAO($banco);
+$dao = new ParceiroDAO($banco);
 $capturar = new CapturarDadosCadastro();
 $verificarSenha = new ValidarVerificarSenha();
 $validarEmail = new ValidarEmail();
@@ -23,7 +23,7 @@ $errosSenha = [];
 $contaCriadaComSucesso = false;
 $contaJaExiste = false;
 
-if($capturar->capturarDadosDeCadastro('usuario')) {
+if($capturar->capturarDadosDeCadastro('parceiro')) {
     if(!$validarNome->validar($capturar->getNome())) {
         $erros[] = "Nome inválido";
     }
@@ -40,7 +40,7 @@ if($capturar->capturarDadosDeCadastro('usuario')) {
 
     if(empty($erros) && empty($errosSenha)) {
         $dados = [
-        "email" => $capturar->getEmail(),
+            "email" => $capturar->getEmail(),
         ];
 
         if($dao->consultarDados($dados)) {
@@ -51,7 +51,7 @@ if($capturar->capturarDadosDeCadastro('usuario')) {
             }
         }
     } 
-    
+
 } else {
     $camposVazios = $capturar->getErros();
 }

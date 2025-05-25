@@ -1,6 +1,7 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+
 session_start();
 //Se o usuário quando logou anteriormente clicou no botão lembrar-me, loga-se automaticamente 
 if(isset($_SESSION['logado']) && $_SESSION['logado'] === true) {
@@ -9,19 +10,19 @@ if(isset($_SESSION['logado']) && $_SESSION['logado'] === true) {
 }
 
 require_once __DIR__ . "/CapturarDadosLogin.php";
-require_once __DIR__ . "/../controller/UsuarioDAO.php";
+require_once __DIR__ . "/../controller/ParceiroDAO.php";
 require_once __DIR__ . "/BancoDeDados.php";
 
 $bancoDeDados = new BancoDeDados();
-$usuarioDAO = new UsuarioDAO($bancoDeDados);
+$dao = new ParceiroDAO($bancoDeDados);
 $capturarDados = new CapturarDadosLogin();
 $resultado = false;
 $id = '';
 
 //Tenta capturar os dados do formulário
-if($capturarDados->capturarDados('usuario')) {
+if($capturarDados->capturarDados('parceiro')) {
     $hash = '';
-    $hash = $usuarioDAO->consultarHash($capturarDados->getEmail());
+    $hash = $dao->consultarHash($capturarDados->getEmail());
     if(empty($hash)) {
         $resultado = false;
     } else {
@@ -29,11 +30,11 @@ if($capturarDados->capturarDados('usuario')) {
             $dados = [
                 "email" => $capturarDados->getEmail(),
                 "senha" => $hash,
-                "tipo_usuario" => "usuario"
+                "tipo_usuario" => $capturarDados->getTipoUsuario()
             ];
 
-            if($usuarioDAO->consultarDados($dados) === true) {
-                $id = $usuarioDAO->recuperarId($capturarDados->getEmail());
+            if($dao->consultarDados($dados) === true) {
+                $id = $dao->recuperarId($capturarDados->getEmail());
                 $resultado = true;
             } else {
                 $resultado = false;
@@ -49,8 +50,8 @@ if(isset($_POST['submit']) && $resultado === true && isset($_POST['remember-me']
     //UsuarioId serve pra guarda o Id do usuário para as outras páginas lembrarem de qual usuário mostrar as informações
     $_SESSION['usuarioId'] = $id;
     $_SESSION['logado'] = true;
-    $_SESSION['email'] = $dadosFormulario->getEmail();
-    $_SESSION['tipo_usuario'] = 'usuario';
+    $_SESSION['email'] = $capturarDados->getEmail();
+    $_SESSION['tipo_usuario'] = $capturarDados->getTipoUsuario();
     header('Location: dashboard-usuario.php');
     exit();
 }

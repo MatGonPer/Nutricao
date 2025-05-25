@@ -33,7 +33,7 @@ class ValidarVerificarSenha {
         if(!preg_match('/[!@#$%^&*()\-_=+{};:,<.>]/', $senha)) {
             $erros[] = "A senha deve conter pelo menos um caractere especial";
         }
-        return $erros;
+        return $erros ?? [];
     }
 
     public function gerarHash(string $senha) : string {

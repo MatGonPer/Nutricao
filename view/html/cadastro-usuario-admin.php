@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 require_once "../../model/CadastrarUsuario.php";
 ?>
 <!DOCTYPE html>
@@ -52,7 +55,7 @@ require_once "../../model/CadastrarUsuario.php";
                     <section class="input-box">
                         <label>Senha:</label>
                         <div class="input-container">
-                            <input name="senha" placeholder="'Digite a sua senha'" type="password">
+                            <input name="senha" placeholder="Digite a sua senha" type="password">
                             <img src="../assets/icons/login-register/password-icon.svg" alt="Ícone de usuário" width="22" height="22">
                         </div>
                     </section>
@@ -78,7 +81,7 @@ require_once "../../model/CadastrarUsuario.php";
                         ?>
                     </div>
                     <section class="input-box">
-                        <label>Senha:</label>
+                        <label>Confirmar senha:</label>
                         <div class="input-container">
                             <input name="confirmarSenha" class="input-info" placeholder="Digite a sua senha novamente" type="password">
                             <img src="../assets/icons/login-register/password-icon.svg" alt="Ícone de usuário" width="22" height="22">
@@ -132,11 +135,14 @@ require_once "../../model/CadastrarUsuario.php";
                     </div>
                     <div class="conta-criada">
                         <?php
-                            if(isset($_POST['submit'])) {
-                                if($contaCriadaComSucesso) {
-                                    echo "<p style=\"color: #0E34A0; font-size: 16px; text-align: center;\">Conta cadastrada com sucesso!</p>";
-                                    }
+                        if(isset($_POST['submit'])) {
+                            if($contaCriadaComSucesso) {
+                                echo "<p style=\"color: #0E34A0; font-size: 16px; text-align: center;\">Conta cadastrada com sucesso!</p>";
                             }
+                            if($contaJaExiste) {
+                                echo "<p style=\"color: red; font-size: 16px; text-align: center;\">Email inserido já está cadastrado!</p>";
+                            }
+                        }
                         ?>
                     </div>
                     <section class="acess-link">
