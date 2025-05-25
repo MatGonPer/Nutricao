@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incluir Plano Alimentar</title>
+    <link rel="stylesheet" href="/view/css/reset.css">
+    <link rel="stylesheet" href="/view/css/pl-alimentar.css">
+    
+</head>
+
+    <body>
+        <div class="container">
+            <section class="left">
+                <div class="profile">
+                    <figure>
+                        <img src="../assets/perfil-usuario/user-icon-default-mod.jpeg" alt="Foto de perfil" />
+                    </figure>
+                    <h2>Francisco do Nascimento</h2>
+                </div>
+                <aside>
+                    <nav>
+                        <ul>
+                            <li><a href="landing-page.php"><img src="../assets/perfil-usuario/incio-icon.svg"
+                                        width="25px" />Início</a></li>
+                            <li><a href="perfil-usuario.php"><img src="../assets/perfil-usuario/profile-icon.svg"
+                                        width="25px" />Usuário</a></li>
+                            <li><a href="dashboard-usuario.php"><img src="../assets/perfil-usuario/desempenho-icon.svg"
+                                        width="25px" />Desempenho</a></li>
+                            <li><a href="treinos.php"><img src="../assets/perfil-usuario/treinos-icon.svg"
+                                        width="25px" />Treino</a></li>
+                            <li><a href="consultas-agendadas.php"><img src="../assets/perfil-usuario/consultas-icon.svg"
+                                        width="25px" />Consultas</a></li>
+                            <li><a href="parceiros.php"><img src="../assets/perfil-usuario/catalogo-icon.svg"
+                                        width="25px" />Catálogo</a></li>
+                            <li><a href="suporte.php"><img src="../assets/perfil-usuario/suporte-icon.svg"
+                                        width="25px" />Suporte</a></li>
+                            <li><a href="#"><img src="../assets/perfil-usuario/configuracao-icon.svg"
+                                        width="25px" />Configurações</a></li>
+                        </ul>
+                    </nav>
+                </aside>
+            </section>
+
+            <!-- Conteúdo principal -->
+            <section class="container-right">
+                <main class="plano-container">
+                    <header class="plano-header">
+                        <h1>Plano Alimentar - Francisco Almeida</h1>
+                        <p>Inclua abaixo as informações sobre o plano alimentar.</p>
+                    </header>
+
+                    <form id="form-plano" class="plano-form">
+                        <label for="data-inicio">Data de início:</label>
+                        <input type="date" id="data-inicio" name="data-inicio" required />
+
+                        <section id="refeicoes-container">
+                            <h2>Refeições</h2>
+                            <div class="refeicao">
+                                <input type="text" name="nome-refeicao[]"
+                                    placeholder="Nome da refeição (ex: Café da manhã)" required />
+                                <input type="time" name="horario[]" required />
+                                <textarea name="descricao[]" placeholder="Descrição dos alimentos" required></textarea>
+                            </div>
+                        </section>
+
+                        <button type="button" id="add-refeicao">+ Adicionar Refeição</button>
+
+                        <label for="observacoes">Observações adicionais:</label>
+                        <textarea id="observacoes" name="observacoes" rows="4"
+                            placeholder="Informações gerais, restrições, dicas, etc."></textarea>
+
+                        <div class="form-buttons">
+                            <button type="submit" class="save">Salvar Plano</button>
+                            <button type="reset" class="cancel">Cancelar</button>
+                        </div>
+                    </form>
+                </main>
+            </section>
+        </div>
+
+        <script src="/view/js/pl-alimentar.js"></script>
+    </body>
+</html>
