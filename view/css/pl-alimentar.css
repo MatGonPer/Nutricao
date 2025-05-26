@@ -13,6 +13,7 @@ ul{
     gap: 10px;
 }
 .container {
+    display: flex; 
     width: 100dvw;
     height: 100dvh;
     display: flex;
@@ -25,7 +26,7 @@ ul{
 }
 
 
-/* Sidebar */
+
 .left {
     width: 20%;
     height: 130dvh;
@@ -91,13 +92,24 @@ aside nav ul li:hover {
 
 /* Conteúdo principal */
 .plano-container {
-  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  background-color: #fff;
   padding: 30px;
-  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
 .plano-header h1 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.plano-header p {
   margin-bottom: 10px;
+ 
 }
 
 .plano-form {
@@ -106,77 +118,15 @@ aside nav ul li:hover {
   gap: 15px;
 }
 
-.plano-form input[type="text"],
-.plano-form input[type="date"],
-.plano-form input[type="time"],
-.plano-form textarea {
-  padding: 8px;
-  width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.refeicao {
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-#add-refeicao {
-  background-color: #dceeee;
-  border: none;
-  padding: 10px;
-  width: fit-content;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.form-buttons {
-  display: flex;
-  gap: 10px;
-}
-
-.save {
-  background-color: #007b5f;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.cancel {
-  background-color: #ccc;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-
-
-/*main*/
-.plano-container {
-  max-width: 800px;
-  margin: auto;
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.plano-header h1 {
-  margin-bottom: 5px;
-}
-
 .plano-form label {
   display: block;
   margin-top: 20px;
   font-weight: 500;
 }
 
-.plano-form input,
+.plano-form input[type="text"],
+.plano-form input[type="date"],
+.plano-form input[type="time"],
 .plano-form textarea {
   width: 100%;
   padding: 10px;
@@ -192,6 +142,15 @@ aside nav ul li:hover {
   margin-top: 10px;
   border-radius: 10px;
   background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.refeicoes-container h2{
+  font-weight: 700;
+  font-size: 24px;
+  margin-top: 20px;
 }
 
 #add-refeicao {
