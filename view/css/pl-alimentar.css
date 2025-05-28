@@ -126,6 +126,8 @@ aside nav ul li:hover {
   display: block;
   margin-top: 20px;
   font-weight: 500;
+  font-size: 25px;
+  font-weight: 700;
 }
 
 .plano-form input[type="text"],
@@ -166,7 +168,8 @@ aside nav ul li:hover {
   border-radius: 8px;
   cursor: pointer;
   width: 20%;
-
+  font-size: 16px;
+  font-weight: 700;
 }
 
 #add-refeicao:hover {
@@ -186,6 +189,8 @@ aside nav ul li:hover {
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .cancel {
@@ -195,4 +200,6 @@ aside nav ul li:hover {
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
 }
