@@ -21,8 +21,12 @@ ul{
 }
 
 .container-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 130vh;
+    height: 100%;
+    padding: 20px;
 }
 
 
@@ -92,13 +96,13 @@ aside nav ul li:hover {
 
 /* Conteúdo principal */
 .plano-container {
-  max-width: 800px;
+  width: 100%;
+  height: 100%;
   margin: auto;
   background-color: #fff;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
 }
 
 .plano-header h1 {
@@ -161,6 +165,8 @@ aside nav ul li:hover {
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  width: 20%;
+
 }
 
 #add-refeicao:hover {
