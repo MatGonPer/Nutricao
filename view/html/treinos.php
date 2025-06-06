@@ -6,6 +6,7 @@
     <title>Treinos</title>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href= "../css/treinos.css">
+    <link rel="shortcut icon" href="../assets/icons/favicon/favicon_io/favicon.ico" type="image/x-icon">
 </head>
 <body>
    <div class="container">

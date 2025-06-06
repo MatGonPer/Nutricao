@@ -6,6 +6,7 @@
     <title>Clientes do nutricionista</title>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/clientes-nutricionista.css">
+    <link rel="shortcut icon" href="../assets/icons/favicon/favicon_io/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <div class="container">

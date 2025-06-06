@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-require "../../model/LoginUsuario.php";
+require_once "../../model/LoginUsuario.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -12,6 +12,7 @@ require "../../model/LoginUsuario.php";
     <title>Acesse sua conta</title>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/login-usuario-admin.css">
+    <link rel="shortcut icon" href="../assets/icons/favicon/favicon_io/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <main>

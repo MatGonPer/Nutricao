@@ -39,24 +39,22 @@ h1 {
 
 .container {
     display: flex;
-    justify-content: space-between;
-    gap: 1rem;
+    justify-content: center;
+    gap: 15rem;
     padding: 1rem;
     box-sizing: border-box;
     max-width: 100vw; 
 }
 
 .user-area,
-.partner-area,
-.commercial-partner {
+.partner-area {
     flex: 0 1 33.33%; 
     box-sizing: border-box;
     margin: 0 10px; 
 }
 
 .user-area p,
-.partner-area p,
-.commercial-partner p {
+.partner-area p {
     color: #1C0F13;
     font-weight: 500;
     font-size: 18px;
@@ -64,15 +62,13 @@ h1 {
 }
 
 .user-area img,
-.partner-area img,
-.commercial-partner img {
+.partner-area img {
     margin-bottom: 10px;
     border-radius: 10px;
 }
 
 .user-area button,
-.partner-area button,
-.commercial-partner button {
+.partner-area button {
     background-color: #ec5363;
 }
     

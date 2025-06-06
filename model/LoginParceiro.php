@@ -39,9 +39,7 @@ if($capturarDados->capturarDados('parceiro')) {
             } else {
                 $resultado = false;
             }
-        }
-        
-        
+        }  
     }
 }
 
@@ -60,6 +58,9 @@ if(isset($_POST['submit']) && $resultado === true && isset($_POST['remember-me']
 if(isset($_POST['submit']) === true && $resultado === true && !empty($id)) {
     //UsuarioId serve pra guarda o Id do usuário para as outras páginas lembrarem de qual usuário mostrar as informações
     $_SESSION['usuarioId'] = $id;
+    $_SESSION['logado'] = false;
+    $_SESSION['email'] = $capturarDados->getEmail();
+    $_SESSION['tipo_usuario'] = $capturarDados->getTipoUsuario();
     header('Location: dashboard-usuario.php');
     exit();
 }
