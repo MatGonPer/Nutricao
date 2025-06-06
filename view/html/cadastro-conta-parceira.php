@@ -13,6 +13,7 @@ require_once __DIR__ . "/../../model/CadastrarParceiro.php";
     <title>Cadastre sua conta parceira</title>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/cadastro-conta-parceira.css">
+    <link rel="shortcut icon" href="../assets/icons/favicon/favicon_io/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <main>

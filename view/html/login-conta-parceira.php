@@ -12,6 +12,7 @@ require_once __DIR__ . "/../../model/LoginParceiro.php";
     <title>Acesse sua conta</title>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/login-conta-parceira.css">
+    <link rel="shortcut icon" href="../assets/icons/favicon/favicon_io/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <main>

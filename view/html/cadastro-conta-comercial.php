@@ -11,6 +11,7 @@ ini_set('display_errors', 1);
     <title>Cadastre sua conta comercial</title>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/cadastro-conta-comercial.css">
+    <link rel="shortcut icon" href="../assets/icons/favicon/favicon_io/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <main>
