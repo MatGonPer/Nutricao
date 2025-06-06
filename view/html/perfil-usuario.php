@@ -49,40 +49,37 @@
                     <fieldset>
                         <legend>Dados pessoais</legend>
                         <div class="form">
-                            <input type="text" placeholder="Nome Completo">
-                            <input type="text" placeholder="Idade">
-                            <select class="gender" name="gender" id="gender">
-                                <option value="Gênero">Gênero</option>
-                                <option value="">Masculino</option>
-                                <option value="feminino">Feminino</option>
+                            <input type="nome" placeholder="Nome Completo">
+                            <input type="dataNascimento" placeholder="Data de Nascimento">
+                            <select class="gender" name="sexo">
+                                <option value="M">Masculino</option>
+                                <option value="F">Feminino</option>
+                                <option value="P">Prefiro não informar</option>
                             </select>
                         </div>
                         <div class="about-me">
-                            <textarea class="about" name="" id="" placeholder="Sobre mim"></textarea>
+                            <textarea class="about" name="sobreMim" placeholder="Sobre mim"></textarea>
                         </div>
                     </fieldset>
                     <fieldset>
                         <legend>Contato</legend>
                         <div class="form">
-                            <input type="email" name="Email" id="" placeholder="Email">
-                            <input type="tel" name="Tel" id="" placeholder="Telefone">
-                            <input type="text" name="Cidade" id="" placeholder="Cidade">
+                            <input type="email" name="email" id="" placeholder="E-mail">
+                            <input type="tel" name="telefone" id="" placeholder="Telefone">
                         </div>
                     </fieldset>
                     <fieldset>
                         <legend>Saúde</legend>
                         <div class="form">
-                            <input type="text" placeholder="Peso">
-                            <input type="text" placeholder="IMC">
-                            <input type="text" placeholder="Altura">
+                            <input type="text" name="peso" placeholder="Peso">
+                            <input type="text" name="altura" placeholder="Altura">
                         </div>
                     </fieldset>
                      <fieldset>
                         <legend>Segurança</legend>
                         <div class="form">
-                            <input type="password" name="Senha atual" id="senhaatual" placeholder="Senha Atual">
-                            <input type="password" name="Nova senha" id="novasenha" placeholder="Nova senha">
-                            <input type="password" name="Confirmar senha" id="confirmarsenha" placeholder="Confirmar Senha">
+                            <input type="password" name="novaSenha" placeholder="Nova senha">
+                            <input type="password" name="confirmarNovaSenha" placeholder="Confirmar nova senha">
                         </div>
                     </fieldset>
                     <div class="buttons">

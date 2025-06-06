@@ -125,13 +125,12 @@ aside nav ul li:hover {
 .profile-form {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-self: center;
     gap: 10px;
 }
 
 .form {
     display: flex;
-    justify-content: space-between;
     gap: 40px;
     padding: 10px;
 }
@@ -152,7 +151,7 @@ legend {
 .gender {
     width: 21vw;
     border-radius: 10px;
-    border: 1px solid black;
+    border-style: none;
     padding-left: 10px;
     font-size: 15px;
     background-color: white;
@@ -165,7 +164,7 @@ legend {
 .about {
     width: 99%;
     border-radius: 10px;
-    border: 1px solid black;
+    border-style: none;
     padding-left: 10px;
     font-size: 15px;
     height: 70px;
@@ -173,14 +172,18 @@ legend {
 
 .buttons {
     display: flex;
-    gap: 630px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
 }
 
 .buttons button {
     width: 210px;
     height: 55px;
+    border-style: none;
     border-radius: 10px;
-    border: 1px solid black;
 }
 
 .save {
@@ -196,3 +199,7 @@ legend {
     color: rgba(0, 0, 0, 0.71);
     font-weight: bold;
 }
+
+.form input {
+    border-style: none;
+} 
