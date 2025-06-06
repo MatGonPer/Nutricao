@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-require "../../model/LoginUsuario.php";
+require_once "../../model/LoginUsuario.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
