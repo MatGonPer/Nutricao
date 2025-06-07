@@ -46,6 +46,20 @@ class Usuario {
         return false;
     }
 
+    
+    public function atualizarFotoPerfil(string $id, string $filename) : bool {
+        if(!$this->banco->conectar()) {
+            return false;
+        }
+
+        $dados = [
+            'id' => $id,
+            'foto_perfil' => $filename
+        ];
+
+        return $this->banco->atualizar('usuario', $dados, 'id = :id');
+    }
+
 
     public function getId() : string {
         return $this->id;

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -35,16 +38,16 @@
         <section class="container-right">
             <main>
                 <header class="profile-header">
-                    <div class="profille-info">
-                        <figure>
-                            <img class="img" src="../assets/perfil-usuario/user-icon-default-mod.jpeg" alt="Foto de perfil">
+                    <div class="profile">
+                        <figure class="profile-picture-container">
+                            <img src="../assets/perfil-usuario/user-icon-default-mod.jpeg" alt="Foto de perfil" id="preview-image">
+                            <label for="profile-photo" class="edit-icon">
+                                <img src="../assets/perfil-usuario/edit-icon.svg" alt="Editar foto" width="200px" height="200px">
+                            </label>
+                            <input type="file" id="profile-photo" name="profile-photo" accept="image/*" style="display: none;">
                         </figure>
-                        <h3>Francisco do Nascimento</h3>
-                    </div>
-                        <p>Perfil 50% completo</p>
-                        <div class="progress-bar">
-                            <div class="fill" style="width: 50%;"></div>
-                        </div>
+                        <h2>Francisco do Nascimento</h2>
+                    </div>                  
                 </header>
                 <form class="profile-form">
                     <fieldset>
