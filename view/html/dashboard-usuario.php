@@ -70,11 +70,16 @@ $base_url = $protocol . $host . $base_path . '/';
             </header>
             
             <nav id="mobile-menu" class="mobile-menu">
-                 <a href="#">Início</a>
-                 <a href="#">Usuário</a>
-                 <a href="#" class="active">Desempenho</a>
-                 <a href="#" id="mobile-set-monthly-goals-btn">Metas Mensais</a>
-                 <a href="#" id="mobile-set-daily-goals-btn">Metas Diárias</a>
+                <a href="landing-page.php">Início</a>
+                <a href="perfil-usuario.php">Usuário</a>
+                <a href="dashboard-usuario.php">Desempenho</a>
+                <a href="treinos.php">Treino</a>
+                <a href="consultas-agendadas.php">Consultas</a>
+                <a href="parceiros.php">"Catálogo</a>
+                <a href="suporte.php">Suporte</a>
+                <a href="#">Configurações</a>            
+                <a href="#" id="mobile-set-monthly-goals-btn">Metas Mensais</a>
+                <a href="#" id="mobile-set-daily-goals-btn">Metas Diárias</a>
             </nav>
 
             <main class="content-area">
