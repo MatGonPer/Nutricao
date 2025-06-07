@@ -171,6 +171,19 @@
             <p>Mapa do Site</p>
         </div>
     </footer>
+<script>
+    const cards = document.getElementsByClassName("card");
+    console.log(cards.get);
 
+    Array.from(cards).forEach(card => {
+        card.addEventListener("mouseover", function() {
+            this.style.transform = "scale(1.2)";
+        });
+
+        card.addEventListener("mouseout", function() {
+            this.style.transform = "scale(1)";
+        });
+    })
+</script>
 </body>
 </html>
