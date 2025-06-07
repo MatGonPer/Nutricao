@@ -19,6 +19,7 @@ $base_url = $protocol . $host . $base_path . '/';
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../assets/icons/favicon/favicon_io/favicon.ico" type="image/x-icon">
     
     <!-- Custom Stylesheet with dynamic base URL -->
     <link rel="stylesheet" href="<?php echo $base_url; ?>../css/dashboard-usuario.css">
@@ -43,14 +44,13 @@ $base_url = $protocol . $host . $base_path . '/';
             <aside>
                 <nav>
                     <ul>
-                        <li><a href="#"><img src="https://placehold.co/25x25/ffffff/000000?text=I" alt="Ícone Início" width="25">Início</a></li>
-                        <li><a href="#"><img src="https://placehold.co/25x25/ffffff/000000?text=U" alt="Ícone Usuário" width="25">Usuário</a></li>
-                        <li class="active"><a href="#"><img src="https://placehold.co/25x25/ffffff/000000?text=D" alt="Ícone Desempenho" width="25">Desempenho</a></li>
-                        <li><a href="#"><img src="https://placehold.co/25x25/ffffff/000000?text=T" alt="Ícone Treino" width="25">Treino</a></li>
-                        <li><a href="#"><img src="https://placehold.co/25x25/ffffff/000000?text=C" alt="Ícone Consultas" width="25">Consultas</a></li>
-                        <li><a href="#"><img src="https://placehold.co/25x25/ffffff/000000?text=C" alt="Ícone Catálogo" width="25">Catálogo</a></li>
-                        <li><a href="#"><img src="https://placehold.co/25x25/ffffff/000000?text=S" alt="Ícone Suporte" width="25">Suporte</a></li>
-                        <li><a href="#"><img src="https://placehold.co/25x25/ffffff/000000?text=CF" alt="Ícone Configurações" width="25">Configurações</a></li>
+                        <li><a href="perfil-usuario.php"><img src="../assets/perfil-usuario/profile-icon.svg" alt="Ícone Usuário" width="25">Usuário</a></li>
+                        <li class="active"><a href="dashboard-usuario.php"><img src="../assets/perfil-usuario/desempenho-icon.svg" alt="Ícone Desempenho" width="25">Desempenho</a></li>
+                        <li><a href="treinos.php"><img src="../assets/perfil-usuario/treinos-icon.svg" alt="Ícone Treino" width="25">Treino</a></li>
+                        <li><a href="consultas-agendadas.php"><img src="../assets/perfil-usuario/consultas-icon.svg" alt="Ícone Consultas" width="25">Consultas</a></li>
+                        <li><a href="parceiros.php"><img src="../assets/perfil-usuario/catalogo-icon.svg" alt="Ícone Catálogo" width="25">Catálogo</a></li>
+                        <li><a href="suporte.php"><img src="../assets/perfil-usuario/suporte-icon.svg" alt="Ícone Suporte" width="25">Suporte</a></li>
+                        <li><a href="#"><img src="../assets/perfil-usuario/configuracao-icon.svg" alt="Ícone Configurações" width="25">Configurações</a></li>
                     </ul>
                 </nav>
             </aside>
