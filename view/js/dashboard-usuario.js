@@ -1,15 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- STATE MANAGEMENT ---
     let currentDate = new Date();
-    let healthData = {}; // Stores daily tracked values
-    let monthlyGoals = {}; // Stores default goals for the month
-    let dailyGoals = {}; // Stores specific goals for individual days
+    let healthData = {};
+    let monthlyGoals = {};
+    let dailyGoals = {};
     
     const defaultMonthlyGoals = { water: 3, sleep: 8, calories: 2200, workout: 45 };
     const defaultDayData = { water: 0, sleep: 0, calories: 0, workout: 0 };
     let editedDateKey = null;
 
-    // --- UI ELEMENTS ---
     const ui = {
         cards: {
             water: document.getElementById('water-current'),
@@ -29,12 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
         averagesContainer: document.getElementById('averages-container'),
         mobileMenu: document.getElementById('mobile-menu'),
         mobileMenuBtn: document.getElementById('mobile-menu-button'),
-        // Buttons for modals
+
         setMonthlyGoalsBtn: document.getElementById('set-monthly-goals-btn'),
         mobileSetMonthlyGoalsBtn: document.getElementById('mobile-set-monthly-goals-btn'),
         setDailyGoalsBtn: document.getElementById('set-daily-goals-btn'),
         mobileSetDailyGoalsBtn: document.getElementById('mobile-set-daily-goals-btn'),
-        // Edit Day Modal
+
         editModal: {
             overlay: document.getElementById('edit-modal'),
             date: document.getElementById('modal-date'),
@@ -53,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             saveBtn: document.getElementById('modal-save-edit'),
             cancelBtn: document.getElementById('modal-cancel-edit'),
         },
-        // Monthly Goals Modal
+
         monthlyGoalsModal: {
             overlay: document.getElementById('monthly-goals-modal'),
             water: document.getElementById('monthly-goal-water'),
@@ -63,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             saveBtn: document.getElementById('modal-save-monthly-goals'),
             cancelBtn: document.getElementById('modal-cancel-monthly-goals'),
         },
-        // Daily Goals Modal
+
         dailyGoalsModal: {
             overlay: document.getElementById('daily-goals-modal'),
             dateInput: document.getElementById('daily-goal-date'),
@@ -76,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // --- DATA & LOCAL STORAGE ---
+
     function loadData() {
         healthData = JSON.parse(localStorage.getItem('monthlyHealthData')) || {};
         monthlyGoals = JSON.parse(localStorage.getItem('userMonthlyGoals')) || { ...defaultMonthlyGoals };
@@ -90,16 +88,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function getDateKey(date) {
-        // Adjust for timezone offset to prevent date changes
+
         const adjustedDate = new Date(date.getTime() - (date.getTimezoneOffset() * 60000));
-        return adjustedDate.toISOString().split('T')[0]; // .+"]),-MM-dd
+        return adjustedDate.toISOString().split('T')[0];
     }
 
     function getGoalForDay(metric, dateKey) {
         return dailyGoals[dateKey]?.[metric] ?? monthlyGoals[metric];
     }
 
-    // --- CHART.JS IMPLEMENTATION ---
     let progressChart;
     const chartCanvas = document.getElementById('progressChart');
     const chartCtx = chartCanvas.getContext('2d');
@@ -163,7 +160,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- MODALS ---
     function openEditModal(date) {
         editedDateKey = getDateKey(date);
         const dayData = healthData[editedDateKey] || { ...defaultDayData };
@@ -265,7 +261,6 @@ document.addEventListener('DOMContentLoaded', () => {
         closeDailyGoalsModal();
     }
 
-    // --- RENDER & UPDATE ---
     function renderDashboard() {
         const year = currentDate.getFullYear();
         const month = currentDate.getMonth();
@@ -318,7 +313,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }).join('');
     }
     
-    // --- GLOBAL API & EVENTS ---
     window.updateMetric = (metric, amount) => {
         const todayKey = getDateKey(new Date());
         if (!healthData[todayKey]) healthData[todayKey] = { ...defaultDayData };
@@ -338,7 +332,6 @@ document.addEventListener('DOMContentLoaded', () => {
         renderDashboard();
     });
 
-    // Modal Listeners
     ui.editModal.saveBtn.addEventListener('click', handleSaveEditModal);
     ui.editModal.cancelBtn.addEventListener('click', closeEditModal);
 
@@ -356,7 +349,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     ui.mobileMenuBtn.addEventListener('click', () => ui.mobileMenu.classList.toggle('active') );
 
-    // --- INITIALIZATION ---
     function init() {
         loadData();
         renderDashboard();

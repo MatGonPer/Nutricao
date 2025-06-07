@@ -11,6 +11,7 @@ class Usuario {
     private string $dataDeNascimento;
     private string $dataDeCadastro;
     private bool $status;
+    private string $telefone;
     private BancoDeDados $banco;
 
     public function __construct(BancoDeDados $banco) {
@@ -133,6 +134,13 @@ class Usuario {
         $this->status = $status;
     }
 
+    public function getTelefone() : string {
+        return $this->telefone;
+    }
+
+    public function setTelefone(string $telefone) {
+        $this->telefone = $telefone;
+    }
 }
 
 ?>

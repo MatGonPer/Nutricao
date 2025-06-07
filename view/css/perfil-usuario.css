@@ -126,8 +126,9 @@ a {
 
 .form {
     display: flex;
-    flex-direction: column; /* Campos empilhados no mobile */
+    flex-direction: column;
     gap: 1rem;
+    width: 100%;
 }
 
 .form input, .form select, .form textarea {
@@ -277,6 +278,7 @@ a {
     /* Faz com que os campos ocupem metade do espaço */
     .form input, .form select {
         flex: 1 1 calc(50% - 1.5rem); 
+        min-width: 200px;
     }
     
     /* Faz com que a textarea ocupe a largura total */

@@ -1,5 +1,9 @@
 <?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 session_start();
+
+require_once __DIR__ . "/../../model/PerfilUsuario.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -8,12 +12,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="https://placehold.co/32x32/053225/F5E9E2?text=P" type="image/x-icon">
     <title>Meu Perfil</title>
-    <!-- Link para o arquivo CSS externo -->
     <link rel="stylesheet" href="../css/perfil-usuario.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -22,7 +21,13 @@ session_start();
                 <figure>
                     <img src="https://placehold.co/200x200/F5E9E2/053225?text=FN" alt="Foto de perfil">
                 </figure>
-                <h2>Francisco do Nascimento</h2>
+                <?php
+                if($sucesso === true && !empty($perfil->getNome())) {
+                    echo "<h2>{$perfil->getNome()}</h2>";
+                } else {
+                    echo "<h2>Usuário</h2>";
+                }
+                ?>
             </div>
             <aside>
                 <nav>
@@ -42,33 +47,73 @@ session_start();
             <main>
                 <header class="profile-header">
                     <figure class="profile-picture-container">
-                        <img src="https://placehold.co/200x200/cccccc/333333?text=Sua+Foto" alt="Foto de perfil" id="preview-image">
+                        <img src="../assets/perfil-usuario/user-icon-default-mod.jpeg" alt="Foto de perfil" id="preview-image">
                         <label for="profile-photo" class="edit-icon">
                             <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTIgMjBIMjFNNCAxMy41VjE4YzAgMS4xLjkxIDIgMiAyaDNsOS41LTkuNUwxMy41IDRaIi8+PC9zdmc+" alt="Editar foto">
                         </label>
-                        <input type="file" id="profile-photo" name="profile-photo" accept="image/*" style="display: none;">
+                        <form action="processarFotoPerfil.php" method="POST" enctype="multipart/form-data">
+                            <input type="file" id="profile-photo" name="profile-photo" accept="image/*" style="display: none;">
+                        </form>
                     </figure>
-                    <h2>Francisco do Nascimento</h2>
+                    <?php
+                    if($sucesso === true && !empty($perfil->getNome())) {
+                        echo "<h2>{$perfil->getNome()}</h2>";
+                    } else {
+                        echo "<h2>Usuário</h2>";
+                    }
+                ?>
                 </header>
-                <form class="profile-form" action="#" method="POST">
+                <form class="profile-form" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
                     <fieldset>
                         <legend>Dados Pessoais</legend>
                         <div class="form">
-                            <input type="text" placeholder="Nome Completo" value="Francisco do Nascimento">
-                            <input type="date" placeholder="Data de Nascimento">
-                            <select class="gender" name="sexo">
-                                <option value="M">Masculino</option>
-                                <option value="F">Feminino</option>
-                                <option value="P">Prefiro não informar</option>
+                            <input type="text" name="nome" placeholder="Nome completo" 
+                            value= "<?php
+                                    if($sucesso === true && !empty($perfil->getNome())) {
+                                        echo htmlspecialchars($perfil->getNome());
+                                    } else {
+                                        echo "";
+                                    }
+                                    ?>">
+                            <input type="date" placeholder="Data de nascimento" readonly 
+                            value= "<?php
+                                    if($sucesso === true && !empty($perfil->getDataDeNascimento())) {
+                                        echo htmlspecialchars($perfil->getDataDeNascimento());
+                                    } else {
+                                        echo "";
+                                    }
+                                   ?>">
+                            <select class="gender" name="sexo" disabled>
+                                <option>
+                                    <?php
+                                    if($sucesso === true && !empty($perfil->getSexo())) {
+                                        if($perfil->getSexo() === 'M') {
+                                            echo "Masculino";
+                                        } else if ($perfil->getSexo() === 'F') {
+                                            echo "Feminino";
+                                        } else {
+                                            echo "Prefiro não informar";
+                                        }
+                                    } else {
+                                        echo "";
+                                    }
+                                    ?>
+                                </option>
                             </select>
-                            <textarea class="about" name="sobreMim" placeholder="Sobre mim..."></textarea>
+                            <textarea class="about" name="sobreMim" placeholder="Sobre mim..."><?php if(isset($_POST['sobreMim'])) {echo $_POST['sobreMim'];} ?></textarea>
                         </div>
                     </fieldset>
                     <fieldset>
                         <legend>Contato</legend>
                         <div class="form">
-                            <input type="email" name="email" placeholder="E-mail">
-                            <input type="tel" name="telefone" placeholder="Telefone">
+                            <input type="email" 
+                                name="email" 
+                                placeholder="E-mail" 
+                                value="<?php echo (!empty($perfil->getEmail())) ? htmlspecialchars($perfil->getEmail()) : ''; ?>">
+                            <input type="text" 
+                                name="telefone" 
+                                placeholder="Telefone" 
+                                value="">
                         </div>
                     </fieldset>
                     <fieldset>
@@ -86,29 +131,12 @@ session_start();
                         </div>
                     </fieldset>
                     <div class="buttons">
-                        <button type="submit" class="save">Salvar Perfil</button>
+                        <button type="submit" class="save" name="submit">Salvar Perfil</button>
                         <button type="button" class="change-pass">Alterar Senha</button>
                     </div>
                 </form>
             </main>
         </section>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const photoInput = document.getElementById('profile-photo');
-            const previewImage = document.getElementById('preview-image');
-
-            photoInput.addEventListener('change', function(event) {
-                const file = event.target.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                        previewImage.src = e.target.result;
-                    }
-                    reader.readAsDataURL(file);
-                }
-            });
-        });
-    </script>
 </body>
 </html>

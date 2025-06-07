@@ -1,4 +1,8 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+session_start();
+
 // Determina a URL base dinamicamente para garantir que os caminhos para os assets (CSS, JS) funcionem corretamente.
 $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 $host = $_SERVER['HTTP_HOST'];
@@ -7,6 +11,8 @@ $script_path = dirname($_SERVER['SCRIPT_NAME']);
 // Normaliza o caminho para evitar barras duplas ou caminhos incorretos se estiver na raiz.
 $base_path = rtrim($script_path, '/\\');
 $base_url = $protocol . $host . $base_path . '/';
+
+require_once __DIR__ . "/../../model/Dashboard.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -14,32 +20,30 @@ $base_url = $protocol . $host . $base_path . '/';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Desempenho - Interativo</title>
-    
-    <!-- Google Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../assets/icons/favicon/favicon_io/favicon.ico" type="image/x-icon">
-    
-    <!-- Custom Stylesheet with dynamic base URL -->
     <link rel="stylesheet" href="<?php echo $base_url; ?>../css/dashboard-usuario.css">
-    
-    <!-- Chart.js for data visualization -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
-    <!-- Custom JavaScript with dynamic base URL -->
     <script src="<?php echo $base_url; ?>../js/dashboard-usuario.js" defer></script>
 </head>
 <body>
 
     <div class="app-container">
-        <!-- Left Sidebar -->
+
         <section class="left">
             <div class="profile">
                 <figure>
                     <img src="https://placehold.co/100x100/F5E9E2/053225?text=FN" alt="Foto de perfil">
                 </figure>
-                <h2>Francisco do Nascimento</h2>
+                <?php
+                    if(!empty($usuario->getNome())) {
+                        echo "<h2>{$usuario->getNome()}</h2>";
+                    } else {
+                        echo "<h2>Usuário</h2>";
+                    }
+                ?>
             </div>
             <aside>
                 <nav>
@@ -56,7 +60,6 @@ $base_url = $protocol . $host . $base_path . '/';
             </aside>
         </section>
 
-        <!-- Main Content -->
         <div class="main-content">
             <header class="main-header">
                 <h1>Meu Desempenho</h1>
@@ -120,14 +123,12 @@ $base_url = $protocol . $host . $base_path . '/';
                 <section class="content-section">
                     <h2>Médias do Mês</h2>
                     <div id="averages-container" class="cards-grid">
-                        <!-- Averages will be populated here by JS -->
                     </div>
                 </section>
             </main>
         </div>
     </div>
 
-    <!-- Edit Day Modal -->
     <div id="edit-modal" class="modal-overlay">
         <div class="modal-content">
             <h3 class="modal-title">Editar Dia</h3>
@@ -158,7 +159,6 @@ $base_url = $protocol . $host . $base_path . '/';
         </div>
     </div>
     
-    <!-- Set Monthly Goals Modal -->
     <div id="monthly-goals-modal" class="modal-overlay">
         <div class="modal-content">
             <h3 class="modal-title">Definir Metas Mensais</h3>
@@ -176,7 +176,6 @@ $base_url = $protocol . $host . $base_path . '/';
         </div>
     </div>
 
-    <!-- Set Daily Goals Modal -->
     <div id="daily-goals-modal" class="modal-overlay">
         <div class="modal-content">
             <h3 class="modal-title">Definir Metas Diárias</h3>
