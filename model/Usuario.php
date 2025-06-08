@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . "/BancoDeDados.php";
+
 class Usuario {
 
     private string $id;
@@ -12,6 +14,9 @@ class Usuario {
     private string $dataDeCadastro;
     private bool $status;
     private string $telefone;
+    private string $sobreMim;
+    private float $peso;
+    private float $altura;
     private BancoDeDados $banco;
 
     public function __construct(BancoDeDados $banco) {
@@ -40,6 +45,10 @@ class Usuario {
             $this->dataDeNascimento = $resultado[0]['data_de_nascimento'];
             $this->dataDeCadastro = $resultado[0]['data_de_cadastro'];
             $this->status = $resultado[0]['status'];
+            $this->telefone = $resultado[0]['telefone'] ?? '';
+            $this->sobreMim = $resultado[0]['sobre_mim'] ?? '';
+            $this->peso = $resultado[0]['peso'] ?? 00.00;
+            $this->altura = $resultado[0]['altura'] ?? 0.00;
 
             return true;
         }
@@ -141,6 +150,29 @@ class Usuario {
     public function setTelefone(string $telefone) {
         $this->telefone = $telefone;
     }
-}
 
+    public function getSobreMim() : string {
+        return $this->sobreMim;
+    }
+
+    public function setSobreMim(string $sobreMim) {
+        $this->sobreMim = $sobreMim;
+    }
+
+    public function getPeso() : float {
+        return $this->peso;
+    }
+
+    public function setPeso(float $peso) {
+        $this->peso = $peso;
+    }
+
+    public function getAltura() : float {
+        return $this->altura;
+    }
+
+    public function setAltura(float $altura) {
+        $this->altura = $altura;
+    }
+}
 ?>

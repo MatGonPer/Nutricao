@@ -61,7 +61,7 @@ img {
 .main-header h1 {
     font-size: 1.875rem; /* 30px */
     font-weight: 700;
-    color: #053225;
+    color: #1C0F13;
     flex-shrink: 0;
     margin-right: 1rem;
 }
@@ -83,7 +83,7 @@ img {
 .content-section h2 {
     font-size: 1.25rem; /* 20px */
     font-weight: 600;
-    color: #4a5568; /* gray-700 */
+    color: #1C0F13; /* gray-700 */
     margin-bottom: 1rem;
 }
 

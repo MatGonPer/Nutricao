@@ -81,6 +81,19 @@ class UsuarioDAO {
         return true;
     }
 
+    public function inserirDados(string $tabela, array $dados, string $id) : bool {
+        if(!$this->banco->conectar()) {
+            return false;
+        }
+        if(!$this->banco->atualizar($tabela, $dados, $id)) {
+            $this->banco->desconectar();
+            return false;
+        }
+        
+        $this->banco->desconectar();
+        return true;
+    }
+
     public function consultarDados(array $dados) : bool {
         if(!$this->banco->conectar()) {
             return false;

@@ -1,9 +1,13 @@
 <?php
+
+use BcMath\Number;
+
 error_reporting(E_ALL);
-ini_set("display_errors", 1);
+ini_set('display_errors', 1);
 session_start();
 
 require_once __DIR__ . "/../../model/PerfilUsuario.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -15,7 +19,7 @@ require_once __DIR__ . "/../../model/PerfilUsuario.php";
     <link rel="stylesheet" href="../css/perfil-usuario.css">
 </head>
 <body>
-    <div class="container">
+    <div class="app-container">
         <section class="left">
             <div class="profile">
                 <figure>
@@ -51,9 +55,6 @@ require_once __DIR__ . "/../../model/PerfilUsuario.php";
                         <label for="profile-photo" class="edit-icon">
                             <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTIgMjBIMjFNNCAxMy41VjE4YzAgMS4xLjkxIDIgMiAyaDNsOS41LTkuNUwxMy41IDRaIi8+PC9zdmc+" alt="Editar foto">
                         </label>
-                        <form action="processarFotoPerfil.php" method="POST" enctype="multipart/form-data">
-                            <input type="file" id="profile-photo" name="profile-photo" accept="image/*" style="display: none;">
-                        </form>
                     </figure>
                     <?php
                     if($sucesso === true && !empty($perfil->getNome())) {
@@ -75,7 +76,7 @@ require_once __DIR__ . "/../../model/PerfilUsuario.php";
                                         echo "";
                                     }
                                     ?>">
-                            <input type="date" placeholder="Data de nascimento" readonly 
+                            <input type="date" readonly 
                             value= "<?php
                                     if($sucesso === true && !empty($perfil->getDataDeNascimento())) {
                                         echo htmlspecialchars($perfil->getDataDeNascimento());
@@ -100,39 +101,29 @@ require_once __DIR__ . "/../../model/PerfilUsuario.php";
                                     ?>
                                 </option>
                             </select>
-                            <textarea class="about" name="sobreMim" placeholder="Sobre mim..."><?php if(isset($_POST['sobreMim'])) {echo $_POST['sobreMim'];} ?></textarea>
+                            <textarea class="about" name="sobreMim" placeholder="Sobre mim..."><?php echo (!empty($perfil->getSobreMim())) ? htmlspecialchars($perfil->getSobreMim()) : ''; ?></textarea>
                         </div>
                     </fieldset>
                     <fieldset>
                         <legend>Contato</legend>
                         <div class="form">
-                            <input type="email" 
-                                name="email" 
-                                placeholder="E-mail" 
+                            <input type="email" name="email" 
                                 value="<?php echo (!empty($perfil->getEmail())) ? htmlspecialchars($perfil->getEmail()) : ''; ?>">
-                            <input type="text" 
-                                name="telefone" 
-                                placeholder="Telefone" 
-                                value="">
+                            <input type="text" name="telefone" 
+                                value="<?php if(!empty($perfil->getTelefone())) { echo htmlspecialchars($perfil->getTelefone()); } ?>">
                         </div>
                     </fieldset>
                     <fieldset>
                         <legend>Saúde</legend>
                         <div class="form">
-                            <input type="text" name="peso" placeholder="Peso (kg)">
-                            <input type="text" name="altura" placeholder="Altura (m)">
-                        </div>
-                    </fieldset>
-                     <fieldset>
-                        <legend>Segurança</legend>
-                        <div class="form">
-                            <input type="password" name="novaSenha" placeholder="Nova senha">
-                            <input type="password" name="confirmarNovaSenha" placeholder="Confirmar nova senha">
+                            <input type="text" name="peso" placeholder="Peso (kg)" 
+                            value="<?php echo (!empty($perfil->getPeso())) ? htmlspecialchars(number_format($perfil->getPeso(), 2, '.'. '')) : number_format(00.00, 2, '.', ''); ?>">
+                            <input type="text" name="altura" placeholder="Altura (m)"
+                            value="<?php echo (!empty($perfil->getAltura())) ? htmlspecialchars(number_format($perfil->getAltura(), 2, '.', "")) : number_format(0.00, 2, ".", ""); ?>">
                         </div>
                     </fieldset>
                     <div class="buttons">
                         <button type="submit" class="save" name="submit">Salvar Perfil</button>
-                        <button type="button" class="change-pass">Alterar Senha</button>
                     </div>
                 </form>
             </main>
