@@ -51,7 +51,7 @@
                    </figure>
                    <h2>Growth Supplements</h2>
                    <p>Nutrição Esportiva</p>
-                   <a href="#" class="btn-ver-mais">Ver Mais</a>
+                   <a href="https://www.gsuplementos.com.br/?gad_source=1&gad_campaignid=21061231397&gclid=CjwKCAjw6ZTCBhBOEiwAqfwJd2lBB7HN19CHrhxr7oW7HsYVtTSb8maSEcs_jX4zviiwDtqI0m6yJhoC0uAQAvD_BwE" class="btn-ver-mais">Ver Mais</a>
                </div>
 
                <!-- Card de Parceiro -->
@@ -61,7 +61,7 @@
                    </figure>
                    <h2>Max Titanium</h2>
                    <p>Suplementos de Alta Performance</p>
-                   <a href="#" class="btn-ver-mais">Ver Mais</a>
+                   <a href="https://www.maxtitanium.com.br/?utm_source=googleads&utm_medium=cpc&utm_campaign=GO_SEAR_INST_F_BR_Institucional-Clique&gad_source=1&gad_campaignid=21850827038&gclid=CjwKCAjw6ZTCBhBOEiwAqfwJdzj3_jPSrX9CVO-xlKM869vtQ0GHpXHh-lI2qpdWzwKNW0Rtuq1pDRoCvvIQAvD_BwE" class="btn-ver-mais">Ver Mais</a>
                </div>
 
                <!-- Card de Parceiro -->
@@ -71,7 +71,7 @@
                    </figure>
                    <h2>Integralmédica</h2>
                    <p>Líder em Suplementação</p>
-                   <a href="#" class="btn-ver-mais">Ver Mais</a>
+                   <a href="https://www.integralmedica.com.br/?gad_source=1&gad_campaignid=22396590402&gclid=CjwKCAjw6ZTCBhBOEiwAqfwJd6OcgYS3tgybD3D43RWP0CxVMs0S2LFgaOo3CqY6YVQ9_Rb_hDQTcRoCf2kQAvD_BwE" class="btn-ver-mais">Ver Mais</a>
                </div>
 
                <!-- Card de Parceiro -->
@@ -81,7 +81,7 @@
                    </figure>
                    <h2>Fitness Exclusive</h2>
                    <p>Equipamentos e Acessórios</p>
-                   <a href="#" class="btn-ver-mais">Ver Mais</a>
+                   <a href="https://fitnessexclusive.com.br/#" class="btn-ver-mais">Ver Mais</a>
                </div>
                
                <!-- Adicione quantos parceiros desejar -->
@@ -91,7 +91,7 @@
                    </figure>
                    <h2>Probiótica</h2>
                    <p>Nutrição e Bem-estar</p>
-                   <a href="#" class="btn-ver-mais">Ver Mais</a>
+                   <a href="https://www.probiotica.com.br/?utm_source=googleads&utm_medium=cpc&utm_campaign=GO_SEAR_INST_P4_BR_Institucional-Conversao-ROAS&utm_term=Institucional&gad_source=1&gad_campaignid=19788126163&gclid=CjwKCAjw6ZTCBhBOEiwAqfwJd6Ss3P01sI9Ok8UoskauyV1rSnT0QksnHvkkfXhSTbhytmAQr8noQhoCahEQAvD_BwE" class="btn-ver-mais">Ver Mais</a>
                </div>
 
                <div class="parceiro-card">
@@ -100,7 +100,7 @@
                    </figure>
                    <h2>Vitafor</h2>
                    <p>Qualidade de Vida</p>
-                   <a href="#" class="btn-ver-mais">Ver Mais</a>
+                   <a href="https://www.vitafor.com.br/381?map=productClusterIds&order=&gad_source=1&gad_campaignid=18705193166&gclid=CjwKCAjw6ZTCBhBOEiwAqfwJd4KVoRxtumVzFImYf-pNFSo01OfU1ZpEM6Y-SEMinNBJ18Qf3GxqxRoCo7UQAvD_BwE" class="btn-ver-mais">Ver Mais</a>
                </div>
            </section>
         </section>
