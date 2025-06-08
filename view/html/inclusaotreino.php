@@ -27,7 +27,7 @@
                         <li><a href="consultas-agendadas.php"> <img src="../assets/icons/dashboard-usuario/consulta-icon.svg" alt=""> Consultas</a></li>
                         <li><a href="parceiros.php"> <img src="../assets/icons/dashboard-usuario/market-icon.svg" alt=""> Catálogo</a></li>
                         <li><a href="suporte.php"> <img src="../assets/icons/dashboard-usuario/suport-icon.svg" alt=""> Suporte</a></li>
-                        <li><a href="#"> <img src="../assets/icons/dashboard-usuario/config-icon.svg" alt=""> Configurações</a></li>
+                        <li><a href="configuracoes.php"> <img src="../assets/icons/dashboard-usuario/config-icon.svg" alt=""> Configurações</a></li>
                     </ul>
                 </nav>
             </aside>
