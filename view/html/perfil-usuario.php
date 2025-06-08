@@ -1,12 +1,10 @@
 <?php
-
-use BcMath\Number;
-
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 session_start();
 
 require_once __DIR__ . "/../../model/PerfilUsuario.php";
+require_once __DIR__ . "/../../model/AlterarFotoPerfil.php";
 
 ?>
 <!DOCTYPE html>
@@ -21,7 +19,7 @@ require_once __DIR__ . "/../../model/PerfilUsuario.php";
 <body>
     <div class="app-container">
         <section class="left">
-            <div class="profile" class="profile-picture-container">
+            <div class="profile">
                 <figure>
                     <?php
                     $caminho_base_foto = '../assets/perfil-usuario/foto/';
@@ -33,7 +31,7 @@ require_once __DIR__ . "/../../model/PerfilUsuario.php";
                         $foto_perfil = $foto_padrao;
                     }
                     ?>
-                    <img src="<?php echo $foto_perfil; ?>" alt="Foto de perfil" width="120" height="120">
+                    <img src="<?php echo $foto_perfil; ?>" alt="Foto de perfil">
                 </figure>
                 <?php
                 if($sucesso === true && !empty($perfil->getNome())) {
@@ -54,7 +52,7 @@ require_once __DIR__ . "/../../model/PerfilUsuario.php";
                         <li><a href="consultas-agendadas.php"><img src="../assets/perfil-usuario/consultas-icon.svg" alt="Ícone Consultas" width="25">Consultas</a></li>
                         <li><a href="parceiros.php"><img src="../assets/perfil-usuario/catalogo-icon.svg" alt="Ícone Catálogo" width="25">Catálogo</a></li>
                         <li><a href="suporte.php"><img src="../assets/perfil-usuario/suporte-icon.svg" alt="Ícone Suporte" width="25">Suporte</a></li>
-                        <li><a href="configuracoes.php"><img src="../assets/perfil-usuario/configuracao-icon.svg" alt="Ícone Configurações" width="25">Configurações</a></li>
+                        <li><a href="#"><img src="../assets/perfil-usuario/configuracao-icon.svg" alt="Ícone Configurações" width="25">Configurações</a></li>
                     </ul>
                 </nav>
             </aside>
@@ -62,7 +60,8 @@ require_once __DIR__ . "/../../model/PerfilUsuario.php";
         <section class="container-right">
             <main>
                 <header class="profile-header">
-                    <figure class="profile-picture-container">
+                    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" class="profile-form-profile" id="form-principal" enctype="multipart/form-data" method="POST">
+                        <figure class="profile-picture-container">
                         <?php
                         $caminho_base_foto = '../assets/perfil-usuario/foto/';
                         $foto_padrao = '../assets/perfil-usuario/user-icon-default-mod.jpeg';
@@ -73,18 +72,20 @@ require_once __DIR__ . "/../../model/PerfilUsuario.php";
                             $foto_perfil = $foto_padrao;
                         }
                         ?>
-                        <img src="<?php echo $foto_perfil; ?>" alt="Foto de perfil" width="120" height="120" id="preview-image">
-                        <label for="profile-photo" class="edit-icon">
+                        <img src="<?php echo $foto_perfil; ?>" alt="Foto de perfil" id="preview-image">
+                        <input type="file" name="fotoPerfil" id="fotoPerfil" style="display: none;">
+                        <label for="fotoPerfil" id="fotoPerfil" class="edit-icon">
                             <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTIgMjBIMjFNNCAxMy41VjE4YzAgMS4xLjkxIDIgMiAyaDNsOS41LTkuNUwxMy41IDRaIi8+PC9zdmc+" alt="Editar foto">
                         </label>
-                    </figure>
-                    <?php
-                    if($sucesso === true && !empty($perfil->getNome())) {
-                        echo "<h2>{$perfil->getNome()}</h2>";
-                    } else {
-                        echo "<h2>Usuário</h2>";
-                    }
-                ?>
+                        </figure>
+                        <?php
+                        if($sucesso === true && !empty($perfil->getNome())) {
+                            echo "<h2>{$perfil->getNome()}</h2>";
+                        } else {
+                            echo "<h2>Usuário</h2>";
+                        }
+                        ?>
+                    </form>
                 </header>
                 <form class="profile-form" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
                     <fieldset>
@@ -129,9 +130,9 @@ require_once __DIR__ . "/../../model/PerfilUsuario.php";
                     <fieldset>
                         <legend>Contato</legend>
                         <div class="form">
-                            <input type="email" name="email" 
+                            <input type="email" name="email" placeholder="Email"
                                 value="<?php echo (!empty($perfil->getEmail())) ? htmlspecialchars($perfil->getEmail()) : ''; ?>">
-                            <input type="text" name="telefone" 
+                            <input type="text" name="telefone" placeholder="Telefone"
                                 value="<?php if(!empty($perfil->getTelefone())) { echo htmlspecialchars($perfil->getTelefone()); } ?>">
                         </div>
                     </fieldset>
@@ -151,5 +152,19 @@ require_once __DIR__ . "/../../model/PerfilUsuario.php";
             </main>
         </section>
     </div>
+<script>
+document.getElementById('fotoPerfil').addEventListener('change', function() {
+    if (this.files && this.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('preview-image').src = e.target.result;
+        }
+        reader.readAsDataURL(this.files[0]);
+        setTimeout(function() {
+            document.getElementById('form-principal').submit();
+        }, 100); 
+    }
+});
+</script>
 </body>
 </html>
