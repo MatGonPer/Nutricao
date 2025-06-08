@@ -20,7 +20,6 @@
             <aside>
                 <nav>
                     <ul>
-                        <li><a href="landing-page.php"> <img src="../assets/perfil-usuario/incio-icon.svg" width="25px">Início</a></li>
                         <li><a href="perfil-usuario.php"> <img src="../assets/perfil-usuario/profile-icon.svg" width="25px">Usuário</a></li>
                         <li><a href="dashboard-usuario.php"> <img src="../assets/perfil-usuario/desempenho-icon.svg" width="25px">Desempenho</a></li>
                         <li><a href="treinos.php"> <img src="../assets/perfil-usuario/treinos-icon.svg" width="25px">Treino</a></li>
