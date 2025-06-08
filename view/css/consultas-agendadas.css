@@ -1,141 +1,367 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* --- Reset Básico e Fontes --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
     font-family: "Poppins", sans-serif;
-    background-color: #F5E9E2;
-    box-sizing: border-box;
+    background-color: #F5E9E2; /* Cor de fundo principal */
+    color: #333;
+    line-height: 1.5;
 }
 
-ul{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+img {
+    max-width: 100%;
+    display: block;
 }
 
-.container {
-    width: 100dvw;
-    height: 100dvh;
-    display: flex;
-    flex-direction: row;
+ul {
+    list-style: none;
 }
 
-.left {
-    width: 20%;
-    height: 130dvh;
-    background-color: #053225;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 5dvh;
-}
-
-h2 {
-    max-width: 300px;
-    max-height: 70px;
-    font-size: 35px;
-    font-weight: 400;
-}
-
-.profile {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-    font-size: 20px;
-    text-wrap: wrap;
-    margin: 20px 0px 20px 0px;
-}
-
-.profile img {
-    border-radius: 100px;
-    width: 40%;
-    border: 1px solid white;
-}
-
-.profile-info h3 {
-    font-size: 30px;
-}
-
-.profile-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 10px;
-}
-
-.profile-header p {
-    margin-top: 10px;
-}
-
-aside nav ul li {
-    width: 250px;
-    height: 50px;
-    text-align: start;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-aside nav ul li a {
-    display: flex;
-    gap: 12px;
-    font-size: 23px;
-    font-weight: 300;
+a {
     text-decoration: none;
-    color: #ffffff;
-    margin: 0px 0px 0px 15px;
+    color: inherit;
 }
 
-aside nav ul li:hover {
-    background-color: rgba(255, 255, 255, 0.100);
-    border-radius: 10px;
+/* --- Layout Principal (Mobile-First) --- */
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Layout empilhado em telas pequenas */
 }
 
-.titulo{
-    padding: 30px;
-    font-size: 30px;
+/* O menu lateral é oculto por padrão em telas móveis */
+.left {
+    display: none; 
 }
 
-h3{
-    font-size: 25px;
+.right {
+    width: 100%;
+    padding: 1.5rem 1rem; /* Espaçamento para mobile */
+}
+
+/* --- Cabeçalho da Área Principal --- */
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.titulo h1 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #053225;
+}
+
+.btn-principal {
+    background-color: #0E34A0;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-principal:hover {
+    background-color: #0b2a82;
+}
+
+.profissionais {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Espaçamento entre os cards */
+}
+
+/* Estilo dos Cards de Profissionais */
+.card-consulta {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.chat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.chat h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.chat a {
+    padding: 0.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.chat a:hover {
+    background-color: #f0f0f0;
+}
+
+/* --- Seção da Data da Consulta --- */
+.consulta-data {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 0;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    color: #555;
+}
+
+.consulta-data img {
+    width: 20px;
+    height: 20px;
+}
+
+.consulta-data span {
+    font-size: 0.95rem;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; /* Espaço entre os itens de informação */
+}
+
+.info p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* --- Seção de Botões de Ação --- */
+.card-actions {
+    display: flex;
+    justify-content: flex-end; /* Alinha o botão à direita */
+    margin-top: 1rem;
+}
+
+.btn {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.btn-cancelar {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border-color: #fecaca;
+}
+
+.btn-cancelar:hover {
+    background-color: #fecaca;
+    color: #991b1b;
+}
+
+.btn-neutro {
+    background-color: #f1f5f9;
+    color: #475569;
+    border-color: #e2e8f0;
+}
+
+.btn-neutro:hover {
+    background-color: #e2e8f0;
+}
+
+/* --- Estilos do Modal --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none; /* Oculto por padrão */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.modal-header h2 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.modal-body label {
     font-weight: 500;
 }
 
-.profissionais{
+.modal-body select, .modal-body input {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.modal-footer {
     display: flex;
-    flex-direction: column;
-    margin-left: 30px;
-    gap: 30px;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding-top: 1.5rem;
+    margin-top: 1rem;
+    border-top: 1px solid #eee;
 }
 
-.chat{
-    display: flex;
-    gap: 20px;
-}
 
-.info{
-    display: flex;
-    flex-direction: column;
-}
+/* --- Media Query para Telas Maiores (Tablet e Desktop a partir de 1024px) --- */
+@media (min-width: 1024px) {
+    .container {
+        flex-direction: row; /* Layout lado a lado em telas grandes */
+    }
 
-.info p{
-    padding-top: 20px;
-}
+    /* Estilos da barra lateral */
+    .left {
+        display: flex; /* Exibe a barra lateral em telas maiores */
+        width: 25%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: #053225;
+        color: #ffffff;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 1rem;
+        gap: 2rem;
+        position: sticky;
+        top: 0;
+        justify-content: flex-start;
+    }
+    
+    .left .profile {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        gap: 1rem;
+    }
 
-.nutricionista,
-.personal{
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    border: 1px solid black;
-    padding: 30px;
-    border-radius: 10px;
-    gap: 10px;
-    width: 70vw;
-}
+    .left .profile figure img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid white;
+    }
 
+    .left .profile h2 {
+        font-size: 1.25rem;
+        font-weight: 500;
+        max-width: 200px;
+        word-break: break-word;
+    }
+    
+    .left aside {
+        width: 100%;
+    }
+
+    .left aside nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .left aside nav ul li {
+        width: 100%;
+        border-radius: 10px;
+        transition: background-color 0.2s;
+    }
+
+    .left aside nav ul li a {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 1.1rem;
+        width: 100%;
+        padding: 0.75rem 1rem;
+        color: #fff;
+    }
+    
+    .left aside nav ul li:hover,
+    .left aside nav ul li.active {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .left aside nav ul li a img {
+        width: 25px;
+    }
+
+    /* Ajustes na área de conteúdo para desktop */
+    .right {
+        flex: 1; 
+        padding: 2rem 3rem;
+    }
+
+    .titulo h1 {
+        font-size: 2rem;
+    }
+
+    .profissionais {
+        gap: 2rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+    }
+}
