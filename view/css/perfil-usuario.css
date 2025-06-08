@@ -7,11 +7,6 @@
     padding: 0;
 }
 
-.app-container {
-    display: flex;
-    min-height: 100vh;
-}
-
 body {
     font-family: "Poppins", sans-serif;
     background-color: #F5E9E2;
@@ -34,70 +29,22 @@ a {
 }
 
 /* --- Layout Principal (Mobile-First) --- */
-.container {
+.app-container {
     width: 100%;
     min-height: 100vh;
     display: flex;
     flex-direction: column; /* Layout empilhado em telas pequenas */
 }
 
-/* O menu lateral é oculto por padrão em telas móveis, como no dashboard */
+/* O menu lateral é oculto por padrão em telas móveis */
 .left {
-    height: 1080.8px;
-    width: 20%;
-    min-width: 260px; /* Added for better responsiveness */
-    background-color: #053225;
-    color: #ffffff;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem; 
-}
-
-.left aside {
-    width: 100%;
-    padding: 0 1rem; /* Add some horizontal padding */
-}
-
-.left aside nav ul {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.left aside nav ul li {
-    border-radius: 0.5rem;
-    transition: background-color 0.2s ease;
-}
-
-.left aside nav ul li a {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-size: 1.125rem;
-    font-weight: 300;
-    color: #ffffff;
-    padding: 0.6rem 0.8rem;
-}
-
-.left aside nav ul li:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.left aside nav ul li.active {
-    background-color: rgba(255, 255, 255, 0.15);
+    display: none; 
 }
 
 .container-right {
     width: 100%;
-    padding: 1rem;
+    padding: 1.5rem 1rem;
     background-color: #F5E9E2;
-    /* Remove a borda arredondada e margem superior para um visual limpo em mobile */
-    border-radius: 0; 
-    margin-top: 0;
-    position: relative;
-    z-index: 1;
 }
 
 /* --- Cabeçalho do Perfil (Direita) --- */
@@ -108,33 +55,6 @@ a {
     text-align: center;
     padding: 1rem;
     margin-bottom: 1.5rem;
-}
-
-.profile {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1.25rem;
-}
-
-.profile figure {
-    width: 40%;
-    max-width: 100px;
-}
-
-.profile img {
-    border-radius: 9999px;
-    width: 100%;
-    border: 2px solid white;
-}
-
-.profile h2 {
-    font-size: 1.25rem;
-    font-weight: 400;
-    max-width: 200px;
-    word-break: break-word;
 }
 
 .profile-header h2 {
@@ -225,7 +145,7 @@ a {
 
 .buttons {
     display: flex;
-    flex-direction: column; /* Botões empilhados no mobile */
+    flex-direction: column; 
     gap: 1rem;
     margin-top: 1rem;
 }
@@ -240,6 +160,7 @@ a {
     cursor: pointer;
     transition: opacity 0.2s;
 }
+
 .buttons button:hover {
     opacity: 0.9;
 }
@@ -249,37 +170,104 @@ a {
     color: white;
 }
 
-.change-pass {
-    background-color: #e2e8f0;
-    color: #475569;
-}
-
 /* --- Media Query para Telas Maiores (Tablet e Desktop) --- */
 @media (min-width: 1024px) {
-    .container {
+    .app-container {
         flex-direction: row; /* Layout lado a lado */
     }
 
+    /* ESTILOS DO MENU LATERAL (IDÊNTICOS AO DA PÁGINA PARCEIROS) */
+    .left {
+        display: flex;
+        width: 25%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: #053225;
+        color: #ffffff;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 1rem;
+        gap: 2rem;
+        position: sticky; /* Fixa o menu na lateral */
+        top: 0;
+        justify-content: flex-start;
+    }
+    
+    .left .profile {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .left .profile figure img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid white;
+    }
+
+    .left .profile h2 {
+        font-size: 1.25rem;
+        font-weight: 500;
+        max-width: 200px;
+        word-break: break-word;
+    }
+    
+    .left aside {
+        width: 100%;
+    }
+
+    .left aside nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .left aside nav ul li {
+        width: 100%;
+        border-radius: 10px;
+        transition: background-color 0.2s;
+    }
+
+    .left aside nav ul li a {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 1.1rem;
+        width: 100%;
+        padding: 0.75rem 1rem;
+        color: #fff;
+    }
+    
+    .left aside nav ul li:hover,
+    .left aside nav ul li.active {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .left aside nav ul li a img {
+        width: 25px;
+    }
+
+    /* AJUSTES NO CONTEÚDO DA DIREITA */
     .container-right {
-        flex: 1;
+        flex: 1; /* Faz o container da direita ocupar o espaço restante */
         padding: 2rem 3rem;
-        border-radius: 0;
-        margin-top: 0;
     }
 
     .form {
         flex-direction: row;
-        flex-wrap: wrap; /* Permite que os campos quebrem a linha se não couberem */
+        flex-wrap: wrap; 
         gap: 1.5rem;
     }
 
-    /* Faz com que os campos ocupem metade do espaço */
     .form input, .form select {
         flex: 1 1 calc(50% - 1.5rem); 
         min-width: 200px;
     }
     
-    /* Faz com que a textarea ocupe a largura total */
     .form .about {
         flex-basis: 100%;
     }

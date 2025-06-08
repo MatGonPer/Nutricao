@@ -1,3 +1,6 @@
+/* --- Reset Básico e Fontes --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -32,10 +35,16 @@ img {
     display: block;
 }
 
-/* --- Main Layout --- */
+/* --- Layout Principal (Mobile-First) --- */
 .app-container {
     display: flex;
+    flex-direction: column;
     min-height: 100vh;
+}
+
+/* O menu lateral é oculto por padrão em telas móveis */
+.left {
+    display: none;
 }
 
 .main-content {
@@ -59,7 +68,7 @@ img {
 }
 
 .main-header h1 {
-    font-size: 1.875rem; /* 30px */
+    font-size: 1.5rem; /* 24px */
     font-weight: 700;
     color: #1C0F13;
     flex-shrink: 0;
@@ -69,11 +78,42 @@ img {
 .header-actions {
     display: flex;
     align-items: center;
-    gap: 0.5rem; /* Reduced gap */
+    gap: 0.5rem;
 }
 
+/* Esconde os botões de desktop na visualização mobile */
+.header-actions .btn {
+    display: none;
+}
+
+.mobile-menu-button {
+    display: block;
+    color: #053225;
+    margin-left: auto;
+}
+
+/* Estilos para o menu hamburguer (se aplicável) */
+.mobile-menu {
+    display: none; /* Inicialmente oculto */
+    background-color: #053225;
+    color: white;
+    padding: 1rem;
+}
+.mobile-menu.active {
+    display: block;
+}
+.mobile-menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+}
+.mobile-menu a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
 .content-area {
-    padding: 1.5rem;
+    padding: 1rem;
 }
 
 .content-section {
@@ -83,88 +123,14 @@ img {
 .content-section h2 {
     font-size: 1.25rem; /* 20px */
     font-weight: 600;
-    color: #1C0F13; /* gray-700 */
+    color: #1C0F13;
     margin-bottom: 1rem;
-}
-
-/* --- Sidebar (Original Structure) --- */
-.left {
-    width: 20%;
-    min-width: 260px; /* Added for better responsiveness */
-    background-color: #053225;
-    color: #ffffff;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-}
-
-.profile {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1.25rem;
-}
-
-.profile figure {
-    width: 40%;
-    max-width: 100px;
-}
-
-.profile img {
-    border-radius: 9999px;
-    width: 100%;
-    border: 2px solid white;
-}
-
-.profile h2 {
-    font-size: 1.25rem;
-    font-weight: 400;
-    max-width: 200px;
-    word-break: break-word;
-}
-
-.left aside {
-    width: 100%;
-    padding: 0 1rem; /* Add some horizontal padding */
-}
-
-.left aside nav ul {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.left aside nav ul li {
-    border-radius: 0.5rem;
-    transition: background-color 0.2s ease;
-}
-
-.left aside nav ul li a {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-size: 1.125rem;
-    font-weight: 300;
-    color: #ffffff;
-    padding: 0.6rem 0.8rem;
-}
-
-.left aside nav ul li:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.left aside nav ul li.active {
-    background-color: rgba(255, 255, 255, 0.15);
 }
 
 /* --- Monitoring Cards --- */
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 1.5rem;
 }
 
@@ -391,7 +357,7 @@ img {
     border-radius: 0.5rem;
     font-weight: 600;
     transition: background-color 0.2s ease, box-shadow 0.2s ease;
-    white-space: nowrap; /* Prevent button text from wrapping */
+    white-space: nowrap;
 }
 
 .btn-primary {
@@ -409,60 +375,104 @@ img {
     background-color: #d1d5db;
 }
 
-/* --- Responsive Design --- */
-.mobile-menu-button { display: none; }
-.mobile-menu { display: none; }
-#set-monthly-goals-btn, #set-daily-goals-btn { display: block; }
-
-@media (max-width: 768px) {
-    .left { 
-        display: none; 
-    }
-    
-    .mobile-menu-button {
-        display: block;
-        color: #053225;
-        margin-left: auto;
-    }
-    
-    .header-actions .btn {
-        display: none;
-    }
-    .header-actions {
-        justify-content: flex-end;
-    }
-
-
-    .mobile-menu {
-        display: none; /* Initially hidden */
-        background-color: #053225;
-        color: white;
-        padding: 1rem;
-    }
-    .mobile-menu.active {
-        display: block;
-    }
-    .mobile-menu a {
-        display: block;
-        padding: 0.75rem 1rem;
-        border-radius: 0.5rem;
-    }
-    .mobile-menu a.active {
-        background-color: rgba(255, 255, 255, 0.2);
-    }
-
-    .main-header h1 { font-size: 1.5rem; }
-    .content-area { padding: 1rem; }
-    .cards-grid { grid-template-columns: repeat(1, 1fr); }
-}
-
-@media (min-width: 640px) {
-    .cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
+/* --- Media Query para Telas Maiores (Tablet e Desktop) --- */
 @media (min-width: 1024px) {
+    .app-container {
+        flex-direction: row;
+    }
+
+    /* ESTILOS DO MENU LATERAL (IDÊNTICOS AO DA PÁGINA PARCEIROS) */
+    .left {
+        display: flex;
+        width: 25%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: #053225;
+        color: #ffffff;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 1rem;
+        gap: 2rem;
+        position: sticky; /* Fixa o menu na lateral */
+        top: 0;
+        justify-content: flex-start;
+    }
+    
+    .left .profile {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .left .profile figure img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid white;
+    }
+
+    .left .profile h2 {
+        font-size: 1.25rem;
+        font-weight: 500;
+        max-width: 200px;
+        word-break: break-word;
+    }
+    
+    .left aside {
+        width: 100%;
+    }
+
+    .left aside nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .left aside nav ul li {
+        width: 100%;
+        border-radius: 10px;
+        transition: background-color 0.2s;
+    }
+
+    .left aside nav ul li a {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 1.1rem;
+        width: 100%;
+        padding: 0.75rem 1rem;
+        color: #fff;
+    }
+    
+    .left aside nav ul li:hover,
+    .left aside nav ul li.active {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .left aside nav ul li a img {
+        width: 25px;
+    }
+
+    /* Ajustes no layout principal para desktop */
+    .main-header h1 {
+        font-size: 1.875rem; /* 30px */
+    }
+
+    .header-actions .btn {
+        display: inline-flex; /* Mostra os botões de desktop */
+    }
+
+    .mobile-menu-button {
+        display: none; /* Esconde o botão hamburguer */
+    }
+
+    .content-area {
+        padding: 1.5rem;
+    }
+
     .cards-grid {
         grid-template-columns: repeat(4, 1fr);
     }
