@@ -17,7 +17,6 @@ class Usuario {
     private string $sobreMim;
     private float $peso;
     private float $altura;
-    private $foto;
     private BancoDeDados $banco;
 
     public function __construct(BancoDeDados $banco) {
@@ -50,7 +49,6 @@ class Usuario {
             $this->sobreMim = $resultado[0]['sobre_mim'] ?? '';
             $this->peso = $resultado[0]['peso'] ?? 00.00;
             $this->altura = $resultado[0]['altura'] ?? 0.00;
-            $this->foto = $resultado[0]['foto'] ?? null;
 
             return true;
         }
@@ -175,14 +173,6 @@ class Usuario {
 
     public function setAltura(float $altura) {
         $this->altura = $altura;
-    }
-
-    public function getFoto() {
-        return $this->foto;
-    }
-
-    public function setFoto($foto) {
-        $this->foto = $foto;
     }
 }
 ?>

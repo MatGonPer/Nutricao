@@ -105,13 +105,6 @@ a {
 }
 
 /* --- Formulário --- */
-
-.profile-form-profile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .profile-form fieldset {
     border: none;
     margin-bottom: 2rem;

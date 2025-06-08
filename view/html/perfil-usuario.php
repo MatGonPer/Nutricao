@@ -1,10 +1,12 @@
 <?php
+
+use BcMath\Number;
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 session_start();
 
 require_once __DIR__ . "/../../model/PerfilUsuario.php";
-require_once __DIR__ . "/../../model/AlterarFotoPerfil.php";
 
 ?>
 <!DOCTYPE html>
@@ -21,17 +23,7 @@ require_once __DIR__ . "/../../model/AlterarFotoPerfil.php";
         <section class="left">
             <div class="profile">
                 <figure>
-                    <?php
-                    $caminho_base_foto = '../assets/perfil-usuario/foto/';
-                    $foto_padrao = '../assets/perfil-usuario/user-icon-default-mod.jpeg';
-
-                    if ($sucesso === true && !empty($perfil->getFoto())) {
-                        $foto_perfil = $caminho_base_foto . htmlspecialchars($perfil->getFoto());
-                    } else {
-                        $foto_perfil = $foto_padrao;
-                    }
-                    ?>
-                    <img src="<?php echo $foto_perfil; ?>" alt="Foto de perfil" id="preview-image">
+                    <img src="https://placehold.co/200x200/F5E9E2/053225?text=FN" alt="Foto de perfil">
                 </figure>
                 <?php
                 if($sucesso === true && !empty($perfil->getNome())) {
@@ -60,32 +52,19 @@ require_once __DIR__ . "/../../model/AlterarFotoPerfil.php";
         <section class="container-right">
             <main>
                 <header class="profile-header">
-                    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" class="profile-form-profile" id="form-principal" enctype="multipart/form-data" method="POST">
-                        <figure class="profile-picture-container">
-                        <?php
-                        $caminho_base_foto = '../assets/perfil-usuario/foto/';
-                        $foto_padrao = '../assets/perfil-usuario/user-icon-default-mod.jpeg';
-
-                        if ($sucesso === true && !empty($perfil->getFoto())) {
-                            $foto_perfil = $caminho_base_foto . htmlspecialchars($perfil->getFoto());
-                        } else {
-                            $foto_perfil = $foto_padrao;
-                        }
-                        ?>
-                        <img src="<?php echo $foto_perfil; ?>" alt="Foto de perfil" id="preview-image">
-                        <input type="file" name="fotoPerfil" id="fotoPerfil" style="display: none;">
-                        <label for="fotoPerfil" id="fotoPerfil" class="edit-icon">
+                    <figure class="profile-picture-container">
+                        <img src="../assets/perfil-usuario/user-icon-default-mod.jpeg" alt="Foto de perfil" id="preview-image">
+                        <label for="profile-photo" class="edit-icon">
                             <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTIgMjBIMjFNNCAxMy41VjE4YzAgMS4xLjkxIDIgMiAyaDNsOS41LTkuNUwxMy41IDRaIi8+PC9zdmc+" alt="Editar foto">
                         </label>
-                        </figure>
-                        <?php
-                        if($sucesso === true && !empty($perfil->getNome())) {
-                            echo "<h2>{$perfil->getNome()}</h2>";
-                        } else {
-                            echo "<h2>Usuário</h2>";
-                        }
-                        ?>
-                    </form>
+                    </figure>
+                    <?php
+                    if($sucesso === true && !empty($perfil->getNome())) {
+                        echo "<h2>{$perfil->getNome()}</h2>";
+                    } else {
+                        echo "<h2>Usuário</h2>";
+                    }
+                ?>
                 </header>
                 <form class="profile-form" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
                     <fieldset>
@@ -152,19 +131,5 @@ require_once __DIR__ . "/../../model/AlterarFotoPerfil.php";
             </main>
         </section>
     </div>
-<script>
-document.getElementById('fotoPerfil').addEventListener('change', function() {
-    if (this.files && this.files[0]) {
-        var reader = new FileReader();
-        reader.onload = function(e) {
-            document.getElementById('preview-image').src = e.target.result;
-        }
-        reader.readAsDataURL(this.files[0]);
-        setTimeout(function() {
-            document.getElementById('form-principal').submit();
-        }, 100); 
-    }
-});
-</script>
 </body>
 </html>
