@@ -1,2 +1,4 @@
 .vscode/
 yay/
+/view/assets/perfil-usuario/foto/*
+!/view/assets/perfil-usuario/foto/.gitkeep
