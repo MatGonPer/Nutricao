@@ -1,144 +1,389 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* --- Reset Básico e Fontes (Consistente com perfil-usuario.css) --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
     font-family: "Poppins", sans-serif;
     background-color: #F5E9E2;
-    box-sizing: border-box;
+    color: #333;
+    line-height: 1.5;
+    min-height: 100vh;
 }
 
-ul{
+img {
+    max-width: 100%;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- Layout Principal (Mobile-First) --- */
+.container {
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-}
-
-.container {
-    width: 100dvw;
-    height: 100dvh;
-    display: flex;
-    flex-direction: row;
 }
 
 .left {
-    width: 20%;
-    height: 130dvh;
-    background-color: #053225;
+    display: none; 
+}
+
+.right {
+    width: 100%;
+    padding: 1.5rem 1rem;
+    background-color: #ffffff;
+}
+
+.main-header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    gap: 5dvh;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
 }
 
-h2 {
-    max-width: 300px;
-    max-height: 70px;
-    font-size: 35px;
-    font-weight: 400;
-}
-
-.profile {
-    display: flex;
-    flex-direction: column;
+main h1 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #053225;
     text-align: center;
-    gap: 20px;
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-    font-size: 20px;
-    text-wrap: wrap;
-    margin: 20px 0px 20px 0px;
 }
 
-.profile img {
-    border-radius: 100px;
-    width: 40%;
-    border: 1px solid white;
-}
-
-.profile-info h3 {
-    font-size: 30px;
-}
-
-.profile-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 10px;
-}
-
-.profile-header p {
-    margin-top: 10px;
-}
-
-aside nav ul li {
-    width: 250px;
-    height: 50px;
-    text-align: start;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-aside nav ul li a {
-    display: flex;
-    gap: 12px;
-    font-size: 23px;
-    font-weight: 300;
-    text-decoration: none;
-    color: #ffffff;
-    margin: 0px 0px 0px 15px;
-}
-
-aside nav ul li:hover {
-    background-color: rgba(255, 255, 255, 0.100);
-    border-radius: 10px;
-}
-
-.treinos{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 50px;
-    justify-content: space-around;
-}
-
-.treino{
-    justify-content: center;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.300);
-    border-radius: 10px;
-    padding: 10px;
-    width: 30%;
-}
-
-.treino h2{
-    font-size: 20px;
+.add-workout-btn {
+    background-color: #0E34A0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
     font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
 }
 
-.treino p{
-    font-size: 15px;
+.add-workout-btn:hover {
+    background-color: #0b2a82;
+    transform: scale(1.05);
 }
 
-.treino img{
-    width: 70%;
-    transition: 0.5s;
-}
-
-.treino img:hover{
-    transform: scale(1.1);
-    transition: 0.5s;
-}
-
-.info{
+/* --- Estilos dos Cards de Treino (Mobile) --- */
+.treinos {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 1.5rem;
 }
 
-main h1{
-    padding: 30px;
-    font-size: 30px;
+.treino {
+    position: relative; /* Necessário para posicionar o botão de remover */
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border: 1px solid #e9ecef;
+    display: flex;
+    flex-direction: column;
+}
+
+.remove-workout-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.2s, background-color 0.2s;
+    z-index: 2;
+}
+
+.treino:hover .remove-workout-btn {
+    opacity: 1;
+}
+
+.remove-workout-btn:hover {
+    background-color: #e53e3e; /* Vermelho ao passar o mouse */
+}
+
+.treino figure {
+    margin-bottom: 1rem;
+}
+
+.treino img {
+    width: 100%;
+    height: 200px; /* Altura fixa para consistência visual */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.treino a:hover img {
+    transform: scale(1.03);
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex-grow: 1;
+}
+
+.info h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.info h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #555;
+}
+
+.info p {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-top: 0.5rem;
+}
+
+/* --- Media Query para Telas Maiores (Desktop) --- */
+@media (min-width: 1024px) {
+    .container {
+        flex-direction: row;
+    }
+
+    .left {
+        display: flex;
+        width: 25%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: #053225;
+        color: #ffffff;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 1rem;
+        gap: 2rem;
+        position: sticky;
+        top: 0;
+        justify-content: flex-start;
+    }
+    
+    .left .profile {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .left .profile figure img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid white;
+    }
+
+    .left .profile h2 {
+        font-size: 1.25rem;
+        font-weight: 500;
+        max-width: 200px;
+        word-break: break-word;
+    }
+    
+    .left aside {
+        width: 100%;
+    }
+
+    .left aside nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .left aside nav ul li {
+        width: 100%;
+        border-radius: 10px;
+        transition: background-color 0.2s;
+    }
+
+    .left aside nav ul li a {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 1.1rem;
+        padding: 0.75rem 1rem;
+    }
+    
+    .left aside nav ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .left aside nav ul li.active {
+        background-color: rgba(255, 255, 255, 0.15);
+        font-weight: 500;
+    }
+    
+    .right {
+        flex: 1;
+        padding: 2rem 3rem;
+    }
+
+    .main-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    main h1 {
+        text-align: left;
+        font-size: 2rem;
+    }
+
+    .treinos {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+
+    .treino {
+        flex: 1 1 calc(50% - 0.75rem); 
+        min-width: 280px;
+    }
+}
+
+/* --- Estilos do Modal --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none; /* Oculto por padrão */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-bottom: 1.5rem;
+    color: #053225;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2rem;
+    color: #aaa;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+.close-btn:hover {
+    color: #333;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+.modal-buttons button {
+    border: none;
+    border-radius: 8px;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    min-width: 120px;
+}
+.btn-danger {
+    background-color: #e53e3e;
+    color: white;
+}
+.btn-danger:hover {
+    background-color: #c53030;
+}
+.btn-secondary {
+    background-color: #e2e8f0;
+    color: #475569;
+}
+.btn-secondary:hover {
+    background-color: #cbd5e0;
+}
+
+/* --- Estilos da Lista de Exercícios no Modal --- */
+.modal-exercise-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-height: 60vh; /* Altura máxima para a lista */
+    overflow-y: auto; /* Adiciona barra de rolagem se necessário */
+    padding-right: 10px; /* Espaço para a barra de rolagem */
+}
+
+.exercise-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.exercise-item:hover {
+    background-color: #f0f4f8;
+    transform: translateY(-2px);
+}
+
+.exercise-name {
+    font-weight: 500;
+    color: #333;
+}
+
+.exercise-details {
+    font-size: 0.9rem;
+    color: #555;
+    background-color: #e2e8f0;
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
 }
