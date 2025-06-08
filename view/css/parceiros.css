@@ -1,144 +1,225 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* --- Reset Básico e Fontes --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
     font-family: "Poppins", sans-serif;
     background-color: #F5E9E2;
-    box-sizing: border-box;
+    color: #333;
+    line-height: 1.5;
 }
 
-ul{
+img {
+    max-width: 100%;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- Layout Principal (Mobile-First) --- */
+.container {
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-}
-
-.container {
-    width: 100dvw;
-    height: 100dvh;
-    display: flex;
-    flex-direction: row;
 }
 
 .left {
-    width: 20%;
-    height: 130dvh;
-    background-color: #053225;
+    display: none; 
+}
+
+.right {
+    width: 100%;
+    padding: 1.5rem 1rem;
+}
+
+/* --- Cabeçalho da Área Principal --- */
+.header-main {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    justify-content: flex-start;
-    gap: 5dvh;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #053225;
 }
 
-h2 {
-    max-width: 300px;
-    max-height: 70px;
-    font-size: 35px;
-    font-weight: 400;
+.titulo h1 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #053225;
 }
 
-.profile {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-    font-size: 20px;
-    text-wrap: wrap;
-    margin: 20px 0px 20px 0px;
+/* --- Grid de Parceiros --- */
+.parceiros-grid {
+    display: grid;
+    /* Cria colunas responsivas: no mínimo 250px, preenchendo o espaço */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
 }
 
-.profile img {
-    border-radius: 100px;
-    width: 40%;
-    border: 1px solid white;
-}
-
-.profile-info h3 {
-    font-size: 30px;
-}
-
-.profile-header {
+/* Estilo dos Cards de Parceiros */
+.parceiro-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 10px;
+    gap: 0.75rem;
+    border: 1px solid #e0e0e0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.profile-header p {
-    margin-top: 10px;
+.parceiro-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
-aside nav ul li {
-    width: 250px;
-    height: 50px;
-    text-align: start;
+.parceiro-logo {
+    width: 100%;
+    height: 100px;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-aside nav ul li a {
-    display: flex;
-    gap: 12px;
-    font-size: 23px;
-    font-weight: 300;
-    text-decoration: none;
-    color: #ffffff;
-    margin: 0px 0px 0px 15px;
-}
-
-aside nav ul li:hover {
-    background-color: rgba(255, 255, 255, 0.100);
-    border-radius: 10px;
-}
-
-
-header h1{
-    padding: 10px 10px 0 30px;
-    font-size: 35px;
-}
-
-.parceiros{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 50px;
-    padding: 30px;
-}
-
-.parceiro{
-    display: flex;
-    flex-direction: column;
-    background-color: white;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid black;
-    gap: 10px;
+    margin-bottom: 0.5rem;
 }
 
-.parceiro img{
-    width: 70%;
+.parceiro-logo img {
+    max-height: 100%;
+    object-fit: contain;
 }
 
-.parceiro a{
-    background-color: #2D92E3;
+.parceiro-card h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.parceiro-card p {
+    font-size: 0.95rem;
+    color: #666;
+    flex-grow: 1; /* Garante que o botão fique sempre na parte inferior */
+}
+
+.btn-ver-mais {
+    background-color: #053225;
     color: white;
-    text-decoration: none;
-    padding: 10px 30px;
-    border-radius: 10px;
-    font-size: 18px;
+    padding: 0.6rem 1.5rem;
+    border-radius: 8px;
     font-weight: 500;
-    transition: 0.5s;
+    margin-top: 0.5rem;
+    display: inline-block;
+    transition: background-color 0.2s;
 }
 
-.parceiro a:hover{
-    transition: 0.5s;
-    transform: scale(1.1);
+.btn-ver-mais:hover {
+    background-color: #084c38;
+}
+
+/* --- Media Query para Telas Maiores (Tablet e Desktop) --- */
+@media (min-width: 1024px) {
+    .container {
+        flex-direction: row;
+    }
+
+    .left {
+        display: flex;
+        width: 25%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: #053225;
+        color: #ffffff;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 1rem;
+        gap: 2rem;
+        position: sticky;
+        top: 0;
+        justify-content: flex-start;
+    }
+    
+    .left .profile {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .left .profile figure img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid white;
+    }
+
+    .left .profile h2 {
+        font-size: 1.25rem;
+        font-weight: 500;
+        max-width: 200px;
+        word-break: break-word;
+    }
+    
+    .left aside {
+        width: 100%;
+    }
+
+    .left aside nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .left aside nav ul li {
+        width: 100%;
+        border-radius: 10px;
+        transition: background-color 0.2s;
+    }
+
+    .left aside nav ul li a {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 1.1rem;
+        width: 100%;
+        padding: 0.75rem 1rem;
+        color: #fff;
+    }
+    
+    .left aside nav ul li:hover,
+    .left aside nav ul li.active {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .left aside nav ul li a img {
+        width: 25px;
+    }
+
+    .right {
+        flex: 1; 
+        padding: 2rem 3rem;
+    }
+
+    .titulo h1 {
+        font-size: 2rem;
+    }
+    
+    .parceiros-grid {
+        gap: 2rem;
+    }
 }
