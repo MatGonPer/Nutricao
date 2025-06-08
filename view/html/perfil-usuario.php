@@ -21,9 +21,19 @@ require_once __DIR__ . "/../../model/PerfilUsuario.php";
 <body>
     <div class="app-container">
         <section class="left">
-            <div class="profile">
+            <div class="profile" class="profile-picture-container">
                 <figure>
-                    <img src="https://placehold.co/200x200/F5E9E2/053225?text=FN" alt="Foto de perfil">
+                    <?php
+                    $caminho_base_foto = '../assets/perfil-usuario/foto/';
+                    $foto_padrao = '../assets/perfil-usuario/user-icon-default-mod.jpeg';
+
+                    if ($sucesso === true && !empty($perfil->getFoto())) {
+                        $foto_perfil = $caminho_base_foto . htmlspecialchars($perfil->getFoto());
+                    } else {
+                        $foto_perfil = $foto_padrao;
+                    }
+                    ?>
+                    <img src="<?php echo $foto_perfil; ?>" alt="Foto de perfil" width="120" height="120">
                 </figure>
                 <?php
                 if($sucesso === true && !empty($perfil->getNome())) {
@@ -53,7 +63,17 @@ require_once __DIR__ . "/../../model/PerfilUsuario.php";
             <main>
                 <header class="profile-header">
                     <figure class="profile-picture-container">
-                        <img src="../assets/perfil-usuario/user-icon-default-mod.jpeg" alt="Foto de perfil" id="preview-image">
+                        <?php
+                        $caminho_base_foto = '../assets/perfil-usuario/foto/';
+                        $foto_padrao = '../assets/perfil-usuario/user-icon-default-mod.jpeg';
+
+                        if ($sucesso === true && !empty($perfil->getFoto())) {
+                            $foto_perfil = $caminho_base_foto . htmlspecialchars($perfil->getFoto());
+                        } else {
+                            $foto_perfil = $foto_padrao;
+                        }
+                        ?>
+                        <img src="<?php echo $foto_perfil; ?>" alt="Foto de perfil" width="120" height="120" id="preview-image">
                         <label for="profile-photo" class="edit-icon">
                             <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTIgMjBIMjFNNCAxMy41VjE4YzAgMS4xLjkxIDIgMiAyaDNsOS41LTkuNUwxMy41IDRaIi8+PC9zdmc+" alt="Editar foto">
                         </label>
