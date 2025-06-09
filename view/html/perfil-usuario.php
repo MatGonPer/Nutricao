@@ -138,9 +138,9 @@ require_once __DIR__ . "/../../model/AlterarFotoPerfil.php";
                         <legend>Saúde</legend>
                         <div class="form">
                             <input type="text" name="peso" placeholder="Peso (kg)" 
-                            value="<?php echo (!empty($perfil->getPeso())) ? htmlspecialchars(number_format($perfil->getPeso(), 2, '.'. '')) : number_format(00.00, 2, '.', ''); ?>">
+                            value="<?php echo (!empty($perfil->getPeso())) ? htmlspecialchars(number_format($perfil->getPeso(), 2, '.'. '')) : ""; ?>">
                             <input type="text" name="altura" placeholder="Altura (m)"
-                            value="<?php echo (!empty($perfil->getAltura())) ? htmlspecialchars(number_format($perfil->getAltura(), 2, '.', "")) : number_format(0.00, 2, ".", ""); ?>">
+                            value="<?php echo (!empty($perfil->getAltura())) ? htmlspecialchars(number_format($perfil->getAltura(), 2, '.', "")) : ""; ?>">
                         </div>
                     </fieldset>
                     <div class="buttons">
