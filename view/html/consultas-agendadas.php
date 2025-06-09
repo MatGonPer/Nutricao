@@ -1,26 +1,45 @@
+<?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+session_start();
+
+require_once __DIR__ . "/../../model/PerfilUsuario.php";
+require_once __DIR__ . "/../../model/Usuario.php";
+require_once __DIR__ . "/../../model/ConsultasAgendadas.php";
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consultas Agendadas</title>
-    
-    <!-- Link para o arquivo CSS externo -->
     <link rel="stylesheet" href="../css/consultas-agendadas.css">
-    
-    <!-- Favicon de exemplo -->
     <link rel="shortcut icon" href="https://placehold.co/32x32/053225/F5E9E2?text=C" type="image/x-icon">
 </head>
 <body>
     <div class="container">
-        <!-- SEÇÃO ESQUERDA (MENU LATERAL) -->
         <section class="left">
             <div class="profile">
                 <figure>
-                    <!-- Imagem de perfil de exemplo -->
-                    <img src="https://placehold.co/120x120/F5E9E2/053225?text=FN" alt="Foto de perfil">
+                    <?php
+                    $caminho_base_foto = '../assets/perfil-usuario/foto/';
+                    $foto_padrao = '../assets/perfil-usuario/user-icon-default-mod.jpeg';
+
+                    if ($sucesso === true && !empty($perfil->getFoto())) {
+                        $foto_perfil = $caminho_base_foto . htmlspecialchars($perfil->getFoto());
+                    } else {
+                        $foto_perfil = $foto_padrao;
+                    }
+                    ?>
+                    <img src="<?php echo $foto_perfil; ?>" alt="Foto de perfil">
                 </figure>
-                <h2>Francisco do Nascimento</h2>
+                <?php
+                    if(!empty($usuario->getNome())) {
+                        echo "<h2>{$usuario->getNome()}</h2>";
+                    } else {
+                        echo "<h2>Usuário</h2>";
+                    }
+                ?>
             </div>
             <aside>
                 <nav>
@@ -36,8 +55,6 @@
                 </nav>
             </aside>
         </section>
-        
-        <!-- SEÇÃO DIREITA (CONTEÚDO PRINCIPAL) -->
         <section class="right">
             <main>
                 <div class="header-main">
@@ -48,9 +65,7 @@
                         <button id="solicitarConsultaBtn" class="btn btn-principal">Solicitar Consulta</button>
                     </div>
                 </div>
-
                 <div class="profissionais">
-                    <!-- Card Nutricionista -->
                     <div class="nutricionista card-consulta">
                         <div class="chat">
                             <h3>Nutricionista</h3>
@@ -72,8 +87,6 @@
                             <button class="btn btn-cancelar">Cancelar Consulta</button>
                         </div>
                     </div>
-
-                    <!-- Card Personal Trainer -->
                     <div class="personal card-consulta">
                         <div class="chat">
                             <h3>Personal</h3>
@@ -98,8 +111,6 @@
             </main>
         </section>
     </div>
-
-    <!-- Modal para Solicitar Consulta -->
     <div id="solicitarModal" class="modal-overlay">
         <div class="modal-content">
             <div class="modal-header">
@@ -120,8 +131,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Modal para Confirmar Cancelamento -->
     <div id="cancelarModal" class="modal-overlay">
         <div class="modal-content">
             <div class="modal-header">
@@ -139,7 +148,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // --- Seletores de Elementos ---
             const solicitarModal = document.getElementById('solicitarModal');
             const cancelarModal = document.getElementById('cancelarModal');
             const fecharSolicitarModalBtn = document.getElementById('fecharSolicitarModal');
@@ -150,32 +158,24 @@
             const profissionaisContainer = document.querySelector('.profissionais');
             let cardParaCancelar = null;
 
-            // --- FUNÇÕES DO MODAL ---
-            
-            // Função para fechar qualquer modal
             function fecharModal(modal) {
                 if (modal) modal.style.display = 'none';
             }
 
-            // --- LÓGICA PARA SOLICITAR CONSULTA ---
-
-            // Abrir modal de Solicitação
             solicitarConsultaBtn.addEventListener('click', () => {
-                // Tratamento de data: impede selecionar datas passadas
                 const novaConsultaDataInput = document.getElementById('novaConsultaData');
                 const today = new Date();
                 const year = today.getFullYear();
-                const month = String(today.getMonth() + 1).padStart(2, '0'); // Adiciona 0 à esquerda se necessário
-                const day = String(today.getDate()).padStart(2, '0'); // Adiciona 0 à esquerda se necessário
+                const month = String(today.getMonth() + 1).padStart(2, '0');
+                const day = String(today.getDate()).padStart(2, '0');
                 
                 const hojeFormatado = `${year}-${month}-${day}`;
                 novaConsultaDataInput.setAttribute('min', hojeFormatado);
-                novaConsultaDataInput.value = ''; // Limpa o valor anterior
+                novaConsultaDataInput.value = '';
 
                 solicitarModal.style.display = 'flex';
             });
 
-            // Lógica para confirmar o agendamento de uma nova consulta
             confirmarSolicitacaoBtn.addEventListener('click', () => {
                 const tipo = document.getElementById('tipoProfissional').value;
                 const dataInput = document.getElementById('novaConsultaData').value;
@@ -185,12 +185,10 @@
                     return;
                 }
                 
-                // Formata a data para um formato amigável
                 const dataObj = new Date(dataInput + 'T00:00:00');
                 const opcoesData = { day: 'numeric', month: 'long', year: 'numeric' };
                 const dataFormatada = dataObj.toLocaleDateString('pt-BR', opcoesData);
 
-                // Cria um novo card dinamicamente
                 const novoCard = document.createElement('div');
                 novoCard.classList.add(tipo.toLowerCase(), 'card-consulta');
                 
@@ -221,32 +219,24 @@
                 fecharModal(solicitarModal);
             });
 
-
-            // --- LÓGICA PARA CANCELAR CONSULTA ---
-
-            // Delegação de evento: um único listener para todos os botões de cancelar
             profissionaisContainer.addEventListener('click', function(event) {
-                // Verifica se o elemento clicado é um botão de cancelar
                 if (event.target.classList.contains('btn-cancelar')) {
-                    cardParaCancelar = event.target.closest('.card-consulta'); // Guarda o card a ser removido
-                    cancelarModal.style.display = 'flex'; // Mostra o modal de confirmação
+                    cardParaCancelar = event.target.closest('.card-consulta');
+                    cancelarModal.style.display = 'flex';
                 }
             });
 
-            // Ação ao clicar em "Sim, Cancelar" no modal
             simCancelarBtn.addEventListener('click', () => {
                 if (cardParaCancelar) {
-                    cardParaCancelar.remove(); // Remove o card do HTML
-                    cardParaCancelar = null;   // Limpa a variável
+                    cardParaCancelar.remove();
+                    cardParaCancelar = null;
                 }
                 fecharModal(cancelarModal);
             });
 
-            // --- EVENTOS PARA FECHAR MODAIS ---
             fecharSolicitarModalBtn.addEventListener('click', () => fecharModal(solicitarModal));
             naoCancelarBtn.addEventListener('click', () => fecharModal(cancelarModal));
             
-            // Fecha o modal se o usuário clicar fora da área de conteúdo
             window.addEventListener('click', (event) => {
                 if (event.target === solicitarModal) {
                     fecharModal(solicitarModal);
