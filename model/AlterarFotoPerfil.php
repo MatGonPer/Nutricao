@@ -5,7 +5,7 @@ ini_set("display_errors", 1);
 require_once __DIR__ . "/../controller/UsuarioDAO.php";
 require_once __DIR__ . "/BancoDeDados.php";
 
-if($_SERVER['REQUEST_METHOD'] === "POST") {
+if($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['submit'])) {
     if(isset($_FILES['fotoPerfil']) && $_FILES['fotoPerfil']['error'] === UPLOAD_ERR_OK) {
         $fileTmpPath = $_FILES['fotoPerfil']['tmp_name'];
         $fileName = $_FILES['fotoPerfil']['name'];

@@ -172,6 +172,42 @@ a {
     color: white;
 }
 
+.modal {
+    border-style: none;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    margin: auto;
+}
+
+.modal::backdrop {
+    background-color: #00000069;
+}
+
+#submit {
+    background-color: #0E34A0;
+    color: white;
+    width: 85px;
+    margin-right: 40px;
+}
+
+#cancelar {
+    background-color: rgb(61, 61, 61);
+    color: white;
+    width: 85px;
+    margin-left: 40px;
+}
+
+.modal h2 {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.modal p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
 @media (min-width: 1024px) {
     .app-container {
         flex-direction: row;

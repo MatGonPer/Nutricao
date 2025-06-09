@@ -17,7 +17,7 @@ if(isset($_SESSION['usuarioId']) && isset($_SESSION['tipo_usuario'])) {
     }
 }
 
-if (isset($_POST['submit']) && $sucesso === true) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']) && $sucesso === true) {
     $dadosParaAtualizar = [];
 
     if (!empty($_POST['nome'])) {

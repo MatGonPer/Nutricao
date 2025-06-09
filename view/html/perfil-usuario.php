@@ -144,25 +144,45 @@ require_once __DIR__ . "/../../model/AlterarFotoPerfil.php";
                         </div>
                     </fieldset>
                     <div class="buttons">
-                        <button type="submit" class="save" name="submit">Salvar Perfil</button>
+                        <button type="button" class="save" id="saveButton">Salvar Perfil</button>
+                        <dialog id="saveModal" class="modal">
+                            <h2>Alterar dados</h2>
+                            <p>Tem certeza de quer alterar os seus dados?</p>
+                            <div class="button-modal">
+                                <button type="submit" name="submit" id="submit">Sim</button>
+                                <button type="button" id="cancelar">Não</button>
+                            </div>
+                        </dialog>
                     </div>
                 </form>
             </main>
         </section>
     </div>
 <script>
-document.getElementById('fotoPerfil').addEventListener('change', function() {
-    if (this.files && this.files[0]) {
-        var reader = new FileReader();
-        reader.onload = function(e) {
-            document.getElementById('preview-image').src = e.target.result;
-        }
-        reader.readAsDataURL(this.files[0]);
-        setTimeout(function() {
-            document.getElementById('form-principal').submit();
-        }, 100); 
+    const botaoSalvar = document.getElementById("saveButton");
+    const modalSalvar = document.getElementById("saveModal");
+    const modalCancelar = document.getElementById("cancelar");
+
+    botaoSalvar.onclick = function() {
+        modalSalvar.showModal();
+    };
+
+    modalCancelar.onclick = function() {
+        modalSalvar.close();
     }
-});
+
+    document.getElementById('fotoPerfil').addEventListener('change', function() {
+        if (this.files && this.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('preview-image').src = e.target.result;
+            }
+            reader.readAsDataURL(this.files[0]);
+            setTimeout(function() {
+                document.getElementById('form-principal').submit();
+            }, 100); 
+        }
+    });
 </script>
 </body>
 </html>
