@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nutrifit</title>
-    <!-- Links para os seus arquivos CSS originais. -->
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/landing-page.css"> 
-    <!-- Favicon (caminho original) -->
     <link rel="shortcut icon" href="../assets/icons/favicon/favicon_io/favicon.ico" type="image/x-icon">
 </head>
 <body>
@@ -33,7 +31,6 @@
 
         <div class="middle-container">
             <div class="middle1 animate-on-scroll">
-                <h3>Conheça a Nutrifit</h3>
             </div>
             <div class="middle2">
                 <div class="middle2-top animate-on-scroll">
