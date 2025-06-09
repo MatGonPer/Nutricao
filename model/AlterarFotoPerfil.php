@@ -5,7 +5,7 @@ ini_set("display_errors", 1);
 require_once __DIR__ . "/../controller/UsuarioDAO.php";
 require_once __DIR__ . "/BancoDeDados.php";
 
-if($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['submit'])) {
+if($_SERVER['REQUEST_METHOD'] === "POST" && isset($_FILES['fotoPerfil'])) {
     if(isset($_FILES['fotoPerfil']) && $_FILES['fotoPerfil']['error'] === UPLOAD_ERR_OK) {
         $fileTmpPath = $_FILES['fotoPerfil']['tmp_name'];
         $fileName = $_FILES['fotoPerfil']['name'];
@@ -49,6 +49,8 @@ if($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['submit'])) {
             if($dao->inserirDados("usuario", $dados, $_SESSION['usuarioId'])) {
                 header("Location: " . $_SERVER['PHP_SELF']);
                 exit();
+            } else {
+                error_log('Error');
             }
         } else {
             echo "Erro: Não foi possível mover o arquivo para o destino.";
