@@ -1,4 +1,3 @@
-/* --- Reset Básico e Fontes --- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 *, *::before, *::after {
@@ -21,6 +20,7 @@ img {
 
 ul {
     list-style: none;
+    line-height: 1.5;
 }
 
 a {
@@ -28,15 +28,13 @@ a {
     color: inherit;
 }
 
-/* --- Layout Principal (Mobile-First) --- */
 .app-container {
     width: 100%;
     min-height: 100vh;
     display: flex;
-    flex-direction: column; /* Layout empilhado em telas pequenas */
+    flex-direction: column;
 }
 
-/* O menu lateral é oculto por padrão em telas móveis */
 .left {
     display: none; 
 }
@@ -47,7 +45,6 @@ a {
     background-color: #F5E9E2;
 }
 
-/* --- Cabeçalho do Perfil (Direita) --- */
 .profile-header {
     display: flex;
     flex-direction: column;
@@ -103,8 +100,6 @@ a {
 .edit-icon:hover {
     transform: scale(1.1);
 }
-
-/* --- Formulário --- */
 
 .profile-form-profile {
     display: flex;
@@ -177,13 +172,11 @@ a {
     color: white;
 }
 
-/* --- Media Query para Telas Maiores (Tablet e Desktop) --- */
 @media (min-width: 1024px) {
     .app-container {
-        flex-direction: row; /* Layout lado a lado */
+        flex-direction: row;
     }
 
-    /* ESTILOS DO MENU LATERAL (IDÊNTICOS AO DA PÁGINA PARCEIROS) */
     .left {
         display: flex;
         width: 25%;
@@ -195,7 +188,7 @@ a {
         align-items: center;
         padding: 2rem 1rem;
         gap: 2rem;
-        position: sticky; /* Fixa o menu na lateral */
+        position: sticky;
         top: 0;
         justify-content: flex-start;
     }
@@ -206,6 +199,7 @@ a {
         text-align: center;
         align-items: center;
         gap: 1rem;
+        line-height: 1.6;
     }
 
     .left .profile figure img {
@@ -258,9 +252,8 @@ a {
         width: 25px;
     }
 
-    /* AJUSTES NO CONTEÚDO DA DIREITA */
     .container-right {
-        flex: 1; /* Faz o container da direita ocupar o espaço restante */
+        flex: 1;
         padding: 2rem 3rem;
     }
 

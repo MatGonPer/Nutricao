@@ -13,6 +13,7 @@ $base_path = rtrim($script_path, '/\\');
 $base_url = $protocol . $host . $base_path . '/';
 
 require_once __DIR__ . "/../../model/Dashboard.php";
+require_once __DIR__ . "/../../model/PerfilUsuario.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -29,13 +30,21 @@ require_once __DIR__ . "/../../model/Dashboard.php";
     <script src="<?php echo $base_url; ?>../js/dashboard-usuario.js" defer></script>
 </head>
 <body>
-
     <div class="app-container">
-
         <section class="left">
             <div class="profile">
                 <figure>
-                    <img src="https://placehold.co/100x100/F5E9E2/053225?text=FN" alt="Foto de perfil">
+                    <?php
+                    $caminho_base_foto = '../assets/perfil-usuario/foto/';
+                    $foto_padrao = '../assets/perfil-usuario/user-icon-default-mod.jpeg';
+
+                    if ($sucesso === true && !empty($perfil->getFoto())) {
+                        $foto_perfil = $caminho_base_foto . htmlspecialchars($perfil->getFoto());
+                    } else {
+                        $foto_perfil = $foto_padrao;
+                    }
+                    ?>
+                    <img src="<?php echo $foto_perfil; ?>" alt="Foto de perfil">
                 </figure>
                 <?php
                     if(!empty($usuario->getNome())) {
@@ -48,7 +57,7 @@ require_once __DIR__ . "/../../model/Dashboard.php";
             <aside>
                 <nav>
                     <ul>
-                        <li><a href="perfil-usuario.php"><img src="../assets/perfil-usuario/profile-icon.svg" alt="Ícone Usuário" width="25">Usuário</a></li>
+                        <li class="active"><a href="perfil-usuario.php"><img src="../assets/perfil-usuario/profile-icon.svg" alt="Ícone Usuário" width="25">Usuário</a></li>
                         <li class="active"><a href="dashboard-usuario.php"><img src="../assets/perfil-usuario/desempenho-icon.svg" alt="Ícone Desempenho" width="25">Desempenho</a></li>
                         <li><a href="treinos.php"><img src="../assets/perfil-usuario/treinos-icon.svg" alt="Ícone Treino" width="25">Treino</a></li>
                         <li><a href="consultas-agendadas.php"><img src="../assets/perfil-usuario/consultas-icon.svg" alt="Ícone Consultas" width="25">Consultas</a></li>

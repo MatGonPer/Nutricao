@@ -1,4 +1,3 @@
-/* --- Reset Básico e Fontes --- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 *, *::before, *::after {
@@ -34,7 +33,6 @@ button {
     cursor: pointer;
 }
 
-/* --- Layout Principal (Mobile-First) --- */
 .container {
     width: 100%;
     min-height: 100vh;
@@ -42,7 +40,6 @@ button {
     flex-direction: column;
 }
 
-/* O menu lateral é oculto por padrão em telas móveis */
 .left {
     display: none; 
 }
@@ -52,7 +49,6 @@ button {
     padding: 1.5rem 1rem;
 }
 
-/* --- Cabeçalho Principal --- */
 .header-main {
     padding-bottom: 0.5rem;
     margin-bottom: 1.5rem;
@@ -65,7 +61,6 @@ button {
     color: #053225;
 }
 
-/* --- Conteúdo de Configurações --- */
 .settings-content {
     display: flex;
     flex-direction: column;
@@ -100,7 +95,6 @@ button {
     border-bottom: 1px solid #f0f0f0;
 }
 
-/* --- Estilo do Interruptor (Toggle Switch) --- */
 .toggle-switch {
     position: relative;
     display: inline-block;
@@ -146,7 +140,6 @@ input:checked + .slider:before {
     transform: translateX(22px);
 }
 
-/* --- Estilo das Opções de Tema --- */
 .theme-options {
     display: flex;
     gap: 0.5rem;
@@ -170,7 +163,6 @@ input:checked + .slider:before {
     display: none;
 }
 
-/* --- Estilo dos Botões de Ação --- */
 .account-actions {
     display: flex;
     flex-direction: column;
@@ -202,13 +194,11 @@ input:checked + .slider:before {
     color: white;
 }
 
-/* --- Media Query para Telas Maiores (Tablet e Desktop) --- */
 @media (min-width: 1024px) {
     .container {
         flex-direction: row;
     }
 
-    /* ESTILOS DO MENU LATERAL (IDÊNTICOS AO DA PÁGINA PARCEIROS) */
     .left {
         display: flex;
         width: 25%;
@@ -231,6 +221,7 @@ input:checked + .slider:before {
         text-align: center;
         align-items: center;
         gap: 1rem;
+        line-height: 1.6;
     }
 
     .left .profile figure img {
@@ -283,7 +274,6 @@ input:checked + .slider:before {
         width: 25px;
     }
 
-    /* Ajustes no conteúdo da direita */
     .right {
         flex: 1; 
         padding: 2rem 3rem;

@@ -1,4 +1,3 @@
-/* --- Reset Básico e Fontes --- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 *, *::before, *::after {
@@ -28,7 +27,6 @@ a {
     color: inherit;
 }
 
-/* --- Layout Principal (Mobile-First) --- */
 .container {
     width: 100%;
     min-height: 100vh;
@@ -36,7 +34,6 @@ a {
     flex-direction: column;
 }
 
-/* O menu lateral é oculto por padrão em telas móveis */
 .left {
     display: none; 
 }
@@ -46,7 +43,6 @@ a {
     padding: 1.5rem 1rem;
 }
 
-/* --- Conteúdo da Página de Suporte --- */
 .contato {
     display: flex;
     flex-direction: column;
@@ -131,13 +127,11 @@ a {
 }
 
 
-/* --- Media Query para Telas Maiores (Tablet e Desktop) --- */
 @media (min-width: 1024px) {
     .container {
         flex-direction: row;
     }
 
-    /* ESTILOS DO MENU LATERAL (IDÊNTICOS AO DA PÁGINA PARCEIROS) */
     .left {
         display: flex;
         width: 25%;
@@ -160,6 +154,7 @@ a {
         text-align: center;
         align-items: center;
         gap: 1rem;
+        line-height: 1.6;
     }
 
     .left .profile figure img {
@@ -212,7 +207,6 @@ a {
         width: 25px;
     }
 
-    /* Ajustes no conteúdo da direita */
     .right {
         flex: 1; 
         padding: 2rem 3rem;

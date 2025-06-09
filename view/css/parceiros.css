@@ -1,4 +1,3 @@
-/* --- Reset Básico e Fontes --- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 *, *::before, *::after {
@@ -28,7 +27,6 @@ a {
     color: inherit;
 }
 
-/* --- Layout Principal (Mobile-First) --- */
 .container {
     width: 100%;
     min-height: 100vh;
@@ -45,7 +43,6 @@ a {
     padding: 1.5rem 1rem;
 }
 
-/* --- Cabeçalho da Área Principal --- */
 .header-main {
     display: flex;
     justify-content: space-between;
@@ -61,15 +58,12 @@ a {
     color: #053225;
 }
 
-/* --- Grid de Parceiros --- */
 .parceiros-grid {
     display: grid;
-    /* Cria colunas responsivas: no mínimo 250px, preenchendo o espaço */
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 1.5rem;
 }
 
-/* Estilo dos Cards de Parceiros */
 .parceiro-card {
     background-color: #ffffff;
     border-radius: 12px;
@@ -112,7 +106,7 @@ a {
 .parceiro-card p {
     font-size: 0.95rem;
     color: #666;
-    flex-grow: 1; /* Garante que o botão fique sempre na parte inferior */
+    flex-grow: 1;
 }
 
 .btn-ver-mais {
@@ -130,7 +124,6 @@ a {
     background-color: #084c38;
 }
 
-/* --- Media Query para Telas Maiores (Tablet e Desktop) --- */
 @media (min-width: 1024px) {
     .container {
         flex-direction: row;
@@ -158,6 +151,7 @@ a {
         text-align: center;
         align-items: center;
         gap: 1rem;
+        line-height: 1.6;
     }
 
     .left .profile figure img {

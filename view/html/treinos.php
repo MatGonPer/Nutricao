@@ -1,3 +1,12 @@
+<?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+session_start();
+
+require_once __DIR__ . "/../../model/PerfilUsuario.php";
+require_once __DIR__ . "/../../model/Usuario.php";
+require_once __DIR__ . "/../../model/Treinos.php";
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -9,18 +18,33 @@
 </head>
 <body>
    <div class="container">
-        <!-- BARRA LATERAL (SIDEBAR) -->
         <section class="left">
             <div class="profile">
                 <figure>
-                    <img src="https://placehold.co/120x120/F5E9E2/053225?text=FN" alt="Foto de perfil">
+                    <?php
+                    $caminho_base_foto = '../assets/perfil-usuario/foto/';
+                    $foto_padrao = '../assets/perfil-usuario/user-icon-default-mod.jpeg';
+
+                    if ($sucesso === true && !empty($perfil->getFoto())) {
+                        $foto_perfil = $caminho_base_foto . htmlspecialchars($perfil->getFoto());
+                    } else {
+                        $foto_perfil = $foto_padrao;
+                    }
+                    ?>
+                    <img src="<?php echo $foto_perfil; ?>" alt="Foto de perfil">
                 </figure>
-                <h2>Francisco do Nascimento</h2>
+                <?php
+                    if(!empty($usuario->getNome())) {
+                        echo "<h2>{$usuario->getNome()}</h2>";
+                    } else {
+                        echo "<h2>Usuário</h2>";
+                    }
+                ?>
             </div>
             <aside>
                 <nav>
                     <ul>
-                        <li><a href="perfil-usuario.php"><img src="../assets/perfil-usuario/profile-icon.svg" alt="Ícone Usuário" width="25">Usuário</a></li>
+                        <li class="active"><a href="perfil-usuario.php"><img src="../assets/perfil-usuario/profile-icon.svg" alt="Ícone Usuário" width="25">Usuário</a></li>
                         <li><a href="dashboard-usuario.php"><img src="../assets/perfil-usuario/desempenho-icon.svg" alt="Ícone Desempenho" width="25">Desempenho</a></li>
                         <li class="active"><a href="treinos.php"><img src="../assets/perfil-usuario/treinos-icon.svg" alt="Ícone Treino" width="25">Treino</a></li>
                         <li><a href="consultas-agendadas.php"><img src="../assets/perfil-usuario/consultas-icon.svg" alt="Ícone Consultas" width="25">Consultas</a></li>
@@ -31,8 +55,6 @@
                 </nav>
             </aside>
         </section>
-
-        <!-- CONTEÚDO PRINCIPAL -->
         <section class="right">
             <main>
                 <div class="main-header">
@@ -40,7 +62,6 @@
                     <button class="add-workout-btn" id="addWorkoutBtn">+ Adicionar Treino</button>
                 </div>
                 <article class="treinos" id="workoutsContainer">
-                    <!-- Cards iniciais com a nova imagem padrão -->
                     <div class="treino">
                         <button class="remove-workout-btn" aria-label="Remover treino">&times;</button>
                         <a href="#">
@@ -71,19 +92,14 @@
             </main>
         </section>
    </div>
-
-   <!-- Modal para Selecionar Treino -->
    <div id="addWorkoutModal" class="modal-overlay">
        <div class="modal-content">
            <button class="close-btn" aria-label="Fechar">&times;</button>
            <h2>Selecione um Exercício</h2>
            <div id="exerciseList" class="modal-exercise-list">
-               <!-- A lista de exercícios será populada via JavaScript -->
            </div>
        </div>
    </div>
-
-   <!-- Modal de Confirmação para Remover -->
    <div id="confirmModal" class="modal-overlay">
        <div class="modal-content">
             <h2>Confirmar Ação</h2>
@@ -100,21 +116,17 @@
         const addWorkoutBtn = document.getElementById('addWorkoutBtn');
         const workoutsContainer = document.getElementById('workoutsContainer');
         
-        // Elementos do Modal de Adicionar
         const addModal = document.getElementById('addWorkoutModal');
         const exerciseListContainer = document.getElementById('exerciseList');
         const closeModalBtn = addModal.querySelector('.close-btn');
 
-        // Elementos do Modal de Confirmação
         const confirmModal = document.getElementById('confirmModal');
         const confirmDeleteBtn = document.getElementById('confirmDeleteBtn');
         const cancelDeleteBtn = document.getElementById('cancelDeleteBtn');
         let cardToRemove = null;
 
-        // Imagem padrão
         const silhouetteImageUrl = 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&auto=format&fit=crop';
         
-        // Base de dados de exercícios predefinidos
         const predefinedExercises = [
             { name: 'Supino Reto', details: '4x10', rest: '2 min' },
             { name: 'Supino Inclinado com Halteres', details: '4x12', rest: '1.5 min' },
@@ -152,7 +164,6 @@
             return card;
         };
         
-        // Popula a lista de exercícios no modal
         const populateExerciseList = () => {
             predefinedExercises.forEach(exercise => {
                 const item = document.createElement('div');
@@ -197,7 +208,6 @@
             hideModal(confirmModal);
         });
         
-        // Popula a lista ao carregar a página
         populateExerciseList();
     });
    </script>
