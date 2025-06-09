@@ -10,7 +10,7 @@ class ValidarDataDeNascimento {
         $dataUsuario = new DateTime($data);
         $dataUsuario = $dataUsuario->format('Y');
 
-        if($anoAtual - $dataUsuario < 18) {
+        if($anoAtual - $dataUsuario < 13) {
             return false;
         } else if ($anoAtual - $dataUsuario > 100) {
             return false;
