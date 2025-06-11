@@ -101,13 +101,69 @@ require_once __DIR__ . "/../../model/Configuracoes.php";
                <div class="settings-card">
                    <h2>Gerenciamento da Conta</h2>
                    <div class="account-actions">
-                       <button class="btn btn-secondary">Alterar Senha</button>
-                       <button class="btn btn-secondary">Exportar meus dados</button>
-                       <button class="btn btn-danger">Deletar minha conta</button>
+                       <button class="btn btn-secondary" id="botaoAlterarSenha">Alterar Senha</button>
+                        <dialog class="dialogAlterarSenha" id="dialogAlterarSenha">
+                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                            <div class="dialogDiv">
+                                <h1>Alterar senha</h1>
+                                <p>Digite a sua nova senha</p>
+                                <input type="password" name="alterarSenha" id="alterarSenha" autocomplete="new-password">
+                            </div>
+                            <div class="dialogDivB">
+                                <button type="submit" id="botaoConfirmar" name="botaoConfirmar">Confirmar</button>
+                                <button type="button" id="botaoCancelar">Cancelar</button>
+                            </div>
+                            </form>
+                        </dialog>
+                       <button class="btn btn-danger" id="botaoDeletarConta">Deletar minha conta</button>
+                       <dialog class="dialogDeletarConta" id="dialogDeletarConta">
+                            <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
+                                <div class="deletarContaDiv">
+                                    <h1>DELETAR CONTA</h1>
+                                    <p>Tem certeza que deseja <strong>DELETAR SUA CONTA?</strong></p>
+                                    <div class="dialogDivC">
+                                        <button type="submit" name="deletarConta" id="deletarConta">SIM</button>
+                                        <button type="button" name="cancelarDeletarConta" id="cancelarDeletarConta">CANCELAR</button>
+                                    </div>
+                                </div>
+                            </form>
+                       </dialog>
                    </div>
                </div>
            </div>
         </section>
    </div>
+<script>
+    //Modal Alterar Senha
+    const dialogAlterarSenha = document.getElementById('dialogAlterarSenha');
+    const botaoAlterarSenha = document.getElementById("botaoAlterarSenha");
+    const botaoConfirmar = document.getElementById("botaoConfirmar");
+    const botaoCancelar = document.getElementById("botaoCancelar");
+
+    //Modal Deletar Conta
+    const dialogDeletarConta = document.getElementById("dialogDeletarConta");
+    const botaoDeletarConta = document.getElementById("botaoDeletarConta");
+    const cancelarDeletarConta = document.getElementById("cancelarDeletarConta");
+
+    botaoAlterarSenha.onclick = function() {
+        dialogAlterarSenha.showModal();
+    };
+
+    botaoCancelar.onclick = function() {
+        dialogAlterarSenha.close();
+    };
+
+    botaoConfirmar.onclick = function() {
+
+    };
+
+    botaoDeletarConta.onclick = function() {
+        dialogDeletarConta.showModal();
+    };
+
+    cancelarDeletarConta.onclick = function() {
+        dialogDeletarConta.close();
+    }
+</script>
 </body>
 </html>

@@ -152,12 +152,16 @@ class UsuarioDAO {
         return $id;
     }
 
-    public function atualizar() {
+    public function deletarConta(string $tabela, string $id) : bool {
+        if(!$this->banco->conectar()) {
+            return false;
+        }
 
-    }
+        if(!$this->banco->deletar($tabela, $id)) {
+            return false;
+        }
 
-    public function deletar() {
-
+        return true;
     }
 }
 ?>

@@ -9,7 +9,7 @@
 body {
     font-family: "Poppins", sans-serif;
     background-color: #F5E9E2;
-    color: #333;
+    color: #1C0F13;
     line-height: 1.5;
 }
 
@@ -192,6 +192,103 @@ input:checked + .slider:before {
 .btn-danger {
     background-color: #ef4444;
     color: white;
+}
+
+.dialogDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dialogDiv p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.dialogDiv input {
+    width: 270px;
+    height: 30px;
+    margin-bottom: 40px;
+    border-left: none;
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    background-color: rgb(253, 253, 253);
+}
+
+.dialogDivB, .dialogDivC{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.dialogDivB button, .dialogDivC button {
+    border-style: none;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.dialogAlterarSenha {
+    width: 350px;
+    border-style: none;
+    border-radius: 10px;
+    background-color: white;
+    color: #1C0F13;
+    margin: auto;
+    padding: 30px;
+}
+
+.dialogAlterarSenha h1 {
+    margin-bottom: 30px;
+    font-size: 21px;
+    text-align: center;
+}
+
+.dialogAlterarSenha::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#botaoConfirmar, #deletarConta {
+    width: 90px;
+    background-color: #0E34A0;
+    color: white;
+}
+
+
+#botaoCancelar, #cancelarDeletarConta {
+    width: 90px;
+    background-color: rgb(61, 61, 61);
+    color: white;
+}
+
+.dialogDeletarConta {
+    width: 450px;
+    border-style: none;
+    border-radius: 10px;
+    background-color: white;
+    color: #1C0F13;
+    margin: auto;
+    padding: 30px;
+}
+
+.dialogDeletarConta::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dialogDeletarConta h1 {
+    margin-bottom: 30px;
+    font-size: 21px;
+    text-align: center;
+}
+
+.dialogDeletarConta p {
+    margin-bottom: 30px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.dialogDivC button {
+    width: 90px;
 }
 
 @media (min-width: 1024px) {

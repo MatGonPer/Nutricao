@@ -31,7 +31,7 @@ require_once __DIR__ . "/../../model/LoginParceiro.php";
                     <section class="input-box">
                         <label>Senha:</label>
                         <div class="input-container">
-                            <input placeholder="Digite a sua senha" type="password" name="senha">
+                            <input placeholder="Digite a sua senha" type="password" name="senha" autocomplete="new-password">
                             <img src="../assets/icons/login-register/password-icon.svg" alt="Ícone de usuário" width="22" height="22">
                         </div>
                     </section>
