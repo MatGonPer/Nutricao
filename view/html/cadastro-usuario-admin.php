@@ -56,7 +56,7 @@ require_once "../../model/CadastrarUsuario.php";
                     <section class="input-box">
                         <label>Senha:</label>
                         <div class="input-container">
-                            <input name="senha" placeholder="Digite a sua senha" type="password">
+                            <input name="senha" placeholder="Digite a sua senha" type="password" autocomplete="new-password">
                             <img src="../assets/icons/login-register/password-icon.svg" alt="Ícone de usuário" width="22" height="22">
                         </div>
                     </section>
